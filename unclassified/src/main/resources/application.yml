@@ -1,0 +1,9 @@
+dubbo:
+  application:
+    name: testService
+  protocol:
+    name: rest
+    port: 1234
+  registry:
+    address: 127.0.0.1:9090
+
