@@ -29,6 +29,8 @@
         <module>start</module>
         <module>tool</module>
         <module>view</module>
+        <module>jetty</module>
+        <module>dubbo-service</module>
     </modules>
 
 
