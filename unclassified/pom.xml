@@ -98,7 +98,11 @@
             <artifactId>spring-kafka</artifactId>
             <version>1.0.5.RELEASE</version>
         </dependency>
-
+        <!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+        </dependency>
         <!-- https://mvnrepository.com/artifact/org.springframework.integration/spring-integration-jdbc -->
 <!--        <dependency>-->
 <!--            <groupId>org.springframework.integration</groupId>-->

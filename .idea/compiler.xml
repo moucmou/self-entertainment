@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="view" />
+        <module name="api" />
+        <module name="common" />
+        <module name="business" />
+        <module name="start" />
+        <module name="dubbo-service" />
+        <module name="unclassified" />
+        <module name="tool" />
+        <module name="provider" />
+        <module name="reference" />
+        <module name="jetty" />
+      </profile>
+    </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_STRING" value="-encoding utf-8" />
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="api" options="-parameters" />
+      <module name="business" options="-parameters" />
+      <module name="common" options="-parameters" />
+      <module name="dubbo-service" options="-parameters" />
+      <module name="j4f" options="" />
+      <module name="jetty" options="-parameters" />
+      <module name="modules" options="" />
+      <module name="provider" options="-parameters" />
+      <module name="reference" options="-parameters" />
+      <module name="start" options="-parameters" />
+      <module name="tool" options="-parameters" />
+      <module name="unclassified" options="-parameters" />
+      <module name="view" options="-parameters" />
+    </option>
+  </component>
+</project>
