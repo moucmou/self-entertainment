@@ -6,26 +6,36 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="view" />
-        <module name="api" />
-        <module name="common" />
-        <module name="business" />
-        <module name="start" />
-        <module name="dubbo-service" />
-        <module name="unclassified" />
-        <module name="tool" />
-        <module name="provider" />
-        <module name="reference" />
         <module name="jetty" />
+        <module name="amazingt" />
+        <module name="dubbo-service" />
+        <module name="dubbo-consumer" />
+        <module name="unclassified" />
+        <module name="dubbo-api" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="api" target="1.8" />
+      <module name="business" target="1.5" />
+      <module name="common" target="1.8" />
+      <module name="modules" target="1.8" />
+      <module name="provider" target="1.5" />
+      <module name="reference" target="1.5" />
+      <module name="start" target="1.8" />
+      <module name="tool" target="1.8" />
+      <module name="view" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_STRING" value="-encoding utf-8" />
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="amazingt" options="-parameters" />
       <module name="api" options="-parameters" />
       <module name="business" options="-parameters" />
       <module name="common" options="-parameters" />
+      <module name="dubbo" options="" />
+      <module name="dubbo-api" options="-parameters" />
+      <module name="dubbo-consumer" options="-parameters" />
       <module name="dubbo-service" options="-parameters" />
       <module name="j4f" options="" />
       <module name="jetty" options="-parameters" />

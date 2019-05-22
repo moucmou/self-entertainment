@@ -7,6 +7,6 @@ import java.util.concurrent.CopyOnWriteArrayList;
 
 public class ServletMappingConfig {
     public static List<ServletMapping> servletMappingList = new CopyOnWriteArrayList<>(
-            Collections.singletonList(new ServletMapping("helloWorld", "/helloworld", "miniServer.servlet.DemoHelloWorldServlet")));
+            Collections.singletonList( ServletMapping.of("helloWorld", "/helloWorld", "com.self.entertainment.simple.SimpleServlet")));
 
 }

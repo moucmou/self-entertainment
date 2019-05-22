@@ -27,7 +27,10 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+        </dependency>
         <!-- https://mvnrepository.com/artifact/org.eclipse.jetty/jetty-server -->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
@@ -40,7 +43,6 @@
             <artifactId>jetty-servlet</artifactId>
             <version>9.4.18.v20190429</version>
         </dependency>
-
 
     </dependencies>
 

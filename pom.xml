@@ -20,17 +20,13 @@
 		<dubbo.version>2.7.1</dubbo.version>
         <curator.version>4.2.0</curator.version>
         <commons-io.version>2.6</commons-io.version>
+        <projectlombok.version>1.18.8</projectlombok.version>
     </properties>
     <modules>
         <module>unclassified</module>
-        <module>api</module>
-        <module>common</module>
-        <module>modules</module>
-        <module>start</module>
-        <module>tool</module>
-        <module>view</module>
         <module>jetty</module>
-        <module>dubbo-service</module>
+        <module>dubbo</module>
+        <module>amazingt</module>
     </modules>
 
 
@@ -93,6 +89,8 @@
                 <artifactId>commons-io</artifactId>
                 <version>${commons-io.version}</version>
             </dependency>
+            <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+
 
 
         </dependencies>
@@ -100,7 +98,11 @@
 	</dependencyManagement>
 
 	<dependencies>
-
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${projectlombok.version}</version>
+        </dependency>
     </dependencies>
     <build>
         <plugins>

@@ -2,8 +2,83 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c7787a2e-85d4-4218-b09f-04b8fe5e019b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dubbo/dubbo-service/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dubbo/dubbo-service/src/main/resources/provider.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jetty/src/main/java/com/self/entertainment/simple/SimpleServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unclassified/src/main/java/note/Interceptor/Interceptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unclassified/src/main/java/note/Interceptor/InterceptorJdkProxy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unclassified/src/main/java/note/Interceptor/InterceptorTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unclassified/src/main/java/note/Interceptor/MyInterceptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unclassified/src/main/java/note/cglib/CglibProxyExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unclassified/src/main/java/note/cglib/ReflectServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unclassified/src/main/java/note/cglib/TestCglibProxy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unclassified/src/main/java/note/countdownlatch/BTree.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unclassified/src/main/java/note/countdownlatch/CountDownLatchTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unclassified/src/main/java/note/countdownlatch/LinkedListCreator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unclassified/src/main/java/note/countdownlatch/LinkedListReverser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unclassified/src/main/java/note/countdownlatch/Node.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unclassified/src/main/java/note/countdownlatch/Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unclassified/src/main/java/note/jdkproxy/HelloWorld.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unclassified/src/main/java/note/jdkproxy/HelloWorldImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unclassified/src/main/java/note/jdkproxy/JdkProxyExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unclassified/src/main/java/note/jdkproxy/JdkProxyExampleTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unclassified/src/main/java/note/socket/CompressClientNoDeadlock.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unclassified/src/main/java/note/socket/PlainIOClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unclassified/src/main/java/note/socket/PlainOioServerThread.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unclassified/src/main/java/note/spinlocks/Spinlocks.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dubbo-service/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/dubbo/dubbo-service/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dubbo-service/.mvn/wrapper/MavenWrapperDownloader.java" beforeDir="false" afterPath="$PROJECT_DIR$/dubbo/dubbo-service/.mvn/wrapper/MavenWrapperDownloader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dubbo-service/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" afterPath="$PROJECT_DIR$/dubbo/dubbo-service/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dubbo-service/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/dubbo/dubbo-service/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dubbo-service/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/dubbo/dubbo-service/mvnw" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dubbo-service/mvnw.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/dubbo/dubbo-service/mvnw.cmd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dubbo-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/dubbo/dubbo-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dubbo-service/src/main/java/com/self/entertainment/dubboservice/DubboServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/dubbo/dubbo-service/src/main/java/com/self/entertainment/DubboServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dubbo-service/src/main/java/com/self/entertainment/dubboservice/service/HelloService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dubbo-service/src/main/java/com/self/entertainment/dubboservice/service/TestService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dubbo-service/src/main/java/com/self/entertainment/dubboservice/service/impl/HelloServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/dubbo/dubbo-service/src/main/java/com/self/entertainment/service/impl/HelloServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dubbo-service/src/main/java/com/self/entertainment/dubboservice/service/impl/TestServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/dubbo/dubbo-service/src/main/java/com/self/entertainment/service/impl/TestServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dubbo-service/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dubbo-service/src/test/java/com/self/entertainment/dubboservice/DubboServiceApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/dubbo/dubbo-service/src/test/java/com/self/entertainment/dubboservice/DubboServiceApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jetty/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/jetty/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jetty/src/main/java/com/self/entertainment/simple/AbstractServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/jetty/src/main/java/com/self/entertainment/simple/AbstractServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jetty/src/main/java/com/self/entertainment/simple/ServletMapping.java" beforeDir="false" afterPath="$PROJECT_DIR$/jetty/src/main/java/com/self/entertainment/simple/ServletMapping.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jetty/src/main/java/com/self/entertainment/simple/ServletMappingConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/jetty/src/main/java/com/self/entertainment/simple/ServletMappingConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jetty/src/main/java/com/self/entertainment/simple/SimpleRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/jetty/src/main/java/com/self/entertainment/simple/SimpleRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jetty/src/main/java/com/self/entertainment/simple/SimpleResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/jetty/src/main/java/com/self/entertainment/simple/SimpleResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jetty/src/main/java/com/self/entertainment/simple/SimpleServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/jetty/src/main/java/com/self/entertainment/simple/SimpleServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/business/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/provider/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/reference/pom.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/start/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/start/src/test/java/DiDiThreadLocal.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/start/src/test/java/DogHello.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/start/src/test/java/FastFailClass.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/start/src/test/java/FastFailTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/start/src/test/java/HashMapTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/start/src/test/java/Hello.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/start/src/test/java/HelloTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/start/src/test/java/Query.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/start/src/test/java/QuickSort.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/start/src/test/java/SocketClient.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/start/src/test/java/SocketServer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/start/src/test/java/Test1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/start/src/test/java/TestException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/start/src/test/java/TestFor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tool/pom.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/unclassified/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/unclassified/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unclassified/src/main/java/com/self/entertainment/unclassified/JavaNioTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/unclassified/src/main/java/com/self/entertainment/unclassified/JavaNioTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unclassified/src/main/java/com/self/entertainment/unclassified/NioSocketClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/unclassified/src/main/java/com/self/entertainment/unclassified/NioSocketClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unclassified/src/main/java/com/self/entertainment/unclassified/UnclassifiedApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/unclassified/src/main/java/com/UnclassifiedApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/pom.xml" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/unclassified/target/" />
@@ -19,6 +94,12 @@
     <ignored path="$PROJECT_DIR$/modules/reference/target/" />
     <ignored path="$PROJECT_DIR$/dubbo-service/target/" />
     <ignored path="$PROJECT_DIR$/jetty/target/" />
+    <ignored path="$PROJECT_DIR$/dubbo-consumer/target/" />
+    <ignored path="$PROJECT_DIR$/dubbo/dubbo-service/target/" />
+    <ignored path="$PROJECT_DIR$/dubbo/target/" />
+    <ignored path="$PROJECT_DIR$/dubbo/dubbo-consumer/target/" />
+    <ignored path="$PROJECT_DIR$/dubbo/dubbo-api/target/" />
+    <ignored path="$PROJECT_DIR$/amazingt/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,116 +110,13 @@
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/unclassified/src/main/java/com/self/entertainment/unclassified/NioSocketServer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="504">
-              <caret line="48" column="57" lean-forward="true" selection-start-line="48" selection-start-column="57" selection-end-line="48" selection-end-column="57" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://D:/Java/jdk1.8.0_171/src.zip!/java/nio/Buffer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="409">
-              <caret line="377" column="30" selection-start-line="377" selection-start-column="24" selection-end-line="377" selection-end-column="30" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://D:/Java/jdk1.8.0_171/src.zip!/java/lang/Exception.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="44" column="13" selection-start-line="44" selection-start-column="13" selection-end-line="44" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://D:/Java/jdk1.8.0_171/src.zip!/java/nio/channels/FileChannel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="523">
-              <caret line="553" column="47" selection-start-line="553" selection-start-column="39" selection-end-line="553" selection-end-column="47" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://D:/Java/jdk1.8.0_171/jre/lib/rt.jar!/sun/nio/ch/FileChannelImpl.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="19">
-              <caret line="178" column="15" selection-start-line="178" selection-start-column="15" selection-end-line="178" selection-end-column="15" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/unclassified/src/main/java/com/self/entertainment/unclassified/JavaNioTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="21" column="53" lean-forward="true" selection-start-line="21" selection-start-column="53" selection-end-line="21" selection-end-column="53" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://D:/Java/jdk1.8.0_171/src.zip!/java/nio/channels/SelectionKey.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
-              <caret line="159" column="25" selection-start-line="159" selection-start-column="25" selection-end-line="159" selection-end-column="25" />
-              <folding>
-                <element signature="e#13176#13177#0" expanded="true" />
-                <element signature="e#13228#13229#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://D:/Java/jdk1.8.0_171/src.zip!/java/nio/channels/SocketChannel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="181">
-              <caret line="466" column="24" selection-start-line="466" selection-start-column="24" selection-end-line="466" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/unclassified/src/main/java/com/self/entertainment/unclassified/NioSocketClient.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="20" column="15" lean-forward="true" selection-start-line="20" selection-start-column="15" selection-end-line="20" selection-end-column="15" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://D:/Java/jdk1.8.0_171/jre/lib/rt.jar!/sun/nio/ch/Net.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="392" selection-start-line="392" selection-end-line="392" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
+        <option value="spring-beans.schema" />
         <option value="Class" />
       </list>
     </option>
@@ -147,6 +125,8 @@
     <findStrings>
       <find>ref</find>
       <find>alibaba</find>
+      <find>abstract</find>
+      <find>读出错</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -161,15 +141,45 @@
         <option value="$PROJECT_DIR$/dubbo-service/src/main/java/com/self/entertainment/dubboservice/service/impl/HelloServiceImpl.java" />
         <option value="$PROJECT_DIR$/dubbo-service/src/main/java/com/self/entertainment/dubboservice/service/TestService.java" />
         <option value="$PROJECT_DIR$/dubbo-service/src/main/java/com/self/entertainment/dubboservice/service/impl/TestServiceImpl.java" />
-        <option value="$PROJECT_DIR$/dubbo-service/src/main/resources/application.properties" />
-        <option value="$PROJECT_DIR$/jetty/pom.xml" />
         <option value="$PROJECT_DIR$/jetty/src/main/java/com/self/entertainment/jetty/client/JettyServer.java" />
         <option value="$PROJECT_DIR$/jetty/src/main/java/com/self/entertainment/jetty/client/JettyContainer.java" />
-        <option value="$PROJECT_DIR$/unclassified/src/main/java/com/self/entertainment/unclassified/JavaNioTest.java" />
-        <option value="$PROJECT_DIR$/unclassified/pom.xml" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/unclassified/src/main/java/com/self/entertainment/unclassified/NioSocketClient.java" />
         <option value="$PROJECT_DIR$/unclassified/src/main/java/com/self/entertainment/unclassified/NioSocketServer.java" />
+        <option value="$PROJECT_DIR$/unclassified/src/main/java/com/self/entertainment/unclassified/JavaNioTest.java" />
+        <option value="$PROJECT_DIR$/unclassified/src/main/java/com/self/entertainment/unclassified/NioSocketClient.java" />
+        <option value="$PROJECT_DIR$/jetty/src/main/java/com/self/entertainment/simple/SimpleRequest.java" />
+        <option value="$PROJECT_DIR$/jetty/src/main/java/com/self/entertainment/simple/ServletMapping.java" />
+        <option value="$PROJECT_DIR$/jetty/src/main/java/com/self/entertainment/simple/ServletMappingConfig.java" />
+        <option value="$PROJECT_DIR$/jetty/src/main/java/com/self/entertainment/simple/SimpleServer.java" />
+        <option value="$PROJECT_DIR$/jetty/src/main/java/com/self/entertainment/simple/SimpleResponse.java" />
+        <option value="$PROJECT_DIR$/jetty/src/main/java/com/self/entertainment/simple/AbstractServlet.java" />
+        <option value="$PROJECT_DIR$/dubbo-consumer/pom.xml" />
+        <option value="$PROJECT_DIR$/dubbo-consumer/src/main/java/com/self/entertainment/dubboconsumer/DubboConsumerApplication.java" />
+        <option value="$PROJECT_DIR$/jetty/pom.xml" />
+        <option value="$PROJECT_DIR$/dubbo-consumer/src/main/java/com/self/entertainment/DubboConsumerApplication.java" />
+        <option value="$PROJECT_DIR$/dubbo-consumer/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/dubbo-service/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/dubbo-service/src/main/resources/provider.xml" />
+        <option value="$PROJECT_DIR$/dubbo-service/src/main/java/com/self/entertainment/DubboServiceApplication.java" />
+        <option value="$PROJECT_DIR$/modules/pom.xml" />
+        <option value="$PROJECT_DIR$/test/pom.xml" />
+        <option value="$PROJECT_DIR$/dubbo/dubbo-api/src/main/java/entertainment/DubboConsumerApplication.java" />
+        <option value="$PROJECT_DIR$/dubbo/dubbo-service/src/main/java/com/self/entertainment/service/impl/HelloServiceImpl.java" />
+        <option value="$PROJECT_DIR$/dubbo/dubbo-consumer/src/main/java/com/self/entertainment/DubboConsumerApplication.java" />
+        <option value="$PROJECT_DIR$/dubbo/dubbo-api/pom.xml" />
+        <option value="$PROJECT_DIR$/amazingt/pom.xml" />
+        <option value="$PROJECT_DIR$/unclassified/src/main/java/com/UnclassifiedApplication.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/unclassified/src/main/java/note/countdownlatch/Node.java" />
+        <option value="$PROJECT_DIR$/dubbo/dubbo-service/pom.xml" />
+        <option value="$PROJECT_DIR$/dubbo/pom.xml" />
+        <option value="$PROJECT_DIR$/dubbo/dubbo-consumer/pom.xml" />
+        <option value="$PROJECT_DIR$/unclassified/src/main/java/note/Interceptor/Interceptor.java" />
+        <option value="$PROJECT_DIR$/unclassified/src/main/java/note/Interceptor/InterceptorTest.java" />
+        <option value="$PROJECT_DIR$/unclassified/pom.xml" />
+        <option value="$PROJECT_DIR$/unclassified/src/main/java/note/javassist/RayTest.java" />
+        <option value="$PROJECT_DIR$/unclassified/src/main/java/note/javassist/TestMain.java" />
+        <option value="$PROJECT_DIR$/amazingt/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/jetty/src/main/java/com/self/entertainment/simple/SimpleServlet.java" />
       </list>
     </option>
   </component>
@@ -192,35 +202,29 @@
       <expand>
         <path>
           <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="unclassified" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="j4f" type="9519ce18:MavenProjectsStructure$ProjectNode" />
         </path>
         <path>
           <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="unclassified" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-          <item name="Dependencies" type="f4be9f2a:MavenProjectsStructure$DependenciesNode" />
+          <item name="j4f" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
         </path>
       </expand>
       <select />
     </treeState>
   </component>
-  <component name="ProjectConfigurationFiles">
-    <option name="files">
-      <list>
-        <option value="$PROJECT_DIR$/.idea/vcs.xml" />
-      </list>
-    </option>
-  </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds">
     <option name="width" value="1920" />
     <option name="height" value="1040" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
+      <flattenPackages ProjectPane="false" />
+      <hideEmptyPackages ProjectPane="true" />
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -232,156 +236,13 @@
             <path>
               <item name="self-entertainment" type="b2602c69:ProjectViewProjectNode" />
               <item name="self-entertainment" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="self-entertainment" type="b2602c69:ProjectViewProjectNode" />
-              <item name="self-entertainment" type="462c0819:PsiDirectoryNode" />
-              <item name="dubbo-service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="self-entertainment" type="b2602c69:ProjectViewProjectNode" />
-              <item name="self-entertainment" type="462c0819:PsiDirectoryNode" />
-              <item name="dubbo-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="self-entertainment" type="b2602c69:ProjectViewProjectNode" />
-              <item name="self-entertainment" type="462c0819:PsiDirectoryNode" />
-              <item name="dubbo-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="self-entertainment" type="b2602c69:ProjectViewProjectNode" />
-              <item name="self-entertainment" type="462c0819:PsiDirectoryNode" />
-              <item name="dubbo-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="self-entertainment" type="b2602c69:ProjectViewProjectNode" />
-              <item name="self-entertainment" type="462c0819:PsiDirectoryNode" />
-              <item name="dubbo-service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="dubboservice" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="self-entertainment" type="b2602c69:ProjectViewProjectNode" />
-              <item name="self-entertainment" type="462c0819:PsiDirectoryNode" />
-              <item name="jetty" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="self-entertainment" type="b2602c69:ProjectViewProjectNode" />
-              <item name="self-entertainment" type="462c0819:PsiDirectoryNode" />
-              <item name="jetty" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="self-entertainment" type="b2602c69:ProjectViewProjectNode" />
-              <item name="self-entertainment" type="462c0819:PsiDirectoryNode" />
-              <item name="jetty" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="self-entertainment" type="b2602c69:ProjectViewProjectNode" />
-              <item name="self-entertainment" type="462c0819:PsiDirectoryNode" />
-              <item name="jetty" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="self-entertainment" type="b2602c69:ProjectViewProjectNode" />
-              <item name="self-entertainment" type="462c0819:PsiDirectoryNode" />
-              <item name="jetty" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="jetty" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="self-entertainment" type="b2602c69:ProjectViewProjectNode" />
-              <item name="self-entertainment" type="462c0819:PsiDirectoryNode" />
-              <item name="jetty" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="jetty" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="self-entertainment" type="b2602c69:ProjectViewProjectNode" />
-              <item name="self-entertainment" type="462c0819:PsiDirectoryNode" />
-              <item name="start" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="self-entertainment" type="b2602c69:ProjectViewProjectNode" />
-              <item name="self-entertainment" type="462c0819:PsiDirectoryNode" />
               <item name="unclassified" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="self-entertainment" type="b2602c69:ProjectViewProjectNode" />
-              <item name="self-entertainment" type="462c0819:PsiDirectoryNode" />
-              <item name="unclassified" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="self-entertainment" type="b2602c69:ProjectViewProjectNode" />
-              <item name="self-entertainment" type="462c0819:PsiDirectoryNode" />
-              <item name="unclassified" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="self-entertainment" type="b2602c69:ProjectViewProjectNode" />
-              <item name="self-entertainment" type="462c0819:PsiDirectoryNode" />
-              <item name="unclassified" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="self-entertainment" type="b2602c69:ProjectViewProjectNode" />
-              <item name="self-entertainment" type="462c0819:PsiDirectoryNode" />
-              <item name="unclassified" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="self-entertainment" type="b2602c69:ProjectViewProjectNode" />
-              <item name="self-entertainment" type="462c0819:PsiDirectoryNode" />
-              <item name="unclassified" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="self-entertainment" type="b2602c69:ProjectViewProjectNode" />
-              <item name="self-entertainment" type="462c0819:PsiDirectoryNode" />
-              <item name="unclassified" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="unclassified" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="self-entertainment" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -389,11 +250,27 @@
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/unclassified/src/main/java" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="Errors" />
+    <property name="settings.editor.selected.configurable" value="http.proxy" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com" />
+      <recent name="com.self.entertainment" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\github\self-entertainment\unclassified\src\main\java" />
+      <recent name="E:\github\self-entertainment\dubbo\dubbo-api\src\main\java" />
+      <recent name="E:\github\self-entertainment\dubbo-consumer\src\main\java\com\self\entertainment\service" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\github\self-entertainment\dubbo" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="configurationTypes">
@@ -413,14 +290,14 @@
     </option>
     <option name="contentProportion" value="0.15854979" />
   </component>
-  <component name="RunManager" selected="Application.NioSocketClient">
+  <component name="RunManager" selected="Application.TestMain">
     <configuration name="JavaNioTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.self.entertainment.unclassified.JavaNioTest" />
       <module name="unclassified" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.self.entertainment.unclassified.*" />
+          <option name="PATTERN" value="com.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -434,7 +311,7 @@
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.self.entertainment.unclassified.*" />
+          <option name="PATTERN" value="com.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -442,13 +319,41 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="NioSocketServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.self.entertainment.unclassified.NioSocketServer" />
+    <configuration name="SimpleResponse" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.self.entertainment.simple.SimpleResponse" />
+      <module name="jetty" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.self.entertainment.simple.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SimpleServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.self.entertainment.simple.SimpleServer" />
+      <module name="jetty" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.self.entertainment.simple.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="note.javassist.TestMain" />
       <module name="unclassified" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.self.entertainment.unclassified.*" />
+          <option name="PATTERN" value="note.javassist.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -469,9 +374,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="AmazingtApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="amazingt" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="cn.example.amazingt.AmazingtApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DubboConsumerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="dubbo-consumer" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.self.entertainment.DubboConsumerApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="DubboServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="dubbo-service" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.self.entertainment.dubboservice.DubboServiceApplication" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.self.entertainment.DubboServiceApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -485,7 +404,7 @@
     </configuration>
     <configuration name="UnclassifiedApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="unclassified" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.self.entertainment.unclassified.UnclassifiedApplication" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.UnclassifiedApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -501,9 +420,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.NioSocketClient" />
-        <item itemvalue="Application.NioSocketServer" />
+        <item itemvalue="Application.TestMain" />
+        <item itemvalue="Application.SimpleServer" />
+        <item itemvalue="Application.SimpleResponse" />
         <item itemvalue="Application.JavaNioTest" />
+        <item itemvalue="Application.NioSocketClient" />
       </list>
     </recent_temporary>
   </component>
@@ -518,18 +439,22 @@
       <option name="presentableId" value="Default" />
       <updated>1558403745637</updated>
       <workItem from="1558403748082" duration="5306000" />
-      <workItem from="1558420117667" duration="17674000" />
+      <workItem from="1558420117667" duration="17980000" />
+      <workItem from="1558442307177" duration="1939000" />
+      <workItem from="1558489054026" duration="6661000" />
+      <workItem from="1558495835410" duration="4132000" />
+      <workItem from="1558506730614" duration="7556000" />
+      <workItem from="1558515783816" duration="4223000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22980000" />
+    <option name="totallyTimeSpent" value="47797000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <frame x="0" y="0" width="1920" height="1040" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25266525" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26505375" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -539,26 +464,26 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32936078" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.24918744" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3351709" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.29217198" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="FindBugs-IDEA" order="7" weight="0.32936078" />
       <window_info anchor="bottom" id="Spring" order="8" weight="0.32936078" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.32936078" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.32855567" />
       <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Sequence" order="11" />
-      <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="13" weight="0.32936078" />
+      <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.50053763" side_tool="true" weight="0.28224918" />
+      <window_info anchor="bottom" id="Messages" order="13" weight="0.32855567" />
       <window_info anchor="bottom" id="Java Enterprise" order="14" weight="0.32936078" />
       <window_info anchor="bottom" id="Database Changes" order="15" />
       <window_info anchor="bottom" id="Version Control" order="16" />
-      <window_info anchor="bottom" id="Run Dashboard" order="17" weight="0.38894907" />
+      <window_info anchor="bottom" id="Run Dashboard" order="17" sideWeight="0.49946237" weight="0.37375966" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Maven" order="3" visible="true" weight="0.092750534" />
+      <window_info active="true" anchor="right" id="Maven" order="3" visible="true" weight="0.21935484" />
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
       <window_info anchor="right" id="Database" order="6" />
@@ -574,118 +499,67 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>jar://E:/repository/org/apache/dubbo/dubbo/2.7.1/dubbo-2.7.1-sources.jar!/org/apache/dubbo/config/spring/ServiceBean.java</url>
-          <line>299</line>
+          <url>file://$PROJECT_DIR$/dubbo/dubbo-consumer/src/main/java/com/self/entertainment/DubboConsumerApplication.java</url>
+          <line>23</line>
           <properties />
-          <option name="timeStamp" value="3" />
+          <option name="timeStamp" value="43" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>jar://E:/repository/org/apache/dubbo/dubbo/2.7.1/dubbo-2.7.1-sources.jar!/org/apache/dubbo/config/ServiceConfig.java</url>
-          <line>421</line>
-          <properties />
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>jar://E:/repository/org/apache/dubbo/dubbo/2.7.1/dubbo-2.7.1-sources.jar!/org/apache/dubbo/config/ServiceConfig.java</url>
-          <line>555</line>
-          <properties />
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>jar://E:/repository/org/apache/dubbo/dubbo/2.7.1/dubbo-2.7.1-sources.jar!/org/apache/dubbo/config/ServiceConfig.java</url>
-          <line>562</line>
-          <properties />
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>jar://E:/repository/org/apache/dubbo/dubbo/2.7.1/dubbo-2.7.1-sources.jar!/org/apache/dubbo/registry/integration/RegistryProtocol.java</url>
-          <line>169</line>
-          <properties />
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>jar://E:/repository/org/apache/dubbo/dubbo/2.7.1/dubbo-2.7.1-sources.jar!/org/apache/dubbo/rpc/protocol/dubbo/DubboProtocol.java</url>
-          <line>287</line>
-          <properties />
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>jar://E:/repository/org/apache/dubbo/dubbo/2.7.1/dubbo-2.7.1-sources.jar!/org/apache/dubbo/rpc/proxy/javassist/JavassistProxyFactory.java</url>
-          <line>40</line>
-          <properties />
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>jar://E:/repository/org/apache/dubbo/dubbo/2.7.1/dubbo-2.7.1-sources.jar!/org/apache/dubbo/rpc/proxy/javassist/JavassistProxyFactory.java</url>
-          <line>46</line>
-          <properties />
-          <option name="timeStamp" value="12" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>jar://E:/repository/org/apache/dubbo/dubbo/2.7.1/dubbo-2.7.1-sources.jar!/com/alibaba/dubbo/rpc/ProxyFactory.java</url>
-          <line>44</line>
-          <properties />
-          <option name="timeStamp" value="13" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>jar://E:/repository/org/apache/dubbo/dubbo/2.7.1/dubbo-2.7.1-sources.jar!/org/apache/dubbo/rpc/protocol/dubbo/DubboProtocol.java</url>
-          <line>264</line>
-          <properties />
-          <option name="timeStamp" value="14" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>jar://E:/repository/org/apache/dubbo/dubbo/2.7.1/dubbo-2.7.1-sources.jar!/org/apache/dubbo/registry/integration/RegistryProtocol.java</url>
-          <line>186</line>
-          <properties />
-          <option name="timeStamp" value="15" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>jar://E:/repository/org/apache/dubbo/dubbo/2.7.1/dubbo-2.7.1-sources.jar!/org/apache/dubbo/registry/integration/RegistryProtocol.java</url>
-          <line>203</line>
-          <properties />
-          <option name="timeStamp" value="17" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/unclassified/src/main/java/com/self/entertainment/unclassified/JavaNioTest.java</url>
-          <line>20</line>
-          <properties />
-          <option name="timeStamp" value="18" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/unclassified/src/main/java/com/self/entertainment/unclassified/NioSocketServer.java</url>
-          <line>17</line>
-          <properties />
-          <option name="timeStamp" value="19" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/unclassified/src/main/java/com/self/entertainment/unclassified/NioSocketClient.java</url>
+          <url>file://$PROJECT_DIR$/dubbo/dubbo-service/src/main/java/com/self/entertainment/service/impl/TestServiceImpl.java</url>
           <line>14</line>
           <properties />
-          <option name="timeStamp" value="20" />
+          <option name="timeStamp" value="44" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/unclassified/src/main/java/com/self/entertainment/unclassified/NioSocketServer.java</url>
-          <line>20</line>
+          <url>file://$PROJECT_DIR$/dubbo/dubbo-service/src/main/java/com/self/entertainment/service/impl/HelloServiceImpl.java</url>
+          <line>15</line>
           <properties />
-          <option name="timeStamp" value="22" />
+          <option name="timeStamp" value="45" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/unclassified/src/main/java/com/self/entertainment/unclassified/NioSocketServer.java</url>
-          <line>69</line>
+          <url>jar://E:/repository/org/apache/dubbo/dubbo/2.7.1/dubbo-2.7.1-sources.jar!/org/apache/dubbo/config/spring/ReferenceBean.java</url>
+          <line>219</line>
           <properties />
-          <option name="timeStamp" value="24" />
+          <option name="timeStamp" value="46" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/unclassified/src/main/java/com/self/entertainment/unclassified/NioSocketServer.java</url>
-          <line>32</line>
+          <url>jar://E:/repository/org/apache/dubbo/dubbo/2.7.1/dubbo-2.7.1-sources.jar!/org/apache/dubbo/config/spring/ReferenceBean.java</url>
+          <line>87</line>
           <properties />
-          <option name="timeStamp" value="29" />
+          <option name="timeStamp" value="47" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://E:/repository/org/apache/dubbo/dubbo/2.7.1/dubbo-2.7.1-sources.jar!/org/apache/dubbo/config/spring/ServiceBean.java</url>
+          <line>112</line>
+          <properties />
+          <option name="timeStamp" value="48" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/unclassified/src/main/java/note/javassist/TestMain.java</url>
+          <line>52</line>
+          <properties />
+          <option name="timeStamp" value="49" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateCodeFragment">
+      <expression>
+        <expression-string>httpHead</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>httpRequest</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>simpleRequest.getUrl()</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>selectionKey.isConnectable()</expression-string>
         <language-id>JAVA</language-id>
@@ -716,610 +590,363 @@
         <language-id>JAVA</language-id>
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
-      <expression>
-        <expression-string>getContextPath(protocolConfig).map(p -&gt; p + &quot;/&quot; + path).orElse(path), group, version)</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>getProvider()</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
-      </expression>
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://E:/repository/org/apache/dubbo/dubbo/2.7.1/dubbo-2.7.1-sources.jar!/org/apache/dubbo/qos/protocol/QosProtocolWrapper.java">
+    <entry file="file://$PROJECT_DIR$/unclassified/src/main/java/note/jdkproxy/HelloWorldImpl.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/unclassified/src/main/java/note/socket/CompressClientNoDeadlock.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/unclassified/src/main/java/note/countdownlatch/Node.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/unclassified/src/main/java/com/dubbo/service/impl/ServiceAImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
-          <caret line="60" selection-start-line="60" selection-end-line="60" />
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://E:/repository/org/apache/dubbo/dubbo/2.7.1/dubbo-2.7.1-sources.jar!/org/apache/dubbo/rpc/protocol/ProtocolListenerWrapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="54" selection-start-line="54" selection-end-line="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://E:/repository/org/apache/dubbo/dubbo/2.7.1/dubbo-2.7.1-sources.jar!/org/apache/dubbo/rpc/protocol/ProtocolFilterWrapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="105" selection-start-line="105" selection-end-line="105" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://E:/repository/org/apache/dubbo/dubbo/2.7.1/dubbo-2.7.1-sources.jar!/org/apache/dubbo/rpc/Protocol.java">
+    <entry file="file://$PROJECT_DIR$/unclassified/src/main/java/com/dubbo/service/impl/TestAAA.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
-          <caret line="49" column="20" selection-start-line="49" selection-start-column="20" selection-end-line="49" selection-end-column="20" />
+          <caret line="10" column="47" selection-start-line="10" selection-start-column="42" selection-end-line="10" selection-end-column="47" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://E:/repository/org/apache/dubbo/dubbo/2.7.1/dubbo-2.7.1-sources.jar!/org/apache/dubbo/config/ServiceConfig.java">
+    <entry file="file://$PROJECT_DIR$/unclassified/src/main/java/com/dubbo/service/ServiceA.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="553" column="25" lean-forward="true" selection-start-line="553" selection-start-column="25" selection-end-line="553" selection-end-column="25" />
-          <folding>
-            <element signature="e#15051#15067#0" expanded="true" />
-            <element signature="e#36975#36976#0" expanded="true" />
-            <element signature="e#37006#37007#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="152">
+          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
         </state>
       </provider>
-    </entry>
-    <entry file="jar://E:/repository/org/apache/dubbo/dubbo/2.7.1/dubbo-2.7.1-sources.jar!/org/apache/dubbo/rpc/proxy/javassist/JavassistProxyFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="40" selection-start-line="40" selection-end-line="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://E:/repository/org/apache/dubbo/dubbo/2.7.1/dubbo-2.7.1-sources.jar!/org/apache/dubbo/rpc/protocol/dubbo/DubboProtocol.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="287" selection-start-line="287" selection-end-line="287" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://E:/repository/org/apache/dubbo/dubbo/2.7.1/dubbo-2.7.1-sources.jar!/org/apache/dubbo/registry/integration/RegistryProtocol.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="372">
-          <caret line="214" column="109" lean-forward="true" selection-start-line="214" selection-start-column="109" selection-end-line="214" selection-end-column="109" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/Java/jdk1.8.0_171/src.zip!/java/util/concurrent/CopyOnWriteArrayList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="334">
-          <caret line="620" column="7" lean-forward="true" selection-start-line="620" selection-start-column="7" selection-end-line="620" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/Java/jdk1.8.0_171/src.zip!/java/nio/channels/Channel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="55" column="22" selection-start-line="55" selection-start-column="22" selection-end-line="55" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/Java/jdk1.8.0_171/src.zip!/java/nio/channels/ByteChannel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="305">
-          <caret line="40" column="22" lean-forward="true" selection-start-line="40" selection-start-column="22" selection-end-line="40" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/Java/jdk1.8.0_171/jre/lib/rt.jar!/sun/nio/fs/AbstractPath.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="17" column="43" selection-start-line="17" selection-start-column="43" selection-end-line="17" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/Java/jdk1.8.0_171/src.zip!/java/nio/file/Files.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="89" column="19" selection-start-line="89" selection-start-column="19" selection-end-line="89" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/Java/jdk1.8.0_171/src.zip!/java/nio/file/Path.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="97" column="17" selection-start-line="97" selection-start-column="17" selection-end-line="97" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="uml://JAVA/java.nio.channels.FileChannel">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>JAVA</ID>
-          <OriginalElement>java.nio.channels.FileChannel</OriginalElement>
-          <nodes>
-            <node x="160.0" y="395.0">java.nio.channels.SeekableByteChannel</node>
-            <node x="253.75" y="237.0">java.nio.channels.ReadableByteChannel</node>
-            <node x="481.75" y="237.0">java.nio.channels.InterruptibleChannel</node>
-            <node x="314.0" y="316.0">java.nio.channels.ScatteringByteChannel</node>
-            <node x="389.25" y="79.0">java.io.Closeable</node>
-            <node x="67.75" y="237.0">java.nio.channels.WritableByteChannel</node>
-            <node x="184.0" y="316.0">java.nio.channels.ByteChannel</node>
-            <node x="504.0" y="316.0">java.nio.channels.spi.AbstractInterruptibleChannel</node>
-            <node x="377.25" y="0.0">java.lang.AutoCloseable</node>
-            <node x="274.3125" y="474.0">java.nio.channels.FileChannel</node>
-            <node x="395.25" y="158.0">java.nio.channels.Channel</node>
-            <node x="0.0" y="316.0">java.nio.channels.GatheringByteChannel</node>
-          </nodes>
-          <notes />
-          <edges>
-            <edge source="java.nio.channels.ByteChannel" target="java.nio.channels.WritableByteChannel">
-              <point x="-27.5" y="-14.5" />
-              <point x="211.5" y="291.0" />
-              <point x="186.25" y="291.0" />
-              <point x="39.5" y="14.5" />
-            </edge>
-            <edge source="java.nio.channels.FileChannel" target="java.nio.channels.ScatteringByteChannel">
-              <point x="13.75" y="-14.5" />
-              <point x="343.0625" y="444.0" />
-              <point x="399.0" y="444.0" />
-              <point x="0.0" y="14.5" />
-            </edge>
-            <edge source="java.nio.channels.WritableByteChannel" target="java.nio.channels.Channel">
-              <point x="0.0" y="-14.5" />
-              <point x="146.75" y="207.0" />
-              <point x="406.0" y="207.0" />
-              <point x="-32.25" y="14.5" />
-            </edge>
-            <edge source="java.nio.channels.ByteChannel" target="java.nio.channels.ReadableByteChannel">
-              <point x="27.5" y="-14.5" />
-              <point x="266.5" y="291.0" />
-              <point x="293.25" y="291.0" />
-              <point x="-39.5" y="14.5" />
-            </edge>
-            <edge source="java.nio.channels.ReadableByteChannel" target="java.nio.channels.Channel">
-              <point x="0.0" y="-14.5" />
-              <point x="332.75" y="217.0" />
-              <point x="427.5" y="217.0" />
-              <point x="-10.75" y="14.5" />
-            </edge>
-            <edge source="java.nio.channels.spi.AbstractInterruptibleChannel" target="java.nio.channels.Channel">
-              <point x="53.0" y="-14.5" />
-              <point x="663.0" y="291.0" />
-              <point x="656.25" y="291.0" />
-              <point x="656.25" y="207.0" />
-              <point x="470.5" y="207.0" />
-              <point x="32.25" y="14.5" />
-            </edge>
-            <edge source="java.nio.channels.InterruptibleChannel" target="java.nio.channels.Channel">
-              <point x="0.0" y="-14.5" />
-              <point x="563.75" y="217.0" />
-              <point x="449.0" y="217.0" />
-              <point x="10.75" y="14.5" />
-            </edge>
-            <edge source="java.nio.channels.GatheringByteChannel" target="java.nio.channels.WritableByteChannel">
-              <point x="0.0" y="-14.5" />
-              <point x="82.0" y="291.0" />
-              <point x="107.25" y="291.0" />
-              <point x="-39.5" y="14.5" />
-            </edge>
-            <edge source="java.nio.channels.ScatteringByteChannel" target="java.nio.channels.ReadableByteChannel">
-              <point x="0.0" y="-14.5" />
-              <point x="399.0" y="291.0" />
-              <point x="372.25" y="291.0" />
-              <point x="39.5" y="14.5" />
-            </edge>
-            <edge source="java.nio.channels.SeekableByteChannel" target="java.nio.channels.ByteChannel">
-              <point x="0.0" y="-14.5" />
-              <point x="0.0" y="14.5" />
-            </edge>
-            <edge source="java.nio.channels.FileChannel" target="java.nio.channels.GatheringByteChannel">
-              <point x="-41.25" y="-14.5" />
-              <point x="288.0625" y="454.0" />
-              <point x="82.0" y="454.0" />
-              <point x="0.0" y="14.5" />
-            </edge>
-            <edge source="java.nio.channels.FileChannel" target="java.nio.channels.SeekableByteChannel">
-              <point x="-13.75" y="-14.5" />
-              <point x="315.5625" y="444.0" />
-              <point x="239.0" y="444.0" />
-              <point x="0.0" y="14.5" />
-            </edge>
-            <edge source="java.nio.channels.spi.AbstractInterruptibleChannel" target="java.nio.channels.InterruptibleChannel">
-              <point x="-53.0" y="-14.5" />
-              <point x="557.0" y="291.0" />
-              <point x="563.75" y="291.0" />
-              <point x="0.0" y="14.5" />
-            </edge>
-            <edge source="java.io.Closeable" target="java.lang.AutoCloseable">
-              <point x="0.0" y="-14.5" />
-              <point x="0.0" y="14.5" />
-            </edge>
-            <edge source="java.nio.channels.Channel" target="java.io.Closeable">
-              <point x="0.0" y="-14.5" />
-              <point x="0.0" y="14.5" />
-            </edge>
-            <edge source="java.nio.channels.FileChannel" target="java.nio.channels.spi.AbstractInterruptibleChannel">
-              <point x="41.25" y="-14.5" />
-              <point x="370.5625" y="454.0" />
-              <point x="610.0" y="454.0" />
-              <point x="0.0" y="14.5" />
-            </edge>
-          </edges>
-          <settings layout="Hierarchic Group" zoom="0.9330783938814532" x="-6.385245901639337" y="237.21311475409834" />
-          <SelectedNodes>
-            <node>java.nio.channels.FileChannel</node>
-          </SelectedNodes>
-          <Categories />
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>private</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
-    <entry file="uml://JAVA/java.nio.ByteBuffer">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>JAVA</ID>
-          <OriginalElement>java.nio.ByteBuffer</OriginalElement>
-          <nodes>
-            <node x="124.0" y="0.0">java.nio.Buffer</node>
-            <node x="0.0" y="0.0">java.lang.Comparable</node>
-            <node x="56.0" y="79.0">java.nio.ByteBuffer</node>
-          </nodes>
-          <notes />
-          <edges>
-            <edge source="java.nio.ByteBuffer" target="java.lang.Comparable">
-              <point x="-26.0" y="-14.5" />
-              <point x="82.0" y="54.0" />
-              <point x="52.0" y="54.0" />
-              <point x="0.0" y="14.5" />
-            </edge>
-            <edge source="java.nio.ByteBuffer" target="java.nio.Buffer">
-              <point x="26.0" y="-14.5" />
-              <point x="134.0" y="54.0" />
-              <point x="164.0" y="54.0" />
-              <point x="0.0" y="14.5" />
-            </edge>
-          </edges>
-          <settings layout="Hierarchic Group" zoom="1.0" x="-238.0" y="50.0" />
-          <SelectedNodes>
-            <node>java.nio.ByteBuffer</node>
-          </SelectedNodes>
-          <Categories />
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>private</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
-    <entry file="uml://JAVA/java.io.File">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>JAVA</ID>
-          <OriginalElement>java.io.File</OriginalElement>
-          <nodes>
-            <node x="0.0" y="0.0">java.lang.Comparable</node>
-            <node x="83.0" y="79.0">java.io.File</node>
-            <node x="124.0" y="0.0">java.io.Serializable</node>
-          </nodes>
-          <notes />
-          <edges>
-            <edge source="java.io.File" target="java.io.Serializable">
-              <point x="17.0" y="-14.5" />
-              <point x="134.0" y="54.0" />
-              <point x="182.0" y="54.0" />
-              <point x="0.0" y="14.5" />
-            </edge>
-            <edge source="java.io.File" target="java.lang.Comparable">
-              <point x="-17.0" y="-14.5" />
-              <point x="100.0" y="54.0" />
-              <point x="52.0" y="54.0" />
-              <point x="0.0" y="14.5" />
-            </edge>
-          </edges>
-          <settings layout="Hierarchic Group" zoom="1.0" x="-220.0" y="38.0" />
-          <SelectedNodes>
-            <node>java.io.File</node>
-          </SelectedNodes>
-          <Categories />
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>private</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/Java/jdk1.8.0_171/src.zip!/java/io/File.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="148" column="12" selection-start-line="148" selection-start-column="12" selection-end-line="148" selection-end-column="12" />
-          <folding>
-            <element signature="e#21135#21136#0" expanded="true" />
-            <element signature="e#21162#21163#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/Java/jdk1.8.0_171/src.zip!/java/lang/String.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="564" column="28" selection-start-line="564" selection-start-column="23" selection-end-line="564" selection-end-column="28" />
-          <folding>
-            <element signature="e#20727#20728#0" expanded="true" />
-            <element signature="e#20771#20772#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/Java/jdk1.8.0_171/src.zip!/java/nio/ByteBuffer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="331" column="29" selection-start-line="331" selection-start-column="29" selection-end-line="331" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/Java/jdk1.8.0_171/src.zip!/java/nio/channels/ServerSocketChannel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-218">
-          <caret line="106" column="42" selection-start-line="106" selection-start-column="38" selection-end-line="106" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://E:/repository/org/springframework/spring-core/5.1.5.RELEASE/spring-core-5.1.5.RELEASE-sources.jar!/org/springframework/util/SocketUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="99" column="7" lean-forward="true" selection-start-line="99" selection-start-column="7" selection-end-line="99" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/Java/jdk1.8.0_171/src.zip!/java/net/SocketAddress.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="40" column="22" selection-start-line="40" selection-start-column="22" selection-end-line="40" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/Java/jdk1.8.0_171/src.zip!/java/net/InetSocketAddress.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="51" column="30" selection-start-line="51" selection-start-column="13" selection-end-line="51" selection-end-column="30" />
-          <folding>
-            <element signature="e#7256#7257#0" expanded="true" />
-            <element signature="e#7330#7331#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/Java/jdk1.8.0_171/src.zip!/java/net/ServerSocket.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="327" column="31" selection-start-line="327" selection-start-column="21" selection-end-line="327" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/Java/jdk1.8.0_171/jre/lib/rt.jar!/sun/nio/ch/SocketChannelImpl.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="207" column="15" selection-start-line="207" selection-start-column="15" selection-end-line="207" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/Java/jdk1.8.0_171/src.zip!/java/util/Iterator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="61" column="12" selection-start-line="61" selection-start-column="12" selection-end-line="61" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://E:/repository/org/apache/tomcat/embed/tomcat-embed-core/9.0.16/tomcat-embed-core-9.0.16-sources.jar!/org/apache/tomcat/jni/File.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="194" column="77" selection-start-line="194" selection-start-column="35" selection-end-line="194" selection-end-column="77" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://E:/repository/org/aspectj/aspectjweaver/1.9.2/aspectjweaver-1.9.2-sources.jar!/org/aspectj/util/FileUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
-          <caret line="1002" column="25" selection-start-line="1002" selection-start-column="25" selection-end-line="1002" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://E:/repository/org/apache/tomcat/embed/tomcat-embed-core/9.0.16/tomcat-embed-core-9.0.16-sources.jar!/org/apache/tomcat/util/http/fileupload/FileUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="551">
-          <caret line="46" column="13" selection-start-line="46" selection-start-column="13" selection-end-line="46" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/unclassified/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
-          <caret line="103" column="47" selection-start-line="103" selection-start-column="47" selection-end-line="103" selection-end-column="47" />
-        </state>
-      </provider>
-      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="627">
-          <caret line="93" selection-start-line="93" selection-end-line="93" />
-        </state>
-      </provider>
       <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
-    </entry>
-    <entry file="jar://E:/repository/commons-io/commons-io/2.6/commons-io-2.6-sources.jar!/org/apache/commons/io/FileUtils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="2076" column="23" selection-start-line="2076" selection-start-column="23" selection-end-line="2076" selection-end-column="23" />
+        <state relative-caret-position="104">
+          <caret line="32" selection-start-line="32" selection-end-line="32" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://D:/Java/jdk1.8.0_171/src.zip!/java/nio/file/Paths.java">
+    <entry file="file://$PROJECT_DIR$/dubbo/dubbo-service/pom.xml">
+      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
-          <caret line="82" column="23" selection-start-line="82" selection-start-column="23" selection-end-line="82" selection-end-column="23" />
-          <folding>
-            <element signature="e#2673#2674#0" expanded="true" />
-            <element signature="e#2741#2742#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="332">
+          <caret line="29" selection-start-line="29" selection-end-line="29" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/jetty/src/main/java/com/self/entertainment/jetty/client/JettyContainer.java">
+    <entry file="file://$PROJECT_DIR$/dubbo/pom.xml">
+      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="551">
+          <caret line="29" column="21" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dubbo/dubbo-consumer/pom.xml">
+      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="142">
+          <caret line="20" column="55" lean-forward="true" selection-start-line="20" selection-start-column="55" selection-end-line="20" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/unclassified/src/main/java/note/Interceptor/Interceptor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/unclassified/src/main/java/note/Interceptor/MyInterceptor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="16" column="22" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/unclassified/src/main/java/note/Interceptor/InterceptorJdkProxy.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="152">
           <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/jetty/src/main/java/com/self/entertainment/jetty/client/JettyServer.java">
+    <entry file="file://$PROJECT_DIR$/unclassified/src/main/java/note/Interceptor/InterceptorTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="11" column="74" selection-start-line="11" selection-start-column="74" selection-end-line="11" selection-end-column="74" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/unclassified/src/main/java/com/UnclassifiedApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/unclassified/src/main/java/note/cglib/ReflectServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="114">
           <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://D:/Java/jdk1.8.0_171/src.zip!/java/util/Set.java">
+    <entry file="file://$PROJECT_DIR$/unclassified/src/main/java/note/cglib/TestCglibProxy.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1976">
-          <caret line="127" column="16" selection-start-line="127" selection-start-column="16" selection-end-line="127" selection-end-column="16" />
+        <state relative-caret-position="114">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://D:/Java/jdk1.8.0_171/src.zip!/java/nio/channels/Selector.java">
+    <entry file="jar://E:/repository/org/springframework/spring-core/5.1.5.RELEASE/spring-core-5.1.5.RELEASE-sources.jar!/org/springframework/cglib/proxy/Enhancer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1069">
-          <caret line="258" column="38" selection-start-line="258" selection-start-column="38" selection-end-line="258" selection-end-column="38" />
+        <state relative-caret-position="285">
+          <caret line="92" column="13" selection-start-line="92" selection-start-column="13" selection-end-line="92" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://D:/Java/jdk1.8.0_171/src.zip!/java/nio/channels/SelectableChannel.java">
+    <entry file="file://$PROJECT_DIR$/unclassified/src/main/java/note/cglib/CglibProxyExample.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="605">
-          <caret line="276" column="30" selection-start-line="276" selection-start-column="30" selection-end-line="276" selection-end-column="30" />
+        <state relative-caret-position="266">
+          <caret line="18" column="35" selection-start-line="18" selection-start-column="35" selection-end-line="18" selection-end-column="35" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://D:/Java/jdk1.8.0_171/src.zip!/java/nio/channels/spi/AbstractSelectionKey.java">
+    <entry file="jar://E:/repository/org/apache/dubbo/dubbo/2.7.1/dubbo-2.7.1-sources.jar!/org/apache/dubbo/config/spring/ServiceBean.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="52" column="17" lean-forward="true" selection-start-line="52" selection-start-column="17" selection-end-line="52" selection-end-column="17" />
+        <state relative-caret-position="296">
+          <caret line="318" column="17" selection-start-line="318" selection-start-column="17" selection-end-line="318" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://E:/repository/org/apache/dubbo/dubbo/2.7.1/dubbo-2.7.1-sources.jar!/org/apache/dubbo/rpc/Protocol.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="49" column="20" selection-start-line="49" selection-start-column="20" selection-end-line="49" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://E:/repository/org/apache/dubbo/dubbo/2.7.1/dubbo-2.7.1-sources.jar!/org/apache/dubbo/config/ServiceConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="163">
+          <caret line="555" column="66" selection-start-line="555" selection-start-column="66" selection-end-line="555" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://E:/repository/org/apache/dubbo/dubbo/2.7.1/dubbo-2.7.1-sources.jar!/org/apache/dubbo/rpc/ProxyFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="705">
+          <caret line="57" column="19" selection-start-line="57" selection-start-column="19" selection-end-line="57" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://E:/repository/org/apache/dubbo/dubbo/2.7.1/dubbo-2.7.1-sources.jar!/org/apache/dubbo/rpc/proxy/javassist/JavassistProxyFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="29" column="34" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/unclassified/pom.xml">
+      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="579">
+          <caret line="134" column="40" lean-forward="true" selection-start-line="134" selection-start-column="40" selection-end-line="134" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://E:/repository/org/javassist/javassist/3.25.0-GA/javassist-3.25.0-GA-sources.jar!/javassist/util/proxy/ProxyObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="28" column="17" selection-start-line="28" selection-start-column="17" selection-end-line="28" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://E:/repository/org/javassist/javassist/3.25.0-GA/javassist-3.25.0-GA-sources.jar!/javassist/util/proxy/ProxyFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="277">
+          <caret line="382" column="11" selection-start-line="382" selection-start-column="11" selection-end-line="382" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/unclassified/src/main/java/note/javassist/RayTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://E:/repository/org/javassist/javassist/3.25.0-GA/javassist-3.25.0-GA-sources.jar!/javassist/ClassPool.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="779">
+          <caret line="69" column="13" selection-start-line="69" selection-start-column="13" selection-end-line="69" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://E:/repository/org/javassist/javassist/3.25.0-GA/javassist-3.25.0-GA-sources.jar!/javassist/CtClass.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="50" column="22" selection-start-line="50" selection-start-column="22" selection-end-line="50" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://E:/repository/org/javassist/javassist/3.25.0-GA/javassist-3.25.0-GA-sources.jar!/javassist/CtMethod.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="38" column="27" selection-start-line="38" selection-start-column="19" selection-end-line="38" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/Java/jdk1.8.0_171/src.zip!/java/lang/Class.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="277">
+          <caret line="2124" column="18" selection-start-line="2124" selection-start-column="18" selection-end-line="2124" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/Java/jdk1.8.0_171/src.zip!/java/lang/reflect/Method.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="483" column="18" selection-start-line="483" selection-start-column="18" selection-end-line="483" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://E:/repository/org/slf4j/slf4j-api/1.7.25/slf4j-api-1.7.25-sources.jar!/org/slf4j/Logger.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="367" column="16" selection-start-line="367" selection-start-column="16" selection-end-line="367" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/unclassified/src/main/java/note/javassist/TestMain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="283">
+          <caret line="31" column="54" selection-start-line="31" selection-start-column="54" selection-end-line="31" selection-end-column="54" />
           <folding>
-            <element signature="e#748#749#0" expanded="true" />
-            <element signature="e#776#777#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="uml://JAVA/java.nio.channels.SocketChannel">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>JAVA</ID>
-          <OriginalElement>java.nio.channels.SocketChannel</OriginalElement>
-          <nodes>
-            <node x="" y="">java.nio.channels.ScatteringByteChannel</node>
-            <node x="" y="">java.nio.channels.ReadableByteChannel</node>
-            <node x="" y="">java.lang.AutoCloseable</node>
-            <node x="" y="">java.nio.channels.spi.AbstractSelectableChannel</node>
-            <node x="" y="">java.nio.channels.InterruptibleChannel</node>
-            <node x="" y="">java.nio.channels.SocketChannel</node>
-            <node x="" y="">java.nio.channels.SelectableChannel</node>
-            <node x="" y="">java.io.Closeable</node>
-            <node x="" y="">java.nio.channels.NetworkChannel</node>
-            <node x="" y="">java.nio.channels.WritableByteChannel</node>
-            <node x="" y="">java.nio.channels.ByteChannel</node>
-            <node x="" y="">java.nio.channels.spi.AbstractInterruptibleChannel</node>
-            <node x="" y="">java.nio.channels.GatheringByteChannel</node>
-            <node x="" y="">java.nio.channels.Channel</node>
-          </nodes>
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="431.5" y="296.0" />
-          <SelectedNodes />
-          <Categories />
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>private</VISIBILITY>
+    <entry file="jar://E:/repository/org/javassist/javassist/3.25.0-GA/javassist-3.25.0-GA-sources.jar!/javassist/util/proxy/MethodHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="303">
+          <caret line="32" column="53" lean-forward="true" selection-start-line="32" selection-start-column="53" selection-end-line="32" selection-end-column="53" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://D:/Java/jdk1.8.0_171/jre/lib/rt.jar!/sun/nio/ch/FileChannelImpl.class">
+    <entry file="file://$PROJECT_DIR$/amazingt/src/main/resources/logback.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="36" column="37" selection-start-line="36" selection-start-column="22" selection-end-line="36" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/amazingt/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="49" selection-start-line="4" selection-start-column="31" selection-end-line="4" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/amazingt/pom.xml">
+      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="49" column="42" selection-start-line="49" selection-start-column="42" selection-end-line="49" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://E:/repository/com/github/ulisesbocchio/jasypt-spring-boot-starter/1.16/jasypt-spring-boot-starter-1.16.pom">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="17" column="32" lean-forward="true" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://E:/repository/com/github/ulisesbocchio/jasypt-spring-boot/1.16/jasypt-spring-boot-1.16-sources.jar!/com/ulisesbocchio/jasyptspringboot/EncryptablePropertySourceConverter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="23" column="26" selection-start-line="23" selection-start-column="26" selection-end-line="23" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://E:/repository/com/github/ulisesbocchio/jasypt-spring-boot-starter/1.16/jasypt-spring-boot-starter-1.16-sources.jar!/com/ulisesbocchio/jasyptspringboot/JasyptSpringBootAutoConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="11" column="26" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://E:/repository/com/github/ulisesbocchio/jasypt-spring-boot-starter/1.16/jasypt-spring-boot-starter-1.16.jar!/META-INF/spring.factories">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="108" selection-start-column="108" selection-end-column="108" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://E:/repository/com/github/ulisesbocchio/jasypt-spring-boot/1.16/jasypt-spring-boot-1.16-sources.jar!/com/ulisesbocchio/jasyptspringboot/configuration/EncryptablePropertyResolverConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://E:/repository/com/github/ulisesbocchio/jasypt-spring-boot/1.16/jasypt-spring-boot-1.16-sources.jar!/com/ulisesbocchio/jasyptspringboot/configuration/EnableEncryptablePropertiesConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="56" column="33" lean-forward="true" selection-start-line="56" selection-start-column="33" selection-end-line="56" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://E:/repository/org/springframework/spring-core/5.1.5.RELEASE/spring-core-5.1.5.RELEASE-sources.jar!/org/springframework/core/Ordered.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="54" column="8" selection-start-line="54" selection-start-column="8" selection-end-line="54" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://E:/repository/com/github/ulisesbocchio/jasypt-spring-boot/1.16/jasypt-spring-boot-1.16-sources.jar!/com/ulisesbocchio/jasyptspringboot/configuration/EnableEncryptablePropertiesBeanFactoryPostProcessor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="359">
+          <caret line="49" column="50" lean-forward="true" selection-start-line="49" selection-start-column="50" selection-end-line="49" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jetty/src/main/java/com/self/entertainment/simple/SimpleServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jetty/src/main/java/com/self/entertainment/simple/AbstractServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jetty/src/main/java/com/self/entertainment/simple/ServletMapping.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="9" column="36" lean-forward="true" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jetty/src/main/resources/application.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="19">
-          <caret line="178" column="15" selection-start-line="178" selection-start-column="15" selection-end-line="178" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/Java/jdk1.8.0_171/src.zip!/java/lang/Exception.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="44" column="13" selection-start-line="44" selection-start-column="13" selection-end-line="44" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/Java/jdk1.8.0_171/src.zip!/java/nio/channels/FileChannel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="523">
-          <caret line="553" column="47" selection-start-line="553" selection-start-column="39" selection-end-line="553" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/Java/jdk1.8.0_171/src.zip!/java/nio/Buffer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="409">
-          <caret line="377" column="30" selection-start-line="377" selection-start-column="24" selection-end-line="377" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/unclassified/src/main/java/com/self/entertainment/unclassified/JavaNioTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="21" column="53" lean-forward="true" selection-start-line="21" selection-start-column="53" selection-end-line="21" selection-end-column="53" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/Java/jdk1.8.0_171/jre/lib/rt.jar!/sun/nio/ch/Net.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="392" selection-start-line="392" selection-end-line="392" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/Java/jdk1.8.0_171/src.zip!/java/nio/channels/SelectionKey.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="159" column="25" selection-start-line="159" selection-start-column="25" selection-end-line="159" selection-end-column="25" />
-          <folding>
-            <element signature="e#13176#13177#0" expanded="true" />
-            <element signature="e#13228#13229#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/Java/jdk1.8.0_171/src.zip!/java/nio/channels/SocketChannel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="466" column="24" selection-start-line="466" selection-start-column="24" selection-end-line="466" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/unclassified/src/main/java/com/self/entertainment/unclassified/NioSocketClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="20" column="15" lean-forward="true" selection-start-line="20" selection-start-column="15" selection-end-line="20" selection-end-column="15" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/unclassified/src/main/java/com/self/entertainment/unclassified/NioSocketServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="48" column="57" lean-forward="true" selection-start-line="48" selection-start-column="57" selection-end-line="48" selection-end-column="57" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
         </state>
       </provider>
     </entry>

@@ -4,17 +4,19 @@
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
-        <option value="$PROJECT_DIR$/api/pom.xml" />
-        <option value="$PROJECT_DIR$/tool/pom.xml" />
-        <option value="$PROJECT_DIR$/view/pom.xml" />
-        <option value="$PROJECT_DIR$/start/pom.xml" />
-        <option value="$PROJECT_DIR$/common/pom.xml" />
         <option value="$PROJECT_DIR$/modules/pom.xml" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/unclassified/pom.xml" />
         <option value="$PROJECT_DIR$/dubbo-service/pom.xml" />
         <option value="$PROJECT_DIR$/jetty/pom.xml" />
+        <option value="$PROJECT_DIR$/dubbo-consumer/pom.xml" />
+        <option value="$PROJECT_DIR$/amazingt/pom.xml" />
       </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/modules/pom.xml" />
+      </set>
     </option>
   </component>
   <component name="NodePackageJsonFileManager">

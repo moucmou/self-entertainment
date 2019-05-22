@@ -15,11 +15,6 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.self.entertainment</groupId>
-            <artifactId>provider</artifactId>
-            <version>${j4f.version}</version>
-        </dependency>
-        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
         </dependency>
@@ -103,6 +98,8 @@
             <groupId>commons-io</groupId>
             <artifactId>commons-io</artifactId>
         </dependency>
+
+
         <!-- https://mvnrepository.com/artifact/org.springframework.integration/spring-integration-jdbc -->
 <!--        <dependency>-->
 <!--            <groupId>org.springframework.integration</groupId>-->
@@ -130,6 +127,14 @@
 <!--            <version>0.0.1-SNAPSHOT</version>-->
 <!--&lt;!&ndash;            <scope>system</scope>&ndash;&gt;-->
 <!--        </dependency>-->
+
+        <!-- https://mvnrepository.com/artifact/org.javassist/javassist -->
+        <dependency>
+            <groupId>org.javassist</groupId>
+            <artifactId>javassist</artifactId>
+            <version>3.25.0-GA</version>
+        </dependency>
+
 
     </dependencies>
     <build>

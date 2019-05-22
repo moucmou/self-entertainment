@@ -1,22 +1,29 @@
 package com.self.entertainment.simple;
 
-import java.io.IOException;
-import java.io.OutputStream;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.extern.slf4j.Slf4j;
 
-public class SimpleResponse  {
-    private OutputStream outputStream;
-    public SimpleResponse(OutputStream outputStream){
-        this.outputStream = outputStream;
-    }
-    public  void  write(String content) throws IOException {
-        /**
-         * Http相应报文
-         * @when
-         */
+import java.io.IOException;
+import java.nio.ByteBuffer;
+import java.nio.channels.SocketChannel;
+import java.nio.charset.StandardCharsets;
+@Slf4j
+@Data
+@AllArgsConstructor
+public class SimpleResponse {
+
+    private SocketChannel socketChannel = null;
+    public  void write(String content) {
         String httpResponse = "HTTP/1.1 200 OK\n" + "Content-Type:text/html\n" +
                 "\r\n" + "<html><body>" + content +
                 "</body><html>";
-        outputStream.write(httpResponse.getBytes());
-        outputStream.close();
+        ByteBuffer byteBuffer=ByteBuffer.wrap(httpResponse.getBytes(StandardCharsets.UTF_8));
+        try {
+            socketChannel.write(byteBuffer);
+        } catch (IOException e) {
+            log.error("写流失败",e);
+        }
     }
+
 }
