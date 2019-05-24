@@ -1,5 +1,6 @@
 package com.self.entertainment.service.impl;
 
+import entertainment.service.TestService;
 import org.apache.dubbo.config.annotation.Service;
 
 /**

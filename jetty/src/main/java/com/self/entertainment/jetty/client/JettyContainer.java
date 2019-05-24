@@ -1,6 +1,5 @@
 package com.self.entertainment.jetty.client;
 
-import org.eclipse.jetty.util.component.Container;
 
 import java.util.Collection;
 

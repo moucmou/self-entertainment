@@ -7,4 +7,5 @@ package com.self.entertainment.unclassified;
 public interface AopTarget<T> {
 
     T getTarget();
+
 }

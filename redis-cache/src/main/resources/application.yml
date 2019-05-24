@@ -1,0 +1,8 @@
+spring:
+  redis:
+    host: 119.3.10.221
+    port: 6739
+    password: redislearn123
+  cache:
+    redis:
+      key-prefix:

@@ -18,9 +18,10 @@ public class NioSocketClient {
     public static void main(String[] args) {
 
         for (int i = 0; i < 100000; i++) {
-            try (SocketChannel socketChannel = SocketChannel.open(new InetSocketAddress(9171));
+            try (SocketChannel socketChannel = SocketChannel.open();
                  Selector selector = Selector.open();
             ) {
+                socketChannel.connect(new InetSocketAddress(9171));
                 socketChannel.configureBlocking(false);
                 socketChannel.register(selector, SelectionKey.OP_READ);
                 String message = "hello world \r\n";

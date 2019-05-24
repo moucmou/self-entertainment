@@ -27,6 +27,7 @@
         <module>jetty</module>
         <module>dubbo</module>
         <module>amazingt</module>
+        <module>redis-cache</module>
     </modules>
 
 
