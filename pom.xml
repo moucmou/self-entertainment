@@ -28,6 +28,7 @@
         <module>dubbo</module>
         <module>amazingt</module>
         <module>redis-cache</module>
+        <module>mybatis</module>
     </modules>
 
 

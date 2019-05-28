@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.self.entertainment.mybatis.repository.GoodsMapper">
+  <resultMap id="BaseResultMap" type="com.self.entertainment.mybatis.pojo.Goods">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="description" jdbcType="VARCHAR" property="description" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="nums" jdbcType="INTEGER" property="nums" />
+    <result column="price" jdbcType="INTEGER" property="price" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from "goods"
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.self.entertainment.mybatis.pojo.Goods">
+    insert into "goods" (id, description, update_time, 
+      name, nums, price)
+    values (#{id,jdbcType=INTEGER}, #{description,jdbcType=VARCHAR}, #{updateTime,jdbcType=TIMESTAMP}, 
+      #{name,jdbcType=VARCHAR}, #{nums,jdbcType=INTEGER}, #{price,jdbcType=INTEGER})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.self.entertainment.mybatis.pojo.Goods">
+    update "goods"
+    set description = #{description,jdbcType=VARCHAR},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      name = #{name,jdbcType=VARCHAR},
+      nums = #{nums,jdbcType=INTEGER},
+      price = #{price,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select id, description, update_time, name, nums, price
+    from "goods"
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap" parameterType="com.self.entertainment.mybatis.pojo.Goods">
+    select id, description, update_time, name, nums, price
+    from "goods"
+    where 1=1
+    <if test="id !=null and id !=''">
+        and id =#{id,jdbcType=INTEGER}
+    </if>
+  </select>
+</mapper>
