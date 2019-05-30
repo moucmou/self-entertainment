@@ -8,6 +8,9 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
 
+import java.io.UnsupportedEncodingException;
+import java.nio.charset.Charset;
+
 /**
  * @author AmazingZ
  * @date 2019/4/19 11:33
@@ -25,5 +28,11 @@ public class TestG implements ApplicationListener<ContextRefreshedEvent>  {
 //       for(String beanDefinitionName:((AnnotationConfigApplicationContext) applicationContext).getBeanFactory().getBeanDefinitionNames()){
 //           System.out.println(beanDefinitionName);
 //       }
+
+        try {
+            String x=new String("123".getBytes(), "Unicode");
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
     }
 }

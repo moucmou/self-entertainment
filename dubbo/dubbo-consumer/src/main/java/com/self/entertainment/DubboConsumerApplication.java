@@ -4,26 +4,25 @@ import entertainment.service.HelloService;
 import entertainment.service.RestEasyService;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.dubbo.config.annotation.Reference;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ImportResource;
 
 @SpringBootApplication
 @Slf4j
+@ImportResource(locations = {"classpath:consumer.xml"})
 public class DubboConsumerApplication {
-    @Reference
+    @Autowired
     RestEasyService restEasyService;
+    @Autowired
+    HelloService helloService;
     public static void main(String[] args) {
         SpringApplication.run(DubboConsumerApplication.class, args
         );
     }
 
-    @Bean
-    public ApplicationRunner runner() {
-        return args -> {
-            log.info(restEasyService.echo("123"));
-        };
-    }
 
 }

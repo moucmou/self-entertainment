@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
 <generatorConfiguration>
 
-    <classPathEntry location="D:\apache-maven-3.5.4-bin\apache-maven-3.5.4\Repository\mysql\mysql-connector-java\8.0.16\mysql-connector-java-8.0.16.jar"/>
+    <classPathEntry location="E:\repository\org\postgresql\postgresql\42.2.5\postgresql-42.2.5.jar"/>
 
     <context id="context" targetRuntime="MyBatis3Simple">
         <commentGenerator>
@@ -12,8 +12,8 @@
             <property name="suppressDate" value="true"/>
         </commentGenerator>
 
-        <jdbcConnection userId="admin" password="Upc@CST2018" driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://119.3.10.221:3306/QrcodeDemo?nullCatalogMeansCurrent=true"/>
+        <jdbcConnection userId="spfd_spfddb_user" password="e9Vwpwxm" driverClass="org.postgresql.Driver"
+                        connectionURL="jdbc:postgresql://10.20.84.120:7017/spfd_spfddb?nullCatalogMeansCurrent=true"/>
 
         <javaTypeResolver>
             <property name="forceBigDecimals" value="false"/>
@@ -32,9 +32,10 @@
             <property name="enableSubPackages" value="false"/>
         </javaClientGenerator>
 
-        <table schema=" " tableName="goods" enableCountByExample="true" enableDeleteByExample="true"
+        <table schema="" tableName="lf_tb_sending_face_result_history" enableCountByExample="true" enableDeleteByExample="true"
                enableSelectByExample="true" enableUpdateByExample="true" enableDeleteByPrimaryKey="true" delimitIdentifiers="true"/>
-
-
+<!--        tb_channel-->
+        <table schema="" tableName="tb_channel" enableCountByExample="true" enableDeleteByExample="true"
+               enableSelectByExample="true" enableUpdateByExample="true" enableDeleteByPrimaryKey="true" delimitIdentifiers="true"/>
     </context>
 </generatorConfiguration>

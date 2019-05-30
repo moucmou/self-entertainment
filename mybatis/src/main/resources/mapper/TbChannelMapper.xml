@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.self.entertainment.mybatis.repository.TbChannelMapper">
+  <resultMap id="BaseResultMap" type="com.self.entertainment.mybatis.pojo.TbChannel">
+    <id column="c_index_code" jdbcType="VARCHAR" property="cIndexCode" />
+    <result column="d_create_time" jdbcType="TIMESTAMP" property="dCreateTime" />
+    <result column="d_update_time" jdbcType="TIMESTAMP" property="dUpdateTime" />
+    <result column="i_channel_no" jdbcType="INTEGER" property="iChannelNo" />
+    <result column="c_channel_type" jdbcType="VARCHAR" property="cChannelType" />
+    <result column="c_name" jdbcType="VARCHAR" property="cName" />
+    <result column="c_parent_index_code" jdbcType="VARCHAR" property="cParentIndexCode" />
+    <result column="c_region_index_code" jdbcType="VARCHAR" property="cRegionIndexCode" />
+    <result column="i_status" jdbcType="INTEGER" property="iStatus" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from "tb_channel"
+    where c_index_code = #{cIndexCode,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.self.entertainment.mybatis.pojo.TbChannel">
+    insert into "tb_channel" (c_index_code, d_create_time, d_update_time, 
+      i_channel_no, c_channel_type, c_name, 
+      c_parent_index_code, c_region_index_code, i_status
+      )
+    values (#{cIndexCode,jdbcType=VARCHAR}, #{dCreateTime,jdbcType=TIMESTAMP}, #{dUpdateTime,jdbcType=TIMESTAMP}, 
+      #{iChannelNo,jdbcType=INTEGER}, #{cChannelType,jdbcType=VARCHAR}, #{cName,jdbcType=VARCHAR}, 
+      #{cParentIndexCode,jdbcType=VARCHAR}, #{cRegionIndexCode,jdbcType=VARCHAR}, #{iStatus,jdbcType=INTEGER}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.self.entertainment.mybatis.pojo.TbChannel">
+    update "tb_channel"
+    set d_create_time = #{dCreateTime,jdbcType=TIMESTAMP},
+      d_update_time = #{dUpdateTime,jdbcType=TIMESTAMP},
+      i_channel_no = #{iChannelNo,jdbcType=INTEGER},
+      c_channel_type = #{cChannelType,jdbcType=VARCHAR},
+      c_name = #{cName,jdbcType=VARCHAR},
+      c_parent_index_code = #{cParentIndexCode,jdbcType=VARCHAR},
+      c_region_index_code = #{cRegionIndexCode,jdbcType=VARCHAR},
+      i_status = #{iStatus,jdbcType=INTEGER}
+    where c_index_code = #{cIndexCode,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select c_index_code, d_create_time, d_update_time, i_channel_no, c_channel_type, 
+    c_name, c_parent_index_code, c_region_index_code, i_status
+    from "tb_channel"
+    where c_index_code = #{cIndexCode,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select c_index_code, d_create_time, d_update_time, i_channel_no, c_channel_type, 
+    c_name, c_parent_index_code, c_region_index_code, i_status
+    from "tb_channel"
+  </select>
+</mapper>

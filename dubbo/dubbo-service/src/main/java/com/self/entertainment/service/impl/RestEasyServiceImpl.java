@@ -13,13 +13,10 @@ import javax.ws.rs.core.MediaType;
  * @date 2019/5/24 17:12
  */
 
-@Path("resteasy")
+
 public class RestEasyServiceImpl implements RestEasyService {
 
 
-    @POST
-    @Path("echo")
-    @Consumes({MediaType.APPLICATION_JSON})
     @Override
     public String echo(String repeat) {
         return repeat;

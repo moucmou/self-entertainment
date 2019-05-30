@@ -1,0 +1,9 @@
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    password: e9Vwpwxm
+    url: jdbc:postgresql://10.20.84.120:7017/spfd_spfddb?nullCatalogMeansCurrent=true
+    username: spfd_spfddb_user
+mybatis-plus:
+  config-location: classpath:MybatisConfig.xml
+  mapper-locations: classpath:mapper/*.xml

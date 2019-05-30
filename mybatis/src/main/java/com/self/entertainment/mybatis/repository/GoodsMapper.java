@@ -1,9 +1,14 @@
 package com.self.entertainment.mybatis.repository;
 
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.self.entertainment.mybatis.pojo.Goods;
+import org.apache.ibatis.annotations.Mapper;
+
 import java.util.List;
 
-public interface GoodsMapper {
+@Mapper
+public interface GoodsMapper  extends BaseMapper {
+
     int deleteByPrimaryKey(Integer id);
 
     int insert(Goods record);
