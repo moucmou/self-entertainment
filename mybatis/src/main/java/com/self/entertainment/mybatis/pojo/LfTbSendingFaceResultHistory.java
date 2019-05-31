@@ -1,6 +1,9 @@
 package com.self.entertainment.mybatis.pojo;
 
-public class LfTbSendingFaceResultHistory {
+import java.io.Serializable;
+
+public class LfTbSendingFaceResultHistory implements Serializable {
+    private static final long serialVersionUID = 8290000585777953815L;
     private String id;
 
     private String faceUrl;

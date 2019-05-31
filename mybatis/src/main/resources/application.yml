@@ -4,6 +4,13 @@ spring:
     password: e9Vwpwxm
     url: jdbc:postgresql://10.20.84.120:7017/spfd_spfddb?nullCatalogMeansCurrent=true
     username: spfd_spfddb_user
+  redis:
+    port: 6379
+    timeout: 5000
+  cache:
+      redis:
+        key-prefix: redis-key
+      cache-names: redis-key
 mybatis-plus:
   config-location: classpath:MybatisConfig.xml
   mapper-locations: classpath:mapper/*.xml

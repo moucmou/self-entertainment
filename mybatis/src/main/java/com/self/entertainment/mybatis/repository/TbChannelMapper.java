@@ -16,4 +16,5 @@ public interface TbChannelMapper extends BaseMapper<TbChannel> {
     List<TbChannel> selectAll();
 
     int updateByPrimaryKey(TbChannel record);
+
 }
