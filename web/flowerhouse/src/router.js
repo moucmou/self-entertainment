@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home'
-import Flower from './views/Flower'
+import UserLogin from './views/UserLogin'
+import AdminLogin from './views/AdminLogin'
 
 Vue.use(Router)
 
@@ -10,14 +11,19 @@ export default new Router({
   base: process.env.BASE_URL,
   routes: [
     {
-      path: '/home',
+      path: '/login',
       name: 'home',
       component: Home
     },
     {
-      path: '/',
-      name: 'flower',
-      component: Flower
+      path: '/user',
+      name: 'userLogin',
+      component: UserLogin
+    },
+    {
+      path: '/admin',
+      name: 'adminLogin',
+      component: AdminLogin
     },
     {
       path: '/about',
