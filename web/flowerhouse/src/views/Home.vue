@@ -48,6 +48,9 @@
               <FormItem label="确认密码">
                 <Input v-model="registerForm.rePassword" type="password"/>
               </FormItem>
+              <FormItem label="真实姓名">
+                <Input v-model="registerForm.realName" type="text"/>
+              </FormItem>
               <FormItem label="电话">
                 <Input v-model="registerForm.phone" type="text"/>
               </FormItem>
