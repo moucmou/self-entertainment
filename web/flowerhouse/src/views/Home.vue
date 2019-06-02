@@ -10,11 +10,11 @@
                 <Input v-model="loginForm.userName" type="text"/>
               </FormItem>
               <FormItem label="密码">
-                <Input v-model="loginForm.password" type="password"/>
+                <Input v-model="loginForm.passWord" type="password"/>
               </FormItem>
             </Form>
             <div class="btn-group-class">
-              <Button class="two-btn" type="primary" @click="loginCon">登录</Button>
+              <Button class="two-btn" type="primary" @click="loginCon(0)">登录</Button>
               <Button class="two-btn" type="primary" @click="register">注册</Button>
             </div>
           </div>
@@ -26,11 +26,11 @@
                 <Input v-model="loginForm.userName" type="text"/>
               </FormItem>
               <FormItem label="密码">
-                <Input v-model="loginForm.password" type="password"/>
+                <Input v-model="loginForm.passWord" type="password"/>
               </FormItem>
             </Form>
             <div class="btn-group-class">
-              <Button class="one-btn" type="primary">登录</Button>
+              <Button class="one-btn" type="primary" @click="loginCon(-1)">登录</Button>
             </div>
           </div>
         </TabPane>
@@ -49,17 +49,17 @@
                 <Input v-model="registerForm.rePassword" type="password"/>
               </FormItem>
               <FormItem label="真实姓名">
-                <Input v-model="registerForm.realName" type="text"/>
+                <Input v-model="registerForm.name" type="text"/>
               </FormItem>
               <FormItem label="电话">
-                <Input v-model="registerForm.phone" type="text"/>
+                <Input v-model="registerForm.userPhone" type="text"/>
               </FormItem>
               <FormItem label="地址">
-                <Input v-model="registerForm.address" type="text"/>
+                <Input v-model="registerForm.userAddress" type="text"/>
               </FormItem>
             </Form>
             <div class="btn-group-class">
-              <Button class="two-btn" type="primary">注册</Button>
+              <Button class="two-btn" type="primary" @click="registerCon">注册</Button>
               <Button class="two-btn" @click="registerCancel">取消</Button>
             </div>
           </div>
@@ -79,15 +79,15 @@ export default {
       loginType: 'user',
       loginForm: {
         userName: '',
-        password: ''
+        passWord: ''
       },
       registerForm: {
         userName: '',
         password: '',
         rePassword: '',
-        realName: '',
-        phone: '',
-        address: ''
+        name: '',
+        userPhone: '',
+        userAddress: ''
       }
     }
   },
@@ -97,7 +97,40 @@ export default {
     }
   },
   methods: {
-    loginCon () {},
+    loginCon (type) {
+      this.$http.post('/anon/login', Object.assign(this.loginForm, {
+        role: type
+      })).then((res) => {
+        if (res.code === '0') {
+          this.$Message.success('登录成功')
+          type === 0
+            ? this.$router.push('/usPage')
+            : this.$router.push('/adPage')
+        } else {
+          this.$Message.error(res.msg)
+        }
+      }).catch((err) => {
+        console.error(err)
+      })
+    },
+    registerCon () {
+      if (this.registerForm.password !== this.registerForm.rePassword) {
+        this.$Message.error('两次密码不一致')
+        return
+      }
+      this.$http.post('/anon/register', this.registerForm).then((res) => {
+        if (res.code === '0') {
+          this.$Message.success('注册成功')
+          this.resetObj(this.loginForm)
+          this.loginType = 'user'
+          this.loginFlag = true
+        } else {
+          this.$Message.error(res.msg)
+        }
+      }).catch((err) => {
+        console.error(err)
+      })
+    },
     register () {
       this.resetObj(this.registerForm)
       this.loginType = 'register'

@@ -17,11 +17,11 @@
             :key="index"
             class="flower-item"
             v-for="(item, index) in flowerList">
-            <img src="" alt="">
+            <img :src="item.picUrl" alt="">
             <div class="flower-info">
-              <span>单价：{{item.price}}</span>
-              <span>剩余量：{{item.total}}</span>
-              <span class="add-btn" @click="addOrder(item)">加入购物车</span>
+              <span>单价：{{item.flowerOutprice}}</span>
+              <span>剩余量：{{item.flowerNumber}}</span>
+              <span class="add-btn" @click="addToCar(item.flowerId, 1)">加入购物车</span>
             </div>
           </div>
         </div>
@@ -31,23 +31,31 @@
       </div>
       <div v-else-if="tabPage === 'car'" class="car-page">
         <div id="car-table" class="car-table">
-          <Table :height="tableHeight" ref="selection" :columns="columns" :data="carFlowerList">
+          <Table
+            :height="tableHeight"
+            ref="selection"
+            :columns="columns"
+            :data="carFlowerList"
+            @on-selection-change="selectionChange">
             <template slot-scope="{row}" slot="img">
-              <img class="flower-pic" :src="row.img" alt="">
+              <img class="flower-pic" :src="row.picUrl" alt="">
             </template>
             <template slot-scope="{row}" slot="num">
-              <Button size="small" icon="ios-remove" shape="circle"></Button>
+              <Button :disabled="row.num === 1" size="small" icon="ios-remove" shape="circle" @click="addToCar(row.flowerId, row.num - 1, true)"></Button>
               {{row.num}}
-              <Button size="small" icon="ios-add" shape="circle"></Button>
+              <Button size="small" icon="ios-add" shape="circle" @click="addToCar(row.flowerId, row.num + 1, true)"></Button>
             </template>
-            <template slot="action">
-              <Button type="error" size="small" icon="ios-trash" shape="circle"></Button>
+            <template slot-scope="{row}" slot="total">
+              {{row.flowerNumber * row.flowerOutprice}}
+            </template>
+            <template slot-scope="{row}" slot="action">
+              <Button type="error" size="small" icon="ios-trash" shape="circle" @click="delFormCar(row.flowerId)"></Button>
             </template>
           </Table>
         </div>
         <div class="car-result">
-          <span>合计: </span>
-          <Button >结算</Button>
+          <span>合计: {{priceTotal}}</span>
+          <Button :disabled="selectionList.length === 0" @click="createOrder">结算</Button>
         </div>
       </div>
       <div v-else-if="tabPage === 'order'" class="order-page">
@@ -57,13 +65,19 @@
             :key="index"
             v-for="(item, index) in orderFlowerList">
             <div class="left-table">
-              <Table :columns="orderColumns" :data="item.carFlowerList">
+              <Table :columns="orderColumns" :data="item.list">
                 <template slot-scope="{ row }" slot="img">
-                  <img class="flower-pic" :src="row.img" alt="">
+                  <img class="flower-pic" :src="row.picUrl" alt="">
+                </template>
+                <template slot-scope="{row}" slot="total">
+                  {{row.flowerNumber * row.flowerOutprice}}
                 </template>
               </Table>
             </div>
             <div class="right-info">
+              <p>订单号：{{item.orderId}}</p>
+              <p>订单总价：{{item.orderPs}}</p>
+              <p>下单时间：{{item.orderTime}}</p>
             </div>
           </div>
         </div>
@@ -80,16 +94,16 @@
             <Input v-model="infoForm.rePassword" type="password"/>
           </FormItem>
           <FormItem label="真实姓名">
-            <Input v-model="infoForm.realName" type="text"/>
+            <Input v-model="infoForm.name" type="text"/>
           </FormItem>
           <FormItem label="电话">
-            <Input v-model="infoForm.phone" type="text"/>
+            <Input v-model="infoForm.userPhone" type="text"/>
           </FormItem>
           <FormItem label="地址">
-            <Input v-model="infoForm.address" type="text"/>
+            <Input v-model="infoForm.userAddress" type="text"/>
           </FormItem>
           <FormItem>
-            <Button class="one-btn" type="primary">保存</Button>
+            <Button class="one-btn" type="primary" @click="userUpdate">保存</Button>
           </FormItem>
         </Form>
       </div>
@@ -108,10 +122,11 @@ export default {
     return {
       tabPage: 'home',
       tableHeight: 600,
+      timer: null,
       // 主页
       notice: '公告',
       noticeList: [],
-      flowerList: [{}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}],
+      flowerList: [],
       // 购物车
       columns: [
         {
@@ -126,43 +141,7 @@ export default {
         },
         {
           title: '名称',
-          key: 'name',
-          align: 'center'
-        },
-        {
-          title: '详情',
-          key: 'babel',
-          align: 'center'
-        },
-        {
-          title: '数量',
-          key: 'num',
-          slot: 'num',
-          align: 'center'
-        },
-        {
-          title: '总价',
-          key: 'total',
-          align: 'center'
-        },
-        {
-          title: '操作',
-          key: 'action',
-          slot: 'action',
-          align: 'center'
-        }
-      ],
-      carFlowerList: [{}, {}, {}, {}, {}],
-      // 订单
-      orderColumns: [
-        {
-          title: '',
-          slot: 'img',
-          align: 'center'
-        },
-        {
-          title: '名称',
-          key: 'name',
+          key: 'flowerName',
           align: 'center'
         },
         {
@@ -172,32 +151,64 @@ export default {
         },
         {
           title: '单价',
-          key: 'price',
+          key: 'flowerOutprice',
+          align: 'center'
+        },
+        {
+          title: '数量',
+          key: 'flowerNumber',
+          slot: 'num',
           align: 'center'
         },
         {
           title: '总价',
-          key: 'total',
+          slot: 'total',
+          align: 'center'
+        },
+        {
+          title: '操作',
+          key: 'action',
+          slot: 'action',
           align: 'center'
         }
       ],
-      orderFlowerList: [
+      carFlowerList: [],
+      priceTotal: 0,
+      selectionList: [],
+      // 订单
+      orderColumns: [
         {
-          carFlowerList: [{}, {}, {}, {}, {}]
+          title: '',
+          slot: 'img',
+          align: 'center'
         },
         {
-          carFlowerList: [{}, {}, {}, {}, {}]
+          title: '名称',
+          key: 'flowerName',
+          align: 'center'
         },
         {
-          carFlowerList: [{}, {}, {}, {}, {}]
+          title: '详情',
+          key: 'babel',
+          align: 'center'
         },
         {
-          carFlowerList: [{}, {}, {}, {}, {}]
+          title: '单价',
+          key: 'flowerOutprice',
+          align: 'center'
         },
         {
-          carFlowerList: [{}, {}, {}, {}, {}]
+          title: '数量',
+          key: 'flowerNumber',
+          align: 'center'
+        },
+        {
+          title: '总价',
+          slot: 'total',
+          align: 'center'
         }
       ],
+      orderFlowerList: [],
       // 个人信息
       infoForm: {
         userName: '',
@@ -217,30 +228,169 @@ export default {
       this.tabPage = val
       switch (val) {
         case 'home': {
+          this.getFlowers()
           break
         }
         case 'car': {
           this.$nextTick(() => {
             this.tableHeight = document.getElementById('car-table').clientHeight
           })
+          this.getCar()
           break
         }
         case 'order': {
+          this.getOrder()
           break
         }
         case 'info': {
+          this.getUser()
           break
         }
         default:
       }
     },
-    addOrder (obj) {
-
+    // 公告
+    getNotice () {
+      this.$http.post('/anon/getNotice').then((res) => {
+        if (res.code === '0') {
+          this.noticeList = res.data
+          this.timer = setInterval(() => {
+            this.notice = this.noticeList[0]
+            this.noticeList.pop()
+          }, 20000)
+        } else {
+          this.$Message.error(res.msg)
+        }
+      }).catch((err) => {
+        console.error(err)
+      })
+    },
+    // 主页
+    getFlowers () {
+      this.$http.post('/anon/getAllFlowers', {
+        pageNo: 1,
+        pageSize: 9999
+      }).then((res) => {
+        if (res.code === '0') {
+          this.flowerList = res.data.content
+        } else {
+          this.$Message.error(res.msg)
+        }
+      }).catch((err) => {
+        console.error(err)
+      })
+    },
+    addToCar (flowerId, num, flag) {
+      this.$http.post('/user/addToCar', {
+        flowerId: flowerId,
+        number: num
+      }).then((res) => {
+        if (res.code === '0') {
+          this.$Message.success('添加购物车成功')
+          flag && this.getCar()
+        } else {
+          this.$Message.error(res.msg)
+        }
+      }).catch((err) => {
+        console.error(err)
+      })
+    },
+    // 购物车
+    getCar () {
+      this.$http.post('/user/getCar').then((res) => {
+        if (res.code === '0') {
+          this.carFlowerList = res.data.content
+        } else {
+          this.$Message.error(res.msg)
+        }
+      }).catch((err) => {
+        console.error(err)
+      })
+    },
+    delFormCar (flowerId) {
+      this.$http.post('/user/delFromCar', {
+        flowerId: flowerId
+      }).then((res) => {
+        if (res.code === '0') {
+          this.$Message.success('删除成功')
+          this.getCar()
+        } else {
+          this.$Message.error(res.msg)
+        }
+      }).catch((err) => {
+        console.error(err)
+      })
+    },
+    selectionChange (selection) {
+      this.selectionList = selection
+    },
+    createOrder () {
+      this.$http.post('/user/createOrder', {
+        ids: this.selectionList.map(item => item.id)
+      }).then((res) => {
+        if (res.code === '0') {
+          this.$Message.success('下单成功')
+        } else {
+          this.$Message.error(res.msg)
+        }
+      }).catch((err) => {
+        console.error(err)
+      })
+    },
+    // 订单
+    getOrder () {
+      this.$http.post('/user/getOrder', {
+        pageNo: 1,
+        pageSize: 9999
+      }).then((res) => {
+        if (res.code === '0') {
+          this.orderFlowerList = res.data.content
+        } else {
+          this.$Message.error(res.msg)
+        }
+      }).catch((err) => {
+        console.error(err)
+      })
+    },
+    // 个人信息
+    getUser () {
+      this.$http.post('/user/getUser').then((res) => {
+        if (res.code === '0') {
+          this.infoForm = res.data
+          this.infoForm.rePassword = res.data.password
+        } else {
+          this.$Message.error(res.msg)
+        }
+      }).catch((err) => {
+        console.error(err)
+      })
+    },
+    userUpdate () {
+      if (this.infoForm.password !== this.infoForm.rePassword) {
+        this.$Message.error('两次密码不一致')
+        return
+      }
+      this.$http.post('/user/update', Object.assign(this.infoForm, {
+        role: 0
+      })).then((res) => {
+        if (res.code === '0') {
+          this.$Message.success('保存成功')
+        } else {
+          this.$Message.error(res.msg)
+        }
+      }).catch((err) => {
+        console.error(err)
+      })
     }
   },
   created () {
   },
   mounted () {
+    this.getNotice()
+    this.getFlowers()
+  },
+  destroyed () {
+    this.timer && this.timer.close()
   }
 }
 </script>

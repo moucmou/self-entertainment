@@ -16,13 +16,19 @@
             :key="index"
             v-for="(item, index) in orderFlowerList">
             <div class="left-table">
-              <Table :columns="orderColumns" :data="item.carFlowerList">
+              <Table :columns="orderColumns" :data="item.list">
                 <template slot-scope="{ row }" slot="img">
-                  <img class="flower-pic" :src="row.img" alt="">
+                  <img class="flower-pic" :src="row.picUrl" alt="">
+                </template>
+                <template slot-scope="{row}" slot="total">
+                  {{row.flowerNumber * row.flowerOutprice}}
                 </template>
               </Table>
             </div>
             <div class="right-info">
+              <p>订单号：{{item.orderId}}</p>
+              <p>订单总价：{{item.orderPs}}</p>
+              <p>下单时间：{{item.orderTime}}</p>
             </div>
           </div>
         </div>
@@ -32,10 +38,10 @@
       <div v-else-if="tabPage === 'notice'" class="notice-page">
         <Form :model="noticeForm" :label-width="120" label-position="right">
           <FormItem label="公告内容">
-            <Input v-model="noticeForm.msg" type="textarea" :rows="4"/>
+            <Input v-model.trim="noticeForm.notice" type="textarea" :rows="4"/>
           </FormItem>
           <FormItem>
-            <Button class="one-btn" type="primary">保存</Button>
+            <Button :disabled="noticeForm.notice === ''" class="one-btn" type="primary" @click="addNotice">发布</Button>
           </FormItem>
         </Form>
       </div>
@@ -52,7 +58,7 @@ export default {
   },
   data () {
     return {
-      tabPage: 'product',
+      tabPage: 'order',
       // 订单
       orderColumns: [
         {
@@ -62,7 +68,7 @@ export default {
         },
         {
           title: '名称',
-          key: 'name',
+          key: 'flowerName',
           align: 'center'
         },
         {
@@ -72,35 +78,59 @@ export default {
         },
         {
           title: '单价',
-          key: 'price',
+          key: 'flowerOutprice',
+          align: 'center'
+        },
+        {
+          title: '数量',
+          key: 'flowerNumber',
           align: 'center'
         },
         {
           title: '总价',
-          key: 'total',
+          slot: 'total',
           align: 'center'
         }
       ],
-      orderFlowerList: [
+      orderFlowerList: [],
+      // 产品
+      proColumns: [
         {
-          carFlowerList: [{}, {}, {}, {}, {}]
+          title: '',
+          slot: 'img',
+          align: 'center'
         },
         {
-          carFlowerList: [{}, {}, {}, {}, {}]
+          title: '名称',
+          key: 'flowerName',
+          align: 'center'
         },
         {
-          carFlowerList: [{}, {}, {}, {}, {}]
+          title: '详情',
+          key: 'babel',
+          align: 'center'
         },
         {
-          carFlowerList: [{}, {}, {}, {}, {}]
+          title: '单价',
+          key: 'flowerOutprice',
+          align: 'center'
         },
         {
-          carFlowerList: [{}, {}, {}, {}, {}]
+          title: '数量',
+          key: 'flowerNumber',
+          align: 'center'
+        },
+        {
+          title: '总价',
+          slot: 'total',
+          align: 'center'
         }
       ],
+      proFlowerList: [],
+      proForm: {},
       // 公告
       noticeForm: {
-        msg: ''
+        notice: ''
       }
     }
   },
@@ -112,21 +142,92 @@ export default {
       this.tabPage = val
       switch (val) {
         case 'order': {
+          this.getOrder()
           break
         }
         case 'product': {
+          this.getProduct()
           break
         }
         case 'notice': {
+          this.noticeForm.notice = ''
           break
         }
         default:
       }
+    },
+    // 订单
+    getOrder () {
+      this.$http.post('/admin/getAllOrder', {
+        pageNo: 1,
+        pageSize: 9999
+      }).then((res) => {
+        if (res.code === '0') {
+          this.orderFlowerList = res.data.content
+        } else {
+          this.$Message.error(res.msg)
+        }
+      }).catch((err) => {
+        console.error(err)
+      })
+    },
+    // 产品
+    getProduct () {
+      this.$http.post('/admin/getAllFlowers', {
+        pageNo: 1,
+        pageSize: 9999
+      }).then((res) => {
+        if (res.code === '0') {
+          this.proFlowerList = res.data.content
+        } else {
+          this.$Message.error(res.msg)
+        }
+      }).catch((err) => {
+        console.error(err)
+      })
+    },
+    upProduct () {
+      this.$http.post('/admin/addFlower', this.proForm).then((res) => {
+        if (res.code === '0') {
+          this.$Message.error('上架成功')
+          this.getProduct()
+        } else {
+          this.$Message.error(res.msg)
+        }
+      }).catch((err) => {
+        console.error(err)
+      })
+    },
+    downProduct () {
+      this.$http.post('/admin/delFlower', this.proForm).then((res) => {
+        if (res.code === '0') {
+          this.$Message.error('下架成功')
+          this.getProduct()
+        } else {
+          this.$Message.error(res.msg)
+        }
+      }).catch((err) => {
+        console.error(err)
+      })
+    },
+    // 公告
+    addNotice () {
+      this.$http.post('/admin/addNoticce', this.noticeForm).then((res) => {
+        if (res.code === '0') {
+          this.$Message.success('发布成功')
+          this.noticeForm.notice = ''
+        } else {
+          this.$Message.error(res.msg)
+        }
+      }).catch((err) => {
+        console.error(err)
+      })
     }
   },
   created () {
   },
   mounted () {
+    this.getOrder()
   }
 }
 </script>

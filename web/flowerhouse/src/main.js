@@ -11,7 +11,7 @@ import qs from 'querystring'
 Vue.use(iView)
 
 // axios ajaxhttp请求
-const baseUrl = '/flowerhouse'
+const baseUrl = '/'
 Vue.prototype.$http = axios.create({
   baseURL: baseUrl,
   headers: {
@@ -57,7 +57,7 @@ Vue.prototype.$http.interceptors.request.use(function (config) {
 // 添加响应拦截器
 Vue.prototype.$http.interceptors.response.use(function (response) {
   // 对响应数据做些事
-  return response
+  return response.data
 }, function (error) {
   // 请求错误时做些事
   if (error && error.request && error.request.status === 0) {

@@ -16,12 +16,12 @@ export default new Router({
       component: Home
     },
     {
-      path: '/user',
+      path: '/usPage',
       name: 'userLogin',
       component: UserLogin
     },
     {
-      path: '/admin',
+      path: '/adPage',
       name: 'adminLogin',
       component: AdminLogin
     },

@@ -1,7 +1,9 @@
 <template>
   <div class="flower">
     <div class="logo">
-      <span class="logo-img"></span><span class="logo-title">创意花坊</span>
+      <span class="logo-img"></span>
+      <span class="logo-title">创意花坊</span>
+      <span class="logout" @click="logout">退出登录</span>
     </div>
     <div class="contain">
       <div class="tab-class">
@@ -32,6 +34,18 @@ export default {
   watch: {
   },
   methods: {
+    logout () {
+      this.$http.get('/anon/logout').then((res) => {
+        if (res.code === '0') {
+          this.$Message.success('退出登录成功')
+          this.$router.push('/login')
+        } else {
+          this.$Message.error(res.msg)
+        }
+      }).catch((err) => {
+        console.error(err)
+      })
+    }
   },
   created () {
   },
@@ -68,6 +82,15 @@ export default {
         border-radius: 80px;
         background-size: 50%, 50%;
         background-image: url('../assets/logo.jpg');
+      }
+    }
+    .logout {
+      cursor: pointer;
+      float: right;
+      padding-right: 32px;
+      font-size: 16px;
+      &:hover {
+        color: green;
       }
     }
   }
