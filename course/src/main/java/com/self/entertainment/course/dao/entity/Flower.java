@@ -2,10 +2,7 @@ package com.self.entertainment.course.dao.entity;
 
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
 
 /**
@@ -14,6 +11,7 @@ import java.io.Serializable;
  */
 @Data
 @Entity
+@Table(name="t_flower")
 public class Flower implements Serializable {
 
     private static final long serialVersionUID = 2604396364055746843L;
@@ -34,7 +32,9 @@ public class Flower implements Serializable {
     private Integer flowerInprice;
     private Integer flowerOutprice;
     private Integer flowerState;
+    private Integer flowerNumber;
     private String picUrl;
+    private Long createTime;
 
 
 

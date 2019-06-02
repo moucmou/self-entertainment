@@ -13,6 +13,10 @@ public interface UserService {
 
      ResponseData<String> updateUser(User User);
 
-     ResponseData<User> findByUserId(Integer userId);
+     ResponseData<User> findByUserId( );
+
+     User findByUserNameAndPassWd(String userName,String passWd);
+
+
 
 }

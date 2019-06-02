@@ -2,11 +2,9 @@ package com.self.entertainment.course.dao.entity;
 
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * @author AmazingZ
@@ -14,6 +12,7 @@ import java.io.Serializable;
  */
 @Entity
 @Data
+@Table(name="t_order")
 public class Order implements Serializable {
 
 
@@ -29,11 +28,13 @@ public class Order implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long orderId;
-    private String userId;
+    private Long userId;
 
     private Long orderTime;
     private String orderAddress;
     private String orderPs;
+    @Transient
+    private List<OderDetail> list;
 
 
 }

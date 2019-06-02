@@ -8,7 +8,11 @@ import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
  * @author AmazingZ
  * @date 2019/6/1 16:17
  */
-public interface UserRepository extends JpaRepository<User, Integer>, JpaSpecificationExecutor<User> {
+public interface UserRepository extends JpaRepository<User, Long>, JpaSpecificationExecutor<User> {
 
     boolean existsByUserName(String userName);
+
+    User findByUserName(String userName);
+
+    User findByUserNameAndPassword(String userName,String passWd);
 }

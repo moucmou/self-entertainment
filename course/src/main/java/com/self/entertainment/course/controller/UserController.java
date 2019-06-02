@@ -8,25 +8,29 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+
 /**
  * @author AmazingZ
  * @date 2019/6/1 16:09
  */
 @RestController
-@RequestMapping("/user")
+@RequestMapping("/")
 public class UserController {
     @Autowired
     UserService userService;
-    @RequestMapping(value ="/register" ,method = RequestMethod.POST)
-    public ResponseData<String> register(User User){
+
+    @RequestMapping(value = "/anon/register", method = RequestMethod.POST)
+    public ResponseData<String> register(User User) {
         return userService.addUser(User);
     }
-    @RequestMapping(value ="/update" ,method = RequestMethod.POST)
-    public ResponseData<String> update(User User){
+
+    @RequestMapping(value = "/user/update", method = RequestMethod.POST)
+    public ResponseData<String> update(User User) {
         return userService.updateUser(User);
     }
-    @RequestMapping(value ="/getUser" ,method = RequestMethod.POST)
-    public ResponseData<String> getUser(User User){
-        return userService.updateUser(User);
+
+    @RequestMapping(value = "/user/getUser", method = RequestMethod.POST)
+    public ResponseData<User> getUser( ) {
+        return userService.findByUserId();
     }
 }

@@ -4,6 +4,7 @@ import com.self.entertainment.course.common.ResponseData;
 import com.self.entertainment.course.dao.UserRepository;
 import com.self.entertainment.course.dao.entity.User;
 import com.self.entertainment.course.service.UserService;
+import com.self.entertainment.course.utils.CurrentUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -22,7 +23,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public ResponseData<String> addUser(User User) {
         if (userRepository.existsByUserName(User.getUserName())) {
-            return ResponseData.fail("用户名重复");
+            return ResponseData.error("用户名重复");
         }
         userRepository.save(User);
         return ResponseData.success("");
@@ -35,7 +36,12 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public ResponseData<User> findByUserId(Integer userId) {
-        return ResponseData.success(userRepository.findById(userId).get());
+    public ResponseData<User> findByUserId( ) {
+        return ResponseData.success(userRepository.findByUserName(CurrentUtils.getCurrent().getUserName()));
+    }
+
+    @Override
+    public User findByUserNameAndPassWd(String userName, String passWd) {
+        return userRepository.findByUserNameAndPassword(userName,passWd);
     }
 }
