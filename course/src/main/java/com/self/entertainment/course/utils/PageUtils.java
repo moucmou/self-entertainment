@@ -1,19 +1,28 @@
 package com.self.entertainment.course.utils;
 
 import org.springframework.data.domain.PageRequest;
-
-import java.util.Objects;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 
 public class PageUtils {
 
-    public static PageRequest of(Integer pageNo,Integer pageSize){
+    private PageUtils() {
+    }
 
-        if(Objects.isNull(pageNo)||pageNo<0){
-            pageNo=0;
+    ;
+    public static final Integer DEFAULT_PAGE_NO = 1;
+    public static final Integer DEFAULT_PAGE_SIZE = 10;
+
+    public static Pageable buildPageRequest(Integer pageNo, Integer pageSize, Sort sort) {
+        if (pageNo == null || pageNo < 1) {
+            pageNo = DEFAULT_PAGE_NO;
         }
-        if(Objects.isNull(pageSize)||pageSize<0){
-            pageSize=30;
+        if (pageSize == null || pageSize < 1) {
+            pageSize = DEFAULT_PAGE_SIZE;
         }
-        return PageRequest.of(pageNo,pageSize);
+        if (sort == null) {
+            return new PageRequest(pageNo - 1, pageSize);
+        }
+        return new PageRequest(pageNo - 1, pageSize, sort);
     }
 }

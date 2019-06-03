@@ -17,7 +17,7 @@ import javax.servlet.ServletResponse;
 import java.io.IOException;
 import java.util.Objects;
 
-public abstract class CustomFilter extends AuthenticatingFilter {
+public abstract class   CustomFilter extends AuthenticatingFilter {
 
     @Autowired
     ObjectMapper objectMapper;

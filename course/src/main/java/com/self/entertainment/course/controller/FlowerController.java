@@ -33,13 +33,18 @@ public class FlowerController {
         return flowerService.findByFlowerName(flowerName, pageNo, pageSize);
     }
 
+    //
+    public ResponseData<String> uploadPic(MultipartFile file) {
+        return ResponseData.success("");
+    }
+
     @RequestMapping(value = "/admin/updateFlower", method = RequestMethod.POST)
-    public ResponseData<Flower> updateFlower(Flower flower, MultipartFile file) {
+    public ResponseData<Flower> updateFlower(Flower flower, String file) {
         return flowerService.addFlower(flower, file);
     }
 
     @RequestMapping(value = "/admin/addFlower", method = RequestMethod.POST)
-    public ResponseData<Flower> addFlower(Flower flower, MultipartFile file) {
+    public ResponseData<Flower> addFlower(Flower flower, String file) {
         return flowerService.addFlower(flower, file);
     }
 

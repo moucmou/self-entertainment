@@ -6,7 +6,9 @@ import org.apache.commons.io.IOUtils;
 
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletResponse;
-import java.io.*;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.nio.charset.Charset;
 
 @Slf4j
@@ -36,19 +38,22 @@ public class PicUtils {
     public static void addNote(String notice) {
         File file = new File(TempFile.getInstance().getFile(), NOTE);
         try {
+            if (!file.exists()) file.createNewFile();
             FileUtils.write(file, notice, Charset.forName("UTF-8"), false);
         } catch (IOException e) {
             log.error("存公告失败", e);
         }
     }
 
-    public static String readNote( ) {
+    public static String readNote() {
         File file = new File(TempFile.getInstance().getFile(), NOTE);
+
         String temp = null;
         try {
-            temp= FileUtils.readFileToString(file, Charset.forName("UTF-8"));
+            if (!file.exists()) file.createNewFile();
+            temp = FileUtils.readFileToString(file, Charset.forName("UTF-8"));
         } catch (IOException e) {
-            log.error("存公告失败", e);
+            log.error("读公告失败", e);
         }
         return temp;
     }

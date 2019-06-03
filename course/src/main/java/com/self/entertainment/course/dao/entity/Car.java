@@ -31,6 +31,7 @@ public class Car implements Serializable {
     private Long flowerId;
     private Integer flowerOutprice;
     private Integer flowerNumber;
+    private String picUrl;
 
 
 }

@@ -28,5 +28,7 @@ public class OderDetail implements Serializable {
     private String flowerName;
     private Integer flowerOutprice;
     private Integer flowerNumber;
+    private Long flowerId;
+    private String picUrl;
 
 }

@@ -18,14 +18,15 @@ public interface FlowerService {
      * @param flower
      * @return
      */
-    ResponseData<Flower> addFlower(Flower flower, MultipartFile file);
+    ResponseData<Flower> addFlower(Flower flower, String file);
 
 //    /**
 //     * 修改花产品
+//     *
 //     * @param flower
 //     * @return
 //     */
-//    ResponseData<Flower> updateFlower(Flower flower);
+//    ResponseData<Flower> updateFlower(Flower flower, MultipartFile file);
 
     /**
      * 删除花
@@ -35,7 +36,7 @@ public interface FlowerService {
     /**
      * 获取所有的花
      */
-    ResponseData<Page<Flower>> getAllFlowers(Integer pageNo,Integer  pageSize);
+    ResponseData<Page<Flower>> getAllFlowers(Integer pageNo, Integer pageSize);
 
     /**
      * 根据花名获取花
@@ -46,6 +47,13 @@ public interface FlowerService {
      * 根据花的id获取花
      */
     ResponseData<List<Flower>> findByFlowerIds(Long[] flowerId);
+
+    /**
+     * 上传图片
+     * @param multipartFile
+     * @return
+     */
+    ResponseData<String> uploadPic(MultipartFile multipartFile);
 
 
 }

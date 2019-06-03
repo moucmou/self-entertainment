@@ -28,6 +28,6 @@ public class OrderController {
 
     @RequestMapping(value = "/admin/getAllOrder", method = RequestMethod.POST)
     public ResponseData<Page<Order>> getAllOrder(Integer pageNo, Integer pageSize) {
-        return orderService.getOrder(pageNo, pageSize);
+        return orderService.getAllOrder(pageNo, pageSize);
     }
 }

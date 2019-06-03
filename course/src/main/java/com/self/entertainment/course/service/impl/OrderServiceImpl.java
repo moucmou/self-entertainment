@@ -6,20 +6,24 @@ import com.self.entertainment.course.dao.FlowerRepository;
 import com.self.entertainment.course.dao.OrderDetailReposity;
 import com.self.entertainment.course.dao.OrderRepository;
 import com.self.entertainment.course.dao.entity.*;
-import com.self.entertainment.course.service.FlowerService;
 import com.self.entertainment.course.service.OrderService;
 import com.self.entertainment.course.utils.CurrentUtils;
 import com.self.entertainment.course.utils.PageUtils;
+import com.self.entertainment.course.utils.TempFile;
+import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.io.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-import javax.transaction.Transactional;
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Supplier;
 
 @Service
+@Slf4j
 public class OrderServiceImpl implements OrderService {
     @Autowired
     FlowerRepository flowerRepository;
@@ -53,6 +57,7 @@ public class OrderServiceImpl implements OrderService {
             flower.setFlowerNumber(flower.getFlowerNumber() - car.getFlowerNumber());
             orderDetail.setFlowerOutprice(flower.getFlowerOutprice());
             orderDetail.setOrderId(order.getOrderId());
+            orderDetail.setFlowerId(flower.getFlowerId());
             orderDetailList.add(orderDetail);
         }
         orderDetailReposity.saveAll(orderDetailList);
@@ -67,9 +72,19 @@ public class OrderServiceImpl implements OrderService {
     @Override
     public ResponseData<Page<Order>> getOrder(Integer pageNo, Integer pageSize) {
         ;
-        Page<Order> orders = orderRepository.findByUserId(CurrentUtils.getCurrent().getUserId(), PageUtils.of(pageNo, pageSize));
+        Page<Order> orders = orderRepository.findByUserId(CurrentUtils.getCurrent().getUserId(), PageUtils.buildPageRequest(pageNo, pageSize, null));
         for (Order order : orders.getContent()) {
-            order.setList(orderDetailReposity.findByOrderId(order.getOrderId()));
+            List<OderDetail> temp = orderDetailReposity.findByOrderId(order.getOrderId());
+            for (OderDetail orderDetail : temp) {
+                File picFile = new File(TempFile.getInstance().getFile(), String.valueOf(orderDetail.getFlowerId()));
+                try {
+                    orderDetail.setPicUrl(FileUtils.readFileToString(picFile, "UTF-8"));
+                    ;
+                } catch (IOException e) {
+                    log.error("读数据失败", e);
+                }
+            }
+            order.setList(temp);
         }
         return ResponseData.success(orders);
     }
@@ -77,9 +92,19 @@ public class OrderServiceImpl implements OrderService {
     @Override
     public ResponseData<Page<Order>> getAllOrder(Integer pageNo, Integer pageSize) {
         ;
-        Page<Order> orders = orderRepository.findAll(PageUtils.of(pageNo, pageSize));
+        Page<Order> orders = orderRepository.findAll(PageUtils.buildPageRequest(pageNo, pageSize, null));
         for (Order order : orders.getContent()) {
-            order.setList(orderDetailReposity.findByOrderId(order.getOrderId()));
+            List<OderDetail> temp = orderDetailReposity.findByOrderId(order.getOrderId());
+            for (OderDetail orderDetail : temp) {
+                File picFile = new File(TempFile.getInstance().getFile(), String.valueOf(orderDetail.getFlowerId()));
+                try {
+                    orderDetail.setPicUrl(FileUtils.readFileToString(picFile, "UTF-8"));
+                    ;
+                } catch (IOException e) {
+                    log.error("读数据失败", e);
+                }
+            }
+            order.setList(temp);
         }
         return ResponseData.success(orders);
     }
