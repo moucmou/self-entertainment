@@ -27,13 +27,47 @@
             </div>
             <div class="right-info">
               <p>订单号：{{item.orderId}}</p>
-              <p>订单总价：{{item.orderPs}}</p>
+              <!--<p>订单总价：{{item.orderPs}}</p>-->
               <p>下单时间：{{item.orderTime}}</p>
             </div>
           </div>
         </div>
       </div>
       <div v-else-if="tabPage === 'product'" class="product-page">
+        <div id="product-table" class="product-table">
+          <Table
+            :columns="proColumns"
+            :data="proFlowerList">
+            <template slot-scope="{row}" slot="img">
+              <img v-if="!row.editFlag" class="flower-pic" :src="row.picUrl" alt="">
+              <input v-else id="file" type="file">
+            </template>
+            <template slot-scope="{row}" slot="flowerName">
+              <span v-if="!row.editFlag">{{row.flowerName}}</span>
+              <input v-else type="text" v-model="proForm.flowerName">
+            </template>
+            <template slot-scope="{row}" slot="flowerLanguage">
+              <span v-if="!row.editFlag">{{row.flowerLanguage}}</span>
+              <input v-else type="text" v-model="proForm.flowerLanguage">
+            </template>
+            <template slot-scope="{row}" slot="flowerInprice">
+              <span v-if="!row.editFlag">{{row.flowerInprice}}</span>
+              <input v-else type="number" v-model="proForm.flowerInprice">
+            </template>
+            <template slot-scope="{row}" slot="flowerOutprice">
+              <span v-if="!row.editFlag">{{row.flowerOutprice}}</span>
+              <input v-else type="number" v-model="proForm.flowerOutprice">
+            </template>
+            <template slot-scope="{row}" slot="flowerNumber">
+              <span v-if="!row.editFlag">{{row.flowerNumber}}</span>
+              <input v-else type="number" v-model="proForm.flowerNumber">
+            </template>
+            <template slot-scope="{row}" slot="action">
+              <Button v-if="!row.editFlag" type="error" size="small" @click="downProduct(row.flowerId)">下架</Button>
+              <Button v-else size="small" @click="upProduct">上架</Button>
+            </template>
+          </Table>
+        </div>
       </div>
       <div v-else-if="tabPage === 'notice'" class="notice-page">
         <Form :model="noticeForm" :label-width="120" label-position="right">
@@ -50,6 +84,7 @@
 </template>
 
 <script>
+import moment from 'moment'
 import Flower from './Flower'
 export default {
   name: 'AdminLogin',
@@ -69,11 +104,6 @@ export default {
         {
           title: '名称',
           key: 'flowerName',
-          align: 'center'
-        },
-        {
-          title: '详情',
-          key: 'babel',
           align: 'center'
         },
         {
@@ -103,31 +133,48 @@ export default {
         {
           title: '名称',
           key: 'flowerName',
+          slot: 'flowerName',
           align: 'center'
         },
         {
-          title: '详情',
-          key: 'babel',
+          title: '花语',
+          key: 'flowerLanguage',
+          slot: 'flowerLanguage',
+          align: 'center'
+        },
+        {
+          title: '进价',
+          key: 'flowerInprice',
+          slot: 'flowerInprice',
           align: 'center'
         },
         {
           title: '单价',
           key: 'flowerOutprice',
+          slot: 'flowerOutprice',
           align: 'center'
         },
         {
           title: '数量',
           key: 'flowerNumber',
+          slot: 'flowerNumber',
           align: 'center'
         },
         {
-          title: '总价',
-          slot: 'total',
+          title: '操作',
+          slot: 'action',
           align: 'center'
         }
       ],
       proFlowerList: [],
-      proForm: {},
+      proForm: {
+        file: null,
+        flowerInprice: 1,
+        flowerOutprice: 1,
+        flowerNumber: 1,
+        flowerLanguage: '花语',
+        flowerName: '花名'
+      },
       // 公告
       noticeForm: {
         notice: ''
@@ -163,7 +210,10 @@ export default {
         pageSize: 9999
       }).then((res) => {
         if (res.code === '0') {
-          this.orderFlowerList = res.data.content
+          this.orderFlowerList = res.data.content.map(item => {
+            item.orderTime = moment(new Date(item.orderTime)).format('YYYY-MM-DD')
+            return item
+          })
         } else {
           this.$Message.error(res.msg)
         }
@@ -173,12 +223,22 @@ export default {
     },
     // 产品
     getProduct () {
-      this.$http.post('/admin/getAllFlowers', {
+      this.$http.post('/anon/getAllFlowers', {
         pageNo: 1,
         pageSize: 9999
       }).then((res) => {
         if (res.code === '0') {
-          this.proFlowerList = res.data.content
+          this.proFlowerList = res.data.content.concat({
+            editFlag: true
+          })
+          this.proForm = {
+            file: null,
+            flowerInprice: 1,
+            flowerOutprice: 1,
+            flowerNumber: 1,
+            flowerLanguage: '花语',
+            flowerName: '花名'
+          }
         } else {
           this.$Message.error(res.msg)
         }
@@ -187,19 +247,35 @@ export default {
       })
     },
     upProduct () {
-      this.$http.post('/admin/addFlower', this.proForm).then((res) => {
-        if (res.code === '0') {
-          this.$Message.error('上架成功')
-          this.getProduct()
-        } else {
-          this.$Message.error(res.msg)
+      try {
+        let reader = new FileReader()
+        reader.readAsDataURL(document.getElementById('file').files[0])
+        reader.onload = () => {
+          console.log(this.proForm)
+          this.$http.post('/admin/addFlower', Object.assign(this.proForm, {
+            file: reader.result
+          })).then((res) => {
+            if (res.code === '0') {
+              this.$Message.success('上架成功')
+              this.getProduct()
+            } else {
+              this.$Message.error(res.msg)
+            }
+          }).catch((err) => {
+            console.error(err)
+          })
         }
-      }).catch((err) => {
-        console.error(err)
-      })
+        reader.onerror = () => {
+          this.$Message.error('图片上传失败')
+        }
+      } catch (e) {
+        this.$Message.error('图片未选择或上传失败')
+      }
     },
-    downProduct () {
-      this.$http.post('/admin/delFlower', this.proForm).then((res) => {
+    downProduct (flowerId) {
+      this.$http.post('/admin/delFlower', {
+        flowerId: flowerId
+      }).then((res) => {
         if (res.code === '0') {
           this.$Message.error('下架成功')
           this.getProduct()
@@ -256,12 +332,15 @@ export default {
             display: inline-block;
             width: 65px;
             height: 65px;
-            background-color: yellow;
+            background-color: #ccc;
           }
         }
         .right-info {
           float: right;
           display: inline-block;
+          font-size: 14px;
+          font-weight: bold;
+          color: #333;
           width: 160px;
           background-color: antiquewhite;
         }
@@ -269,6 +348,21 @@ export default {
     }
   }
   .product-page {
+    .product-table {
+      height: 100%;
+      overflow: auto;
+      background-color: #fff;
+      .flower-pic {
+        margin-top: 5px;
+        display: inline-block;
+        width: 65px;
+        height: 65px;
+        background-color: #ccc;
+      }
+      input {
+        width: 100%;
+      }
+    }
   }
   .notice-page {
     padding: 48px 464px 0 8px !important;

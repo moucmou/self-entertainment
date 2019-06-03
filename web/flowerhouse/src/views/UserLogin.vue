@@ -41,9 +41,9 @@
               <img class="flower-pic" :src="row.picUrl" alt="">
             </template>
             <template slot-scope="{row}" slot="num">
-              <Button :disabled="row.num === 1" size="small" icon="ios-remove" shape="circle" @click="addToCar(row.flowerId, row.num - 1, true)"></Button>
-              {{row.num}}
-              <Button size="small" icon="ios-add" shape="circle" @click="addToCar(row.flowerId, row.num + 1, true)"></Button>
+              <Button :disabled="row.num === 1" size="small" icon="ios-remove" shape="circle" @click="addToCar(row.flowerId, row.flowerNumber - 1, true)"></Button>
+              {{row.flowerNumber}}
+              <Button size="small" icon="ios-add" shape="circle" @click="addToCar(row.flowerId, row.flowerNumber + 1, true)"></Button>
             </template>
             <template slot-scope="{row}" slot="total">
               {{row.flowerNumber * row.flowerOutprice}}
@@ -76,7 +76,7 @@
             </div>
             <div class="right-info">
               <p>订单号：{{item.orderId}}</p>
-              <p>订单总价：{{item.orderPs}}</p>
+              <!--<p>订单总价：{{item.orderPs}}</p>-->
               <p>下单时间：{{item.orderTime}}</p>
             </div>
           </div>
@@ -112,6 +112,7 @@
 </template>
 
 <script>
+import moment from 'moment'
 import Flower from './Flower'
 export default {
   name: 'UserLogin',
@@ -145,11 +146,6 @@ export default {
           align: 'center'
         },
         {
-          title: '详情',
-          key: 'babel',
-          align: 'center'
-        },
-        {
           title: '单价',
           key: 'flowerOutprice',
           align: 'center'
@@ -167,7 +163,6 @@ export default {
         },
         {
           title: '操作',
-          key: 'action',
           slot: 'action',
           align: 'center'
         }
@@ -185,11 +180,6 @@ export default {
         {
           title: '名称',
           key: 'flowerName',
-          align: 'center'
-        },
-        {
-          title: '详情',
-          key: 'babel',
           align: 'center'
         },
         {
@@ -254,10 +244,12 @@ export default {
       this.$http.post('/anon/getNotice').then((res) => {
         if (res.code === '0') {
           this.noticeList = res.data
+          this.notice = this.noticeList[0]
+          this.noticeList.pop()
           this.timer = setInterval(() => {
             this.notice = this.noticeList[0]
             this.noticeList.pop()
-          }, 20000)
+          }, 10000)
         } else {
           this.$Message.error(res.msg)
         }
@@ -322,14 +314,19 @@ export default {
       })
     },
     selectionChange (selection) {
+      this.priceTotal = 0
+      selection.forEach(item => {
+        this.priceTotal += item.flowerOutprice * item.flowerNumber
+      })
       this.selectionList = selection
     },
     createOrder () {
       this.$http.post('/user/createOrder', {
-        ids: this.selectionList.map(item => item.id)
+        ids: this.selectionList.map(item => item.flowerId)
       }).then((res) => {
         if (res.code === '0') {
           this.$Message.success('下单成功')
+          this.getCar()
         } else {
           this.$Message.error(res.msg)
         }
@@ -344,7 +341,10 @@ export default {
         pageSize: 9999
       }).then((res) => {
         if (res.code === '0') {
-          this.orderFlowerList = res.data.content
+          this.orderFlowerList = res.data.content.map(item => {
+            item.orderTime = moment(new Date(item.orderTime)).format('YYYY-MM-DD')
+            return item
+          })
         } else {
           this.$Message.error(res.msg)
         }
@@ -467,7 +467,7 @@ export default {
         display: inline-block;
         width: 65px;
         height: 65px;
-        background-color: yellow;
+        background-color: #ccc;
       }
     }
     .car-result {
@@ -502,12 +502,15 @@ export default {
             display: inline-block;
             width: 65px;
             height: 65px;
-            background-color: yellow;
+            background-color: #ccc;
           }
         }
         .right-info {
           float: right;
           display: inline-block;
+          font-size: 14px;
+          font-weight: bold;
+          color: #333;
           width: 160px;
           background-color: antiquewhite;
         }
