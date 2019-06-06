@@ -17,7 +17,7 @@ import javax.servlet.ServletResponse;
 import java.io.IOException;
 import java.util.Objects;
 
-public abstract class   CustomFilter extends AuthenticatingFilter {
+public abstract class CustomFilter extends AuthenticatingFilter {
 
     @Autowired
     ObjectMapper objectMapper;
@@ -38,7 +38,7 @@ public abstract class   CustomFilter extends AuthenticatingFilter {
         IOUtils.write(objectMapper.writeValueAsBytes(responseData), response.getOutputStream());
         return false;
     }
-
+    @Override
     public boolean isAccessAllowed(ServletRequest request, ServletResponse response, Object mappedValue) {
 
         boolean isPermitted = true;

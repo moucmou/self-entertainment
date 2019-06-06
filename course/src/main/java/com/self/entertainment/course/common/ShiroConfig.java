@@ -6,12 +6,17 @@ import com.self.entertainment.course.config.UserFilter;
 import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
 import org.apache.shiro.spring.web.config.DefaultShiroFilterChainDefinition;
 import org.apache.shiro.spring.web.config.ShiroFilterChainDefinition;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.apache.shiro.mgt.SecurityManager;
 
 @Configuration
 public class ShiroConfig {
+
+    @Autowired
+    DataSourceProperties dataSourceProperties;
 
     @Bean
     public ShiroFilterChainDefinition shiroFilterChainDefinition() {
