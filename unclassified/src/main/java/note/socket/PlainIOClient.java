@@ -98,7 +98,8 @@ public class PlainIOClient {
         }
     }
     public static void main(String[] args) throws InterruptedException, IOException {
-
+        String x="heartbeatjkdhaskjdhksadsajdaskasd"+66+"\r\n";
+        System.out.println();
 //        PlainIOClient plainIOClient= new PlainIOClient(9120,"localhost");
 //        plainIOClient.init();
 //        plainIOClient.outputStream.write("hello".getBytes(Charset.forName("UTF-8")));
@@ -115,7 +116,7 @@ public class PlainIOClient {
 //        t.start();
 //        t.join();
 
-        ScheduledExecutorService executorService = Executors.newScheduledThreadPool(5);
+        ScheduledExecutorService executorService = Executors.newScheduledThreadPool(1);
 ////        CyclicBarrier cyclicBarrier=new CyclicBarrier(1, new Runnable() {
 ////            @Override
 ////            public void run() {
@@ -134,24 +135,44 @@ public class PlainIOClient {
         PlainIOClient plainIOClient= new PlainIOClient(9120,"localhost");
         plainIOClient.init();
         executorService.scheduleWithFixedDelay(new Runnable() {
+
+
             private boolean isconnected=true;
             int count=0;
             @Override
             public void run() {
+
+                Thread.currentThread().setName("客户端线程");
                 //                    cyclicBarrier.reset();
 //                if (isconnected && LocalTime.now().minusSeconds(5).isAfter(plainIOClient.getLastTime())) {
                     System.out.println(LocalTime.now().toString());
-                    try {
+                    StringBuilder stringBuilder=new StringBuilder();
+
+                    for(int i=0;i<1300;i++){
+                        stringBuilder.append("heartbeatjkdhaskjdhksadsajdaskasd"+66+"\r\n");
+                    }
+
+                try {
+                    plainIOClient.sendMsg(stringBuilder.toString().getBytes(Charset.forName("UTF-8")));
+                    System.out.println("hahahah 到不了这里");
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                try {
+                        if(count==1126){
+                            System.out.println();
+                        }
                         System.out.println(count++);
 //                        PlainIOClient plainIOClient= new PlainIOClient(9120,"localhost");
 //                        plainIOClient.init();
 //                        plainIOClient.outputStream.write("hello".getBytes(Charset.forName("UTF-8")));
                         String x="heartbeatjkdhaskjdhksadsajdaskasd"+count+"\r\n";
+
                         plainIOClient.sendMsg(x.getBytes(Charset.forName("UTF-8")));
 //
 //                        plainIOClient.setLastTime(LocalTime.now());
 //                        count++;
-//                        if(count==1000){
+//                        if(count==1000){SocketOutputStream
 ////                            Thread.sleep(1*1000);
 //                        }
 //                        System.out.println(count);
@@ -176,7 +197,7 @@ public class PlainIOClient {
 //                }
 
             }
-        }, 0, 20,TimeUnit.MILLISECONDS);
+        }, 0, 20,TimeUnit.HOURS);
 
 //        plainIOClient.sendMsg(("asdasd asdsa sdadasd!\r\n").getBytes(Charset.forName("UTF-8")));
 //        plainIOClient.getMsg();

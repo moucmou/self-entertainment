@@ -5,6 +5,7 @@ import org.apache.tomcat.util.http.fileupload.IOUtils;
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.nio.charset.Charset;
 import java.time.LocalTime;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.Executors;
@@ -34,7 +35,7 @@ public class PlainOioServerThread implements Runnable{
                             Socket socket = serverSocket.accept();
                             socket.setTcpNoDelay(true);
                             PlainOioServerThread socketThread = new PlainOioServerThread(socket);
-                            Executors.newFixedThreadPool(5).submit(socketThread);
+                            Executors.newFixedThreadPool(5).execute(socketThread);
                         }
                     }finally{
                         //释放资源回收
@@ -50,6 +51,8 @@ public class PlainOioServerThread implements Runnable{
     }
     @Override
     public void run() {
+
+        Thread.currentThread().setName("服务器线程");
         if(socket == null || socket.getInetAddress() == null){
             System.out.println("请求参数有误，socket为空或客户端Address为空");
             return;
@@ -112,11 +115,11 @@ public class PlainOioServerThread implements Runnable{
                             break;
                         } else if (msg.startsWith("heartbeat")) {
                             System.out.println(Thread.currentThread().getName() + "，服务端接收到客户端：{}的信息为：{}" + ipAndPort + "," + msg);
-//                            socket.getOutputStream().write("heartbeat !!".getBytes(Charset.forName("UTF-8")));
-//                            outputStream = socket.getOutputStream();// 获取一个输出流，向服务端发送信息
-//                            printWriter = new PrintWriter(outputStream);// 将输出流包装成打印流
-//                            printWriter.print("heartbeatjkdhaskjdhksadsajdaskasd!\n\n");
-//                            printWriter.flush();
+                            socket.getOutputStream().write("heartbeat !!".getBytes(Charset.forName("UTF-8")));
+                            outputStream = socket.getOutputStream();// 获取一个输出流，向服务端发送信息
+                            printWriter = new PrintWriter(outputStream);// 将输出流包装成打印流
+                            printWriter.print("heartbeatjkdhaskjdhksadsajdaskasd!\n\n");
+                            printWriter.flush();
                             System.out.println(LocalTime.now().toString());
 
                         } else {

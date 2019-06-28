@@ -13,6 +13,7 @@ import java.util.Comparator;
 
 @SpringBootApplication
 @EnableCaching
+
 public class MybatisApplication {
 
     public static void main(String[] args) {

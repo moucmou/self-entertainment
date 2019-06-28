@@ -29,6 +29,7 @@
         <module>amazingt</module>
         <module>redis-cache</module>
         <module>mybatis</module>
+        <module>openfeign</module>
     </modules>
 
 

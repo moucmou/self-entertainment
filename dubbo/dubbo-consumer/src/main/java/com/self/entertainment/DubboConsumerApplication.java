@@ -20,8 +20,9 @@ public class DubboConsumerApplication {
     @Autowired
     HelloService helloService;
     public static void main(String[] args) {
-        SpringApplication.run(DubboConsumerApplication.class, args
-        );
+        SpringApplication.run(DubboConsumerApplication.class, args);
+
+        System.out.println();
     }
 
 
