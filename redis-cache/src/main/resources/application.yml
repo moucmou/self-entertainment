@@ -2,6 +2,11 @@ spring:
   redis:
     port: 6379
     timeout: 5000
+    host: localhost
+#    password: iXfv6mUF
   cache:
     redis:
       key-prefix:
+hystrix:
+  metrics:
+    polling-interval-ms:
