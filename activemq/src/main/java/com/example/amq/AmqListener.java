@@ -15,6 +15,11 @@ import javax.jms.*;
 @Slf4j
 public class AmqListener {
 
+
+    public AmqListener() {
+        System.out.println("cao nima wo bei chushihua le ");
+    }
+
     public static void main(String[] args) {
 
         try {

@@ -1,0 +1,4 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.example.demo.TestGG
+org.springframework.cloud.bootstrap.BootstrapConfiguration=\
+com.example.demo.TestConfig

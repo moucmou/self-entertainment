@@ -41,6 +41,12 @@
             <artifactId>spring-boot-starter-activemq</artifactId>
             <version>2.1.6.RELEASE</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-config -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter</artifactId>
+            <version>2.1.1.RELEASE</version>
+        </dependency>
 
     </dependencies>
 
