@@ -5,8 +5,11 @@ import org.apache.dubbo.registry.Registry;
 import org.apache.dubbo.registry.support.AbstractRegistryFactory;
 
 public class SimpleRegistryFactory extends AbstractRegistryFactory {
+
     @Override
     protected Registry createRegistry(URL url) {
-        return new SimpleRegistryService();
+
+        return SimpleRegistryService.getInstance();
     }
+
 }

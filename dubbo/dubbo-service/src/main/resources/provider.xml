@@ -5,23 +5,23 @@
 
     <dubbo:application name="annotation-provider"/>
 <!--    <dubbo:protocol name="dubbo" port="9090"/>-->
-    <dubbo:service interface="org.apache.dubbo.registry.RegistryService" ref="registryService" registry="N/A"
-                   ondisconnect="disconnect" callbacks="1000" protocol="dubbo">
-        <dubbo:method name="subscribe">
-            <dubbo:argument index="1" callback="true"/>
-        </dubbo:method>
-        <dubbo:method name="unsubscribe">
-            <dubbo:argument index="1" callback="false"/>
-        </dubbo:method>
-    </dubbo:service>
+<!--    <dubbo:service interface="org.apache.dubbo.registry.RegistryService" ref="registryService" registry="N/A"-->
+<!--                   ondisconnect="disconnect" callbacks="1000" protocol="dubbo">-->
+<!--        <dubbo:method name="subscribe">-->
+<!--            <dubbo:argument index="1" callback="true"/>-->
+<!--        </dubbo:method>-->
+<!--        <dubbo:method name="unsubscribe">-->
+<!--            <dubbo:argument index="1" callback="false"/>-->
+<!--        </dubbo:method>-->
+<!--    </dubbo:service>-->
 
-    <bean id="registryService" class="com.self.entertainment.config.SimpleRegistryService"/>
+<!--    <bean id="registryService" class="com.self.entertainment.config.SimpleRegistryService"/>-->
 
-    <dubbo:registry protocol="dubbo" address="127.0.0.1:20890"/>
+    <dubbo:registry protocol="simple" address="127.0.0.1:8073"/>
 
 <!--    <dubbo:registry address="zookeeper://119.3.10.221:2181"/>-->
 <!--    <dubbo:metadata-report address="zookeeper://119.3.10.221:2181"/>-->
-    <dubbo:protocol name="dubbo" port="20890"/>
+<!--    <dubbo:protocol name="dubbo" port="20890"/>-->
     <dubbo:protocol name="rest" port="8090"/>
 <!--    <bean id="testService" class="com.self.entertainment.service.impl.TestServiceImpl"/>-->
 <!--    <bean id="helloService" class="com.self.entertainment.service.impl.HelloServiceImpl"/>-->

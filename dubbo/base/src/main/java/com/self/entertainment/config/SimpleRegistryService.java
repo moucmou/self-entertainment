@@ -1,4 +1,5 @@
 package com.self.entertainment.config;
+
 import org.apache.dubbo.common.URL;
 import org.apache.dubbo.common.logger.Logger;
 import org.apache.dubbo.common.logger.LoggerFactory;
@@ -10,6 +11,7 @@ import org.apache.dubbo.rpc.RpcContext;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
@@ -19,6 +21,20 @@ public class SimpleRegistryService extends AbstractRegistryService {
     private final ConcurrentMap<String, ConcurrentMap<String, URL>> remoteRegistered = new ConcurrentHashMap<>();
     private final ConcurrentMap<String, ConcurrentMap<String, NotifyListener>> remoteListeners = new ConcurrentHashMap<>();
     private List<String> registries;
+    private static volatile SimpleRegistryService simpleRegistryService = null;
+
+    public static SimpleRegistryService getInstance() {
+        if (Objects.isNull(simpleRegistryService)) {
+            synchronized (SimpleRegistryService.class) {
+                if (Objects.isNull(simpleRegistryService)) {
+                    simpleRegistryService = new SimpleRegistryService();
+                }
+            }
+        }
+        return simpleRegistryService;
+
+    }
+
 
     @Override
     public void register(String service, URL url) {

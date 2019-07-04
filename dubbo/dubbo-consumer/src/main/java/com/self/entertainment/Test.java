@@ -1,9 +1,9 @@
 package com.self.entertainment;
 
-import entertainment.service.HelloService;
+import com.self.entertainment.config.SimpleRegistryService;
 import entertainment.service.RestEasyService;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.dubbo.config.annotation.Reference;
+import org.apache.dubbo.common.URL;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
@@ -16,21 +16,25 @@ import org.springframework.stereotype.Component;
 @Slf4j
 @Component
 public class Test implements ApplicationListener<ContextRefreshedEvent> {
+    //    @Autowired
+//    HelloService helloService;
     @Autowired
-    HelloService helloService;
-    @Autowired
-    RestEasyService restEasyService;
+    TestRestEasyService testRestEasyService;
+
     @Override
     public void onApplicationEvent(ContextRefreshedEvent event) {
-        new Thread(()->{
-            restEasyService.echo("");
+
+        SimpleRegistryService.getInstance().register("server@justTest", URL.valueOf("rest://127.0.0.1:8090"));
+
+        new Thread(() -> {
+            testRestEasyService.echo("2313123");
             try {
-                Thread.sleep(3*1000*60);
+                Thread.sleep(3 * 1000 * 60);
             } catch (InterruptedException e) {
-                log.error("",e);
+                log.error("", e);
             }
             log.info("我开始了");
-            helloService.sayHello();
+//            helloService.sayHello();
         }).start();
 
     }

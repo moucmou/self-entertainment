@@ -15,6 +15,7 @@
         <module>dubbo-consumer</module>
         <module>dubbo-service</module>
         <module>dubbo-api</module>
+        <module>base</module>
     </modules>
 
     <properties>

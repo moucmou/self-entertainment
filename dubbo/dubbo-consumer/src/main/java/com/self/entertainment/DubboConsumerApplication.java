@@ -16,9 +16,9 @@ import org.springframework.context.annotation.ImportResource;
 @ImportResource(locations = {"classpath:consumer.xml"})
 public class DubboConsumerApplication {
     @Autowired
-    RestEasyService restEasyService;
-    @Autowired
-    HelloService helloService;
+    TestRestEasyService testRestEasyService;
+//    @Autowired
+//    HelloService helloService;
     public static void main(String[] args) {
         SpringApplication.run(DubboConsumerApplication.class, args);
 
