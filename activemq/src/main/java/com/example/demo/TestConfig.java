@@ -17,14 +17,13 @@ import java.util.Properties;
 @Configuration
 public class TestConfig {
 
-
-
     @Bean
     PropertySourceLocator propertySourceLocator(){
         return environment -> {
             System.out.println("我是环境配置量");
             Properties localConfig = new Properties();
-            localConfig.setProperty("123","123");
+
+            localConfig.setProperty("spring.activemq.broker-url","helloworld");
             return new PropertiesPropertySource("123",localConfig);
         };
     }
