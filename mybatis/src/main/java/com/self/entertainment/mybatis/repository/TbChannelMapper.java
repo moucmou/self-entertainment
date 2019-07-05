@@ -5,6 +5,7 @@ import com.self.entertainment.mybatis.pojo.TbChannel;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
+
 @Mapper
 public interface TbChannelMapper extends BaseMapper<TbChannel> {
     int deleteByPrimaryKey(String cIndexCode);
