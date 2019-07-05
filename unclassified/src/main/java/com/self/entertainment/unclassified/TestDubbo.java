@@ -16,14 +16,14 @@ public class TestDubbo {
         Robot bumblebee = extensionLoader.getExtension("bumblebee");
         bumblebee.sayHello();
 
-        String x =	"local lockClientId = redis.call('GET', KEYS[1])\n" +
-                "if lockClientId == ARGV[1] then\n" +
-                "  redis.call('PEXPIRE', KEYS[1], ARGV[2])\n" +
-                "  return true\n" +
-                "elseif not lockClientId then\n" +
-                "  redis.call('SET', KEYS[1], ARGV[1], 'PX', ARGV[2])\n" +
-                "  return true\n" +
-                "end\n" +
-                "return false";
+//        String x =	"local lockClientId = redis.call('GET', KEYS[1])\n" +
+//                "if lockClientId == ARGV[1] then\n" +
+//                "  redis.call('PEXPIRE', KEYS[1], ARGV[2])\n" +
+//                "  return true\n" +
+//                "elseif not lockClientId then\n" +
+//                "  redis.call('SET', KEYS[1], ARGV[1], 'PX', ARGV[2])\n" +
+//                "  return true\n" +
+//                "end\n" +
+//                "return false";
     }
 }
