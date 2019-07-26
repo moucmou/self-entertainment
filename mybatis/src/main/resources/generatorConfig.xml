@@ -28,14 +28,18 @@
             <property name="enableSubPackages" value="false"/>
         </sqlMapGenerator>
 
-        <javaClientGenerator targetPackage="com.self.entertainment.mybatis.repository" type="XMLMAPPER" targetProject=".">
+        <javaClientGenerator targetPackage="com.self.entertainment.mybatis.repository" type="XMLMAPPER"
+                             targetProject=".">
             <property name="enableSubPackages" value="false"/>
         </javaClientGenerator>
 
-        <table schema="" tableName="lf_tb_sending_face_result_history" enableCountByExample="true" enableDeleteByExample="true"
-               enableSelectByExample="true" enableUpdateByExample="true" enableDeleteByPrimaryKey="true" delimitIdentifiers="true"/>
-<!--        tb_channel-->
+        <table schema="" tableName="lf_tb_sending_face_result_history" enableCountByExample="true"
+               enableDeleteByExample="true"
+               enableSelectByExample="true" enableUpdateByExample="true" enableDeleteByPrimaryKey="true"
+               delimitIdentifiers="true"/>
+        <!--        tb_channel-->
         <table schema="" tableName="tb_channel" enableCountByExample="true" enableDeleteByExample="true"
-               enableSelectByExample="true" enableUpdateByExample="true" enableDeleteByPrimaryKey="true" delimitIdentifiers="true"/>
+               enableSelectByExample="true" enableUpdateByExample="true" enableDeleteByPrimaryKey="true"
+               delimitIdentifiers="true"/>
     </context>
 </generatorConfiguration>

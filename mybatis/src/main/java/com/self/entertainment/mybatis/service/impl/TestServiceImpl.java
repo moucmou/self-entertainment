@@ -1,19 +1,12 @@
 package com.self.entertainment.mybatis.service.impl;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
-import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.self.entertainment.mybatis.pojo.LfTbSendingFaceResultHistory;
-import com.self.entertainment.mybatis.repository.LfTbSendingFaceResultHistoryMapper;
-import com.self.entertainment.mybatis.repository.TbChannelMapper;
+import com.self.entertainment.mybatis.repository.TbUserMapper;
 import com.self.entertainment.mybatis.service.TestService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cache.annotation.Cacheable;
-import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
-
-import javax.annotation.Resource;
-import java.util.HashMap;
 
 /**
  * @author AmazingZ
@@ -23,23 +16,22 @@ import java.util.HashMap;
 @Service
 public class TestServiceImpl implements TestService {
 
-    @Autowired
-    LfTbSendingFaceResultHistoryMapper lfTbSendingFaceResultHistoryMapper;
-    @Autowired
-    TbChannelMapper tbChannelMapper;
+    //    @Autowired
+//    LfTbSendingFaceResultHistoryMapper lfTbSendingFaceResultHistoryMapper;
+//    @Autowired
+//    TbChannelMapper tbChannelMapper;
     @Autowired
     ObjectMapper objectMapper;
 
-    @Resource
-    RedisTemplate redisTempalte;
-
-
+//    @Resource
+//    RedisTemplate redisTempalte;
+    @Autowired
+    TbUserMapper tbUserMapper;
     @Override
-    @Cacheable("asdasd")
+//    @Cacheable("asdasd")
     public IPage<LfTbSendingFaceResultHistory> getCache(String x) {
-
-        redisTempalte.opsForHash().put("IpAndPort", "asw", new HashMap<String, Object>());
-
-        return lfTbSendingFaceResultHistoryMapper.selectPage(new Page<>(), null);
+//        redisTempalte.opsForHash().put("IpAndPort", "asw", new HashMap<String, Object>());
+        return null;
+//        return lfTbSendingFaceResultHistoryMapper.selectPage(new Page<>(), null);
     }
 }

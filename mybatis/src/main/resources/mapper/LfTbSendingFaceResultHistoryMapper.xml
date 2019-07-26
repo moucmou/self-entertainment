@@ -1,63 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.self.entertainment.mybatis.repository.LfTbSendingFaceResultHistoryMapper">
-  <resultMap id="BaseResultMap" type="com.self.entertainment.mybatis.pojo.LfTbSendingFaceResultHistory">
-    <id column="id" jdbcType="VARCHAR" property="id" />
-    <result column="face_url" jdbcType="VARCHAR" property="faceUrl" />
-    <result column="list_id" jdbcType="VARCHAR" property="listId" />
-    <result column="list_library_id" jdbcType="VARCHAR" property="listLibraryId" />
-    <result column="list_library_name" jdbcType="VARCHAR" property="listLibraryName" />
-    <result column="name" jdbcType="VARCHAR" property="name" />
-    <result column="protect_id" jdbcType="VARCHAR" property="protectId" />
-    <result column="reason" jdbcType="VARCHAR" property="reason" />
-    <result column="recog_id" jdbcType="VARCHAR" property="recogId" />
-    <result column="recog_name" jdbcType="VARCHAR" property="recogName" />
-    <result column="status" jdbcType="INTEGER" property="status" />
-  </resultMap>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
-    delete from "lf_tb_sending_face_result_history"
-    where id = #{id,jdbcType=VARCHAR}
-  </delete>
-  <insert id="insert" parameterType="com.self.entertainment.mybatis.pojo.LfTbSendingFaceResultHistory">
-    insert into "lf_tb_sending_face_result_history" (id, face_url, list_id, 
-      list_library_id, list_library_name, name, 
-      protect_id, reason, recog_id, 
-      recog_name, status)
-    values (#{id,jdbcType=VARCHAR}, #{faceUrl,jdbcType=VARCHAR}, #{listId,jdbcType=VARCHAR}, 
-      #{listLibraryId,jdbcType=VARCHAR}, #{listLibraryName,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, 
-      #{protectId,jdbcType=VARCHAR}, #{reason,jdbcType=VARCHAR}, #{recogId,jdbcType=VARCHAR}, 
-      #{recogName,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER})
-  </insert>
-  <update id="updateByPrimaryKey" parameterType="com.self.entertainment.mybatis.pojo.LfTbSendingFaceResultHistory">
-    update "lf_tb_sending_face_result_history"
-    set face_url = #{faceUrl,jdbcType=VARCHAR},
-      list_id = #{listId,jdbcType=VARCHAR},
-      list_library_id = #{listLibraryId,jdbcType=VARCHAR},
-      list_library_name = #{listLibraryName,jdbcType=VARCHAR},
-      name = #{name,jdbcType=VARCHAR},
-      protect_id = #{protectId,jdbcType=VARCHAR},
-      reason = #{reason,jdbcType=VARCHAR},
-      recog_id = #{recogId,jdbcType=VARCHAR},
-      recog_name = #{recogName,jdbcType=VARCHAR},
-      status = #{status,jdbcType=INTEGER}
-    where id = #{id,jdbcType=VARCHAR}
-  </update>
-  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
-    select id, face_url, list_id, list_library_id, list_library_name, name, protect_id, 
-    reason, recog_id, recog_name, status
-    from "lf_tb_sending_face_result_history"
-    where id = #{id,jdbcType=VARCHAR}
-  </select>
-  <select id="selectAll" resultMap="BaseResultMap">
-    select id, face_url, list_id, list_library_id, list_library_name, name, protect_id, 
-    reason, recog_id, recog_name, status
-    from "lf_tb_sending_face_result_history"
-  </select>
+    <resultMap id="BaseResultMap" type="com.self.entertainment.mybatis.pojo.LfTbSendingFaceResultHistory">
+        <id column="id" jdbcType="VARCHAR" property="id"/>
+        <result column="face_url" jdbcType="VARCHAR" property="faceUrl"/>
+        <result column="list_id" jdbcType="VARCHAR" property="listId"/>
+        <result column="list_library_id" jdbcType="VARCHAR" property="listLibraryId"/>
+        <result column="list_library_name" jdbcType="VARCHAR" property="listLibraryName"/>
+        <result column="name" jdbcType="VARCHAR" property="name"/>
+        <result column="protect_id" jdbcType="VARCHAR" property="protectId"/>
+        <result column="reason" jdbcType="VARCHAR" property="reason"/>
+        <result column="recog_id" jdbcType="VARCHAR" property="recogId"/>
+        <result column="recog_name" jdbcType="VARCHAR" property="recogName"/>
+        <result column="status" jdbcType="INTEGER" property="status"/>
+    </resultMap>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+        delete from "lf_tb_sending_face_result_history"
+        where id = #{id,jdbcType=VARCHAR}
+    </delete>
+    <insert id="insert" parameterType="com.self.entertainment.mybatis.pojo.LfTbSendingFaceResultHistory">
+        insert into "lf_tb_sending_face_result_history" (id, face_url, list_id,
+        list_library_id, list_library_name, name,
+        protect_id, reason, recog_id,
+        recog_name, status)
+        values (#{id,jdbcType=VARCHAR}, #{faceUrl,jdbcType=VARCHAR}, #{listId,jdbcType=VARCHAR},
+        #{listLibraryId,jdbcType=VARCHAR}, #{listLibraryName,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR},
+        #{protectId,jdbcType=VARCHAR}, #{reason,jdbcType=VARCHAR}, #{recogId,jdbcType=VARCHAR},
+        #{recogName,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER})
+    </insert>
+    <update id="updateByPrimaryKey" parameterType="com.self.entertainment.mybatis.pojo.LfTbSendingFaceResultHistory">
+        update "lf_tb_sending_face_result_history"
+        set face_url = #{faceUrl,jdbcType=VARCHAR},
+        list_id = #{listId,jdbcType=VARCHAR},
+        list_library_id = #{listLibraryId,jdbcType=VARCHAR},
+        list_library_name = #{listLibraryName,jdbcType=VARCHAR},
+        name = #{name,jdbcType=VARCHAR},
+        protect_id = #{protectId,jdbcType=VARCHAR},
+        reason = #{reason,jdbcType=VARCHAR},
+        recog_id = #{recogId,jdbcType=VARCHAR},
+        recog_name = #{recogName,jdbcType=VARCHAR},
+        status = #{status,jdbcType=INTEGER}
+        where id = #{id,jdbcType=VARCHAR}
+    </update>
+    <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+        select id, face_url, list_id, list_library_id, list_library_name, name, protect_id,
+        reason, recog_id, recog_name, status
+        from "lf_tb_sending_face_result_history"
+        where id = #{id,jdbcType=VARCHAR}
+    </select>
+    <select id="selectAll" resultMap="BaseResultMap">
+        select id, face_url, list_id, list_library_id, list_library_name, name, protect_id,
+        reason, recog_id, recog_name, status
+        from "lf_tb_sending_face_result_history"
+    </select>
 
-  <select id="selectOne" parameterType="java.lang.String" resultType="com.self.entertainment.mybatis.pojo.LfTbSendingFaceResultHistory">
-    select id, face_url, list_id, list_library_id, list_library_name, name, protect_id,
-    reason, recog_id, recog_name, status
-    from "lf_tb_sending_face_result_history"
-    where id=#{id}
-  </select>
+    <select id="selectOne" parameterType="java.lang.String"
+            resultType="com.self.entertainment.mybatis.pojo.LfTbSendingFaceResultHistory">
+        select id, face_url, list_id, list_library_id, list_library_name, name, protect_id,
+        reason, recog_id, recog_name, status
+        from "lf_tb_sending_face_result_history"
+        where id=#{id}
+    </select>
 </mapper>

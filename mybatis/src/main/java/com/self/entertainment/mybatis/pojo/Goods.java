@@ -3,7 +3,7 @@ package com.self.entertainment.mybatis.pojo;
 import java.util.Comparator;
 import java.util.Date;
 
-public class Goods   {
+public class Goods {
     private Integer id;
 
     private String description;
