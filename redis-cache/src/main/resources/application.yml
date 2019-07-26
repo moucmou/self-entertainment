@@ -3,7 +3,7 @@ spring:
     port: 6379
     timeout: 5000
     host: localhost
-#    password: iXfv6mUF
+  #    password: iXfv6mUF
   cache:
     redis:
       key-prefix:

@@ -52,7 +52,7 @@ public class RedisCacheApplication implements CommandLineRunner {
 
     private void string() {
         //保存Strkey，注意设置过期时间
-        redisTemplate.opsForValue().set("Strkey", "abc",1, TimeUnit.HOURS);
+        redisTemplate.opsForValue().set("Strkey", "abc", 1, TimeUnit.HOURS);
         //批量保存，每个key都要单独设置过期时间
         Map<String, String> maps = new HashMap<>();
         maps.put("Strkey1", "StrValue1");
@@ -76,7 +76,8 @@ public class RedisCacheApplication implements CommandLineRunner {
         redisTemplate.delete("Strkey");
 
     }
-    private void list(){
+
+    private void list() {
         //模拟list数据
         List<String> list = new ArrayList<>();
         list.add("listvalue1");
@@ -84,10 +85,10 @@ public class RedisCacheApplication implements CommandLineRunner {
         list.add("listvalue3");
         //保存
         redisTemplate.delete("listkey");//清空
-        redisTemplate.opsForList().leftPushAll("listkey",list);//按list顺序依次左插入
+        redisTemplate.opsForList().leftPushAll("listkey", list);//按list顺序依次左插入
         redisTemplate.expire("listkey", 1, TimeUnit.HOURS);
         //绑定对象,多次操作时推荐
-        BoundListOperations<String,Object> ops=redisTemplate.boundListOps("listkey");
+        BoundListOperations<String, Object> ops = redisTemplate.boundListOps("listkey");
         //插入元素
         ops.leftPush("listvalue4");//返回列表长度 4 3 2 1
         ops.rightPush("listvalue5");//4 3 2 1 5
@@ -106,14 +107,14 @@ public class RedisCacheApplication implements CommandLineRunner {
 
     }
 
-    private void hash(){
+    private void hash() {
         //模拟需要存入redis的hash数据
         Map<String, Object> hash = new HashMap<>();
         hash.put("field1", "value1");
         hash.put("field2", "value2");
         //批量保存
         redisTemplate.delete("hashKey");
-        redisTemplate.opsForHash().putAll("hashKey",hash);
+        redisTemplate.opsForHash().putAll("hashKey", hash);
         redisTemplate.expire("hashKey", 1, TimeUnit.HOURS);//过期时间
         //对已经保存的hash单独插入key
         redisTemplate.opsForHash().put("hashKey", "field3", "value3");
@@ -128,7 +129,7 @@ public class RedisCacheApplication implements CommandLineRunner {
         Map<Object, Object> hashFromRedis = redisTemplate.opsForHash().entries("hashKey");
 
         //绑定key
-        BoundHashOperations<String,String,Object> ops = redisTemplate.boundHashOps("hashKey");
+        BoundHashOperations<String, String, Object> ops = redisTemplate.boundHashOps("hashKey");
         //获取hash所有key
         ops.keys();
         //增删hash数据
@@ -138,63 +139,62 @@ public class RedisCacheApplication implements CommandLineRunner {
 
         //scan  游标cursor实现迭代
         String pattern = "*";//匹配规则
-        Long count= 100l;
+        Long count = 100l;
         Cursor cursor = redisTemplate.opsForHash().scan("hashKey", ScanOptions.scanOptions().match(pattern).count(count).build());
-        while(cursor.hasNext()){
+        while (cursor.hasNext()) {
             Map.Entry<Object, Object> entry = (Map.Entry<Object, Object>) cursor.next();
-            System.out.println(entry.getKey()+":"+entry.getValue());
+            System.out.println(entry.getKey() + ":" + entry.getValue());
             //实际操作...
         }
 
     }
 
-    private void set(){
+    private void set() {
         //清空原始数据
         redisTemplate.delete("setKey");
         redisTemplate.delete("setKey1");
         //模拟set数据
-        String[] setKey = new String[]{"setvalue1","setvalue2"};
+        String[] setKey = new String[]{"setvalue1", "setvalue2"};
         //插入
-        redisTemplate.opsForSet().add("setKey",setKey);
-        redisTemplate.expire("setKey",1,TimeUnit.HOURS);
-        redisTemplate.opsForSet().add("setKey1",Arrays.asList("setvalue1","setvalue2","setvalue3"));
-        redisTemplate.expire("setKey1",1,TimeUnit.HOURS);
+        redisTemplate.opsForSet().add("setKey", setKey);
+        redisTemplate.expire("setKey", 1, TimeUnit.HOURS);
+        redisTemplate.opsForSet().add("setKey1", Arrays.asList("setvalue1", "setvalue2", "setvalue3"));
+        redisTemplate.expire("setKey1", 1, TimeUnit.HOURS);
 
         //绑定
         BoundSetOperations ops = redisTemplate.boundSetOps("setKey");
         Set members = ops.members();
         System.out.println(members);
         //插入一个或多个
-        ops.add("setvalue3", "setvalue4","setvalue5");
+        ops.add("setvalue3", "setvalue4", "setvalue5");
         System.out.println(ops.members());
         //删除一个或多个
-        ops.remove("setvalue5","setvalue4");
+        ops.remove("setvalue5", "setvalue4");
         System.out.println(ops.members());
         //删除随机一个
         Object pop = ops.pop();
-        System.out.println("pop的值："+pop);
+        System.out.println("pop的值：" + pop);
         //scan  游标cursor实现迭代
         String pattern = "*";//匹配规则
-        Long count= 100l;
+        Long count = 100l;
         Cursor cursor = ops.scan(ScanOptions.scanOptions().match(pattern).count(count).build());
-        while(cursor.hasNext()){
-            String s= (String) cursor.next();
+        while (cursor.hasNext()) {
+            String s = (String) cursor.next();
             System.out.println(s);
             //实际操作...
         }
         //与其他set求交集(一个或多个)
-        members=ops.intersect("setKey1");
+        members = ops.intersect("setKey1");
         System.out.println(members);
         ops.intersect(Arrays.asList("setKey1", "setKey2"));
-        ops.intersectAndStore("setKey1","destSet");//保存交集
-        ops.intersectAndStore(Arrays.asList("setKey1", "setKey2"),"destSet");
+        ops.intersectAndStore("setKey1", "destSet");//保存交集
+        ops.intersectAndStore(Arrays.asList("setKey1", "setKey2"), "destSet");
         //求并集
         ops.union("setKey1");
         //求差集
         ops.diff("setKey1");
 
     }
-
 
 
     public static class User {

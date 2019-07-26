@@ -1,6 +1,8 @@
 package com.self.entertainment.rediscache.test;
 
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
+import org.springframework.boot.web.servlet.RegistrationBean;
+import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.annotation.Order;
@@ -59,7 +61,9 @@ public class Test implements WebMvcConfigurer {
 
     /**
      * {@link WebMvcConfigurer}  也可以使用
-     *
+     * @see FilterRegistrationBean 看上面的注释、这样可以实现
+     * @see ServletRegistrationBean
+     * @see RegistrationBean  它的实现、直接注册bean到ioc容器即可
      * @return
      */
     @Bean
