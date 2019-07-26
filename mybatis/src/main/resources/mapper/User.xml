@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.self.entertainment.mybatis.repository.TbUserMapper">
+    <resultMap id="baseResultMap" type="com.self.entertainment.mybatis.pojo.User">
+        <id column="id" jdbcType="BIGINT" property="id"/>
+        <result column="city_id" jdbcType="INTEGER" property="cityId"/>
+        <result column="test" jdbcType="INTEGER" property="test"/>
+        <result column="start_time" jdbcType="TIMESTAMP" property="startTime"/>
+        <result column="site" jdbcType="VARCHAR" property="site"/>
+    </resultMap>
+    <insert id="insert" parameterType="com.self.entertainment.mybatis.pojo.User" useGeneratedKeys="true"
+            keyProperty="id">
+        insert into "t_user" ( city_id,test)
+        values ( #{cityId,jdbcType=INTEGER},#{test,jdbcType=INTEGER})
+    </insert>
+    <update id="updateByPrimaryKey" parameterType="com.self.entertainment.mybatis.pojo.User">
+        update "t_user"
+        set id = #{id,jdbcType=VARCHAR},
+        city_id = #{cityId,jdbcType=TIMESTAMP}
+    </update>
+    <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="baseResultMap">
+        select id
+        from "t_user"
+        where id = #{id,jdbcType=INTEGER}
+    </select>
+    <select id="findAll" resultMap="baseResultMap">
+        select id,city_id,test from "t_user"
+    </select>
+    <select id="findIn" resultMap="baseResultMap">
+        select id,city_id,test from "t_user" where id in
+        <foreach collection="list" item="id" index="index" open="(" close=")" separator=",">
+            #{id}
+        </foreach>
+    </select>
+    <!--    findById-->
+    <select id="findById" resultMap="baseResultMap">
+        select id,city_id,test from "t_user" where id =#{id,jdbcType=BIGINT}
+    </select>
+    <insert id="insertBatch" parameterType="java.util.List">
+        insert into "t_user" ( city_id,test,site,start_time) values
+        <foreach collection="list" index="index" item="item" separator=",">
+            (
+            #{item.cityId,jdbcType=INTEGER},#{item.test,jdbcType=INTEGER},#{item.site,jdbcType=VARCHAR},#{item.startTime,jdbcType=TIMESTAMP})
+        </foreach>
+    </insert>
+    <select id="findByTimeAndSite1" resultMap="baseResultMap">
+        select  id, city_id, test,  start_time,site from "t_user"
+        <where>
+        site =#{site}
+        and
+         start_time between #{startTime} and  #{endTime}
+         </where>
+    </select>
+    <select id="findByTimeAndSite" resultType="com.self.entertainment.mybatis.pojo.User">
+        select id, city_id, test,  start_time,site from "t_user" where site =#{site} and start_time &gt;=#{startTime}
+    </select>
+</mapper>

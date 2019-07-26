@@ -7,7 +7,7 @@ import lombok.extern.slf4j.Slf4j;
 import java.io.Serializable;
 
 @Data
-@AllArgsConstructor(staticName="of")
+@AllArgsConstructor(staticName = "of")
 @Slf4j
 public class ServletMapping implements Serializable {
     private static final long serialVersionUID = -3835893442344556053L;
@@ -16,6 +16,6 @@ public class ServletMapping implements Serializable {
     private String clazz;
 
     public static void main(String[] args) {
-        ServletMapping.of("","","");
+        ServletMapping.of("", "", "");
     }
 }

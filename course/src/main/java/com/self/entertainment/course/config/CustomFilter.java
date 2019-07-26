@@ -38,9 +38,9 @@ public abstract class CustomFilter extends AuthenticatingFilter {
         IOUtils.write(objectMapper.writeValueAsBytes(responseData), response.getOutputStream());
         return false;
     }
+
     @Override
     public boolean isAccessAllowed(ServletRequest request, ServletResponse response, Object mappedValue) {
-
         boolean isPermitted = true;
         Subject subject = getSubject(request, response);
         if (Objects.isNull(subject.getPrincipal())) isPermitted = false;

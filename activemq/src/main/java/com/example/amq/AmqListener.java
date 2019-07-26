@@ -44,15 +44,18 @@ public class AmqListener {
 
             container.setSessionAcknowledgeMode(2);
             container.setMessageListener(new MessageListener() {
+                int count = 0;
 
                 @Override
                 public void onMessage(Message message) {
                     TextMessage textMessage = (TextMessage) message;
                     try {
                         System.out.println(textMessage.getText());
-//                        throw new RuntimeException("");
+                        System.out.println("看看会不会重发");
+                        System.out.println(count++);
+                        throw new RuntimeException("");
                     } catch (JMSException e) {
-                        e.printStackTrace();
+//                        e.printStackTrace();
                     }
                 }
             });

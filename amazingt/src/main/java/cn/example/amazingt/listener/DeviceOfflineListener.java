@@ -21,17 +21,18 @@ public class DeviceOfflineListener implements ApplicationListener<DeviceEvent> {
     @Qualifier("IDeviceServiceImpl")
     IDeviceService iDeviceService;
 
-    Logger logger=LoggerFactory.getLogger(DeviceOfflineListener.class);
+    Logger logger = LoggerFactory.getLogger(DeviceOfflineListener.class);
 
     /**
      * 一类事件，只对在线感到兴趣
+     *
      * @param event
      */
     @Override
     public void onApplicationEvent(DeviceEvent event) {
-        if(event.getEventTypeId()==0){
+        if (event.getEventTypeId() == 0) {
             iDeviceService.save(event.getDevice());
-            logger.info(event.getDevice().getDeviceName()+"离线");
+            logger.info(event.getDevice().getDeviceName() + "离线");
         }
     }
 }

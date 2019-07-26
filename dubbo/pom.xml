@@ -28,7 +28,6 @@
         <dependency>
             <groupId>org.apache.dubbo</groupId>
             <artifactId>dubbo-spring-boot-starter</artifactId>
-            <version>2.7.1</version>
         </dependency>
 
         <dependency>
@@ -46,45 +45,39 @@
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/org.jboss.resteasy/resteasy-spring-boot-starter -->
-<!--        <dependency>-->
-<!--            <groupId>org.jboss.resteasy</groupId>-->
-<!--            <artifactId>resteasy-spring-boot-starter</artifactId>-->
-<!--            <version>2.0.1.Final</version>-->
+        <dependency>
+            <groupId>org.jboss.resteasy</groupId>
+            <artifactId>resteasy-spring-boot-starter</artifactId>
 
+        </dependency>
 <!--        </dependency>-->
         <!-- https://mvnrepository.com/artifact/org.jboss.resteasy/resteasy-jaxrs -->
         <dependency>
             <groupId>org.jboss.resteasy</groupId>
             <artifactId>resteasy-jaxrs</artifactId>
-            <version>3.6.2.Final</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/org.eclipse.jetty/jetty-server -->
-<!--        <dependency>-->
-<!--            <groupId>org.eclipse.jetty</groupId>-->
-<!--            <artifactId>jetty-server</artifactId>-->
-<!--            <version>9.4.18.v20190429</version>-->
-<!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>org.eclipse.jetty</groupId>-->
+        <!--            <artifactId>jetty-server</artifactId>-->
+        <!--            <version>9.4.18.v20190429</version>-->
+        <!--        </dependency>-->
 
         <!-- https://mvnrepository.com/artifact/org.eclipse.jetty/jetty-util -->
 
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-server</artifactId>
-            <version>9.4.16.v20190411</version>
         </dependency>
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-util</artifactId>
-            <version>9.4.16.v20190411</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/org.eclipse.jetty/jetty-servlet -->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-servlet</artifactId>
-            <version>9.4.16.v20190411</version>
         </dependency>
-
-
 
 
     </dependencies>

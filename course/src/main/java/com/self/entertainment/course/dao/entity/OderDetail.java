@@ -11,15 +11,15 @@ import java.io.Serializable;
  */
 @Entity
 @Data
-@Table(name="t_oder_detail")
+@Table(name = "t_oder_detail")
 public class OderDetail implements Serializable {
     private static final long serialVersionUID = -8704874738293655474L;
     /**
-     *     order_id int NOT NULL,
-     *      flower_name char(10) NOT NULL,
-     *      flower_outprice int NOT NULL,
-     *      flower_number int NOT NULL,
-     *      FOREIGN KEY (order_id) REFERENCES orders(order_id),
+     * order_id int NOT NULL,
+     * flower_name char(10) NOT NULL,
+     * flower_outprice int NOT NULL,
+     * flower_number int NOT NULL,
+     * FOREIGN KEY (order_id) REFERENCES orders(order_id),
      */
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

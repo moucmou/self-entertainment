@@ -9,6 +9,6 @@ public class UserFilter extends CustomFilter {
     @Override
     public boolean hasPermitted(Integer role) {
 
-        return Role.USER.getRole(). equals(role);
+        return Role.USER.getRole().equals(role);
     }
 }

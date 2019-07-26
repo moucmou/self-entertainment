@@ -17,12 +17,12 @@
     <name>amazingt</name>
     <description>Demo project for programming assignments</description>
 
-<!--    <parent>-->
-<!--        <groupId>org.springframework.boot</groupId>-->
-<!--        <artifactId>spring-boot-starter-parent</artifactId>-->
-<!--        <version>2.0.5.RELEASE</version>-->
-<!--        <relativePath/> &lt;!&ndash; lookup parent from repository &ndash;&gt;-->
-<!--    </parent>-->
+    <!--    <parent>-->
+    <!--        <groupId>org.springframework.boot</groupId>-->
+    <!--        <artifactId>spring-boot-starter-parent</artifactId>-->
+    <!--        <version>2.0.5.RELEASE</version>-->
+    <!--        <relativePath/> &lt;!&ndash; lookup parent from repository &ndash;&gt;-->
+    <!--    </parent>-->
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -48,32 +48,31 @@
         <dependency>
             <groupId>com.github.ulisesbocchio</groupId>
             <artifactId>jasypt-spring-boot-starter</artifactId>
-            <version>1.16</version>
         </dependency>
         <!--&lt;!&ndash;hikaricp连接池&ndash;&gt;-->
         <!--<dependency>-->
-            <!--<groupId>com.zaxxer</groupId>-->
-            <!--<artifactId>HikariCP</artifactId>-->
-            <!--<version>2.6.1</version>-->
-            <!--<scope>compile</scope>-->
+        <!--<groupId>com.zaxxer</groupId>-->
+        <!--<artifactId>HikariCP</artifactId>-->
+        <!--<version>2.6.1</version>-->
+        <!--<scope>compile</scope>-->
         <!--</dependency>-->
 
         <!-- spring aop -->
         <!--<dependency>-->
-            <!--<groupId>org.springframework.boot</groupId>-->
-            <!--<artifactId>spring-boot-starter-aop</artifactId>-->
+        <!--<groupId>org.springframework.boot</groupId>-->
+        <!--<artifactId>spring-boot-starter-aop</artifactId>-->
         <!--</dependency>-->
         <!-- spring data jpa -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-jpa</artifactId>
-        </dependency>
+        <!--        <dependency>-->
+        <!--            <groupId>org.springframework.boot</groupId>-->
+        <!--            <artifactId>spring-boot-starter-data-jpa</artifactId>-->
+        <!--        </dependency>-->
         <!-- hibernate 依赖 -->
-        <dependency>
-            <groupId>org.hibernate.javax.persistence</groupId>
-            <artifactId>hibernate-jpa-2.1-api</artifactId>
-            <version>1.0.0.Final</version>
-        </dependency>
+        <!--        <dependency>-->
+        <!--            <groupId>org.hibernate.javax.persistence</groupId>-->
+        <!--            <artifactId>hibernate-jpa-2.1-api</artifactId>-->
+        <!--            <version>1.0.0.Final</version>-->
+        <!--        </dependency>-->
 
         <!-- JDBC连接数据库，因为要用HikariCP，所以需要将SpringBoot中的tomcat-jdbc排除 -->
         <dependency>
@@ -110,21 +109,6 @@
             <artifactId>org.apache.commons.codec</artifactId>
             <version>1.9.0.v20170208-1614</version>
         </dependency>
-        <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-core</artifactId>
-            <version>2.9.5</version>
-        </dependency>
-        <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-databind</artifactId>
-            <version>2.9.5</version>
-        </dependency>
-        <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-annotations</artifactId>
-            <version>2.9.5</version>
-        </dependency>
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -139,8 +123,6 @@
         </dependency>
 
     </dependencies>
-
-
 
 
     <build>

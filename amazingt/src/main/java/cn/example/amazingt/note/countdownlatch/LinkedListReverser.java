@@ -30,15 +30,14 @@ public class LinkedListReverser {
 //		}
 
         //把上两个特殊情况合起来
-        if(head==null||head.getNext()==null){
+        if (head == null || head.getNext() == null) {
             return head;
         }
 
 
-
         //假设函数能够反转链表，返回头结点
         //---------------此处head有可能是null，head。getNext（）有可能是null-----------
-        Node newHead=reverseLinkedList(head.getNext());
+        Node newHead = reverseLinkedList(head.getNext());
         //此时如图4状态，1的getNext就是第二个结点2，
         //把第二结点2的next指向head则实现把2的指针指向1，如图5
         //------------此处的getNext（）有可能是null------
@@ -46,12 +45,13 @@ public class LinkedListReverser {
         head.setNext(null);//最后指向null，如图6
         return newHead;
     }
+
     public static void main(String[] args) {
-        LinkedListCreator creator=new LinkedListCreator();
-        LinkedListReverser reverser=new LinkedListReverser();
+        LinkedListCreator creator = new LinkedListCreator();
+        LinkedListReverser reverser = new LinkedListReverser();
 
 
-        ArrayList arrayList=new ArrayList<>();
+        ArrayList arrayList = new ArrayList<>();
 
 //        Node.printLinkedList(
 //                reverser.reverseLinkedList(creator.createLinkedList(arrayList))
@@ -60,7 +60,7 @@ public class LinkedListReverser {
 //                reverser.reverseLinkedList(creator.createLinkedList(Arrays.asList(1)))
 //        );
         Node.printLinkedList(
-                reverser.reverseLinkedList(creator.createLinkedList(Arrays.asList(1,2,3,4,5)))
+                reverser.reverseLinkedList(creator.createLinkedList(Arrays.asList(1, 2, 3, 4, 5)))
         );
 
     }

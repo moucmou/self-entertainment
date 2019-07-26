@@ -14,7 +14,7 @@ import javax.ws.rs.core.MediaType;
  * @date 2019/7/4 17:23
  */
 @ServerType("justTest")
-@Interceptor(interceptorClass= TokenInterceptor.class)
+@Interceptor(interceptorClass = TokenInterceptor.class)
 @Path("resteasy")
 public interface TestRestEasyService {
 

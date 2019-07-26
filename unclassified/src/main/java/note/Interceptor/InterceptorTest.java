@@ -9,7 +9,7 @@ import note.jdkproxy.HelloWorldImpl;
  */
 public class InterceptorTest {
     public static void main(String[] args) {
-        HelloWorld proxy=(HelloWorld)InterceptorJdkProxy.bind(new HelloWorldImpl(),
+        HelloWorld proxy = (HelloWorld) InterceptorJdkProxy.bind(new HelloWorldImpl(),
                 "cn.example.amazingt.note.Interceptor.MyInterceptor");
         proxy.sayHelloWorld();
 

@@ -6,9 +6,12 @@ import org.apache.shiro.subject.Subject;
 
 public class CurrentUtils {
 
-    private CurrentUtils(){};
+    private CurrentUtils() {
+    }
 
-    public static User getCurrent(){
+    ;
+
+    public static User getCurrent() {
         Subject subject = SecurityUtils.getSubject();
         return (User) subject.getPrincipal();
     }

@@ -5,7 +5,8 @@ import com.self.entertainment.mybatis.pojo.LfTbSendingFaceResultHistory;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
-@Mapper
+
+//@Mapper
 public interface LfTbSendingFaceResultHistoryMapper extends BaseMapper<LfTbSendingFaceResultHistory> {
     int deleteByPrimaryKey(String id);
 

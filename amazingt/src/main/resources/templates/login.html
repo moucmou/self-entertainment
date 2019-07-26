@@ -19,7 +19,12 @@
     <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
 
     <style>
-        body{background: url(https://pic.qqtn.com/up/2017-7/201707271532276552320.jpg)no-repeat;background-size:cover;font-size: 16px;}
+        body {
+            background: url(https://pic.qqtn.com/up/2017-7/201707271532276552320.jpg) no-repeat;
+            background-size: cover;
+            font-size: 16px;
+        }
+
         .form {
             background: rgba(255, 255, 255, 0.4);
             padding: 20px;
@@ -30,31 +35,31 @@
 
     <script type="text/javascript">
 
-        function direct(){
-            window.location.href="/web/device/findAllDevices";
+        function direct() {
+            window.location.href = "/web/device/findAllDevices";
         }
+
         $(document).ready(function () {
 
 
             $("#registerButton").click(function () {
 
-                var json={
-                    "loginName":$("#username").val(),
-                    "password":$("#password").val()
+                var json = {
+                    "loginName": $("#username").val(),
+                    "password": $("#password").val()
                 };
                 $.ajax({
                     url: "/users/v1/login",
                     contentType: 'application/json; charset=utf-8',
-                    data:JSON.stringify(json),
+                    data: JSON.stringify(json),
                     type: "POST",
                     success: function (result) {
-                        if(result.code=="0x00212099")
-                        {
+                        if (result.code == "0x00212099") {
                             alert("登录成功,即将跳转到登录页面");
-                            setTimeout('direct()',1000);
+                            setTimeout('direct()', 1000);
 
-                        }else {
-                            alert("出现错误"+result.msg);
+                        } else {
+                            alert("出现错误" + result.msg);
                         }
                     }
                 })

@@ -13,8 +13,8 @@ import java.lang.reflect.Method;
  */
 public class CglibProxyExample implements MethodInterceptor {
 
-    public Object getProxy(Class cls){
-        Enhancer enhancer=new Enhancer();
+    public Object getProxy(Class cls) {
+        Enhancer enhancer = new Enhancer();
         enhancer.setSuperclass(cls);
         enhancer.setCallback(this);
         return enhancer.create();
@@ -23,6 +23,6 @@ public class CglibProxyExample implements MethodInterceptor {
 
     @Override
     public Object intercept(Object o, Method method, Object[] objects, MethodProxy methodProxy) throws Throwable {
-        return methodProxy.invokeSuper(o,objects);
+        return methodProxy.invokeSuper(o, objects);
     }
 }

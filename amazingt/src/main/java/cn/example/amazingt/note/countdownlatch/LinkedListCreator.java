@@ -14,14 +14,14 @@ public class LinkedListCreator {
      * 创建一个链表
      * @return 链表的头结点，返回链表的最后一个结点的getNext()==null.
      */
-    public Node createLinkedList(List<Integer> data){
+    public Node createLinkedList(List<Integer> data) {
         //假设传入空的List
-        if(data.isEmpty()){
+        if (data.isEmpty()) {
             return null;
         }
 
         //取出传入数据的第一个结点
-        Node firstNode=new Node(data.get(0));
+        Node firstNode = new Node(data.get(0));
         //取走一个元素后，从第二个元素创建一个链表，
         //因为返回的是Node，所以用Node来接收
         //假设传入来的List有一个元素，则走到这里时sublist传入的两个参数相等
@@ -39,10 +39,11 @@ public class LinkedListCreator {
         return firstNode;
 
     }
-    public static void main(String[] args) {
-        LinkedListCreator creator=new LinkedListCreator();
 
-        ArrayList arrayList=new ArrayList<>();
+    public static void main(String[] args) {
+        LinkedListCreator creator = new LinkedListCreator();
+
+        ArrayList arrayList = new ArrayList<>();
 
         Node.printLinkedList(
                 creator.createLinkedList(arrayList)
@@ -51,7 +52,7 @@ public class LinkedListCreator {
                 creator.createLinkedList(Arrays.asList(1))
         );
         Node.printLinkedList(
-                creator.createLinkedList(Arrays.asList(1,2,3,4,5))
+                creator.createLinkedList(Arrays.asList(1, 2, 3, 4, 5))
         );
     }
 }

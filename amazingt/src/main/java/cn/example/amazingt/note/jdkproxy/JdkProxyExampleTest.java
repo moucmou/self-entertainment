@@ -6,7 +6,7 @@ package cn.example.amazingt.note.jdkproxy;
  */
 public class JdkProxyExampleTest {
     public static void main(String[] args) {
-        JdkProxyExample jdk =new JdkProxyExample();
-        ((HelloWorld)jdk.bind(new HelloWorldImpl())).sayHelloWorld();
+        JdkProxyExample jdk = new JdkProxyExample();
+        ((HelloWorld) jdk.bind(new HelloWorldImpl())).sayHelloWorld();
     }
 }

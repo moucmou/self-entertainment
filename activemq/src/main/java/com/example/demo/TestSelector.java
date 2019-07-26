@@ -25,8 +25,8 @@ public class TestSelector implements ImportSelector {
 
         Map<String, Object> annotationAttributes = importingClassMetadata.getAnnotationAttributes(ComponentScan.class.getName());
         String[] basePackages = (String[]) annotationAttributes.get("basePackages");
-        if(basePackages == null || basePackages.length == 0){
-            basePackages=new String[]{"com.example.demo"};
+        if (basePackages == null || basePackages.length == 0) {
+            basePackages = new String[]{"com.example.demo"};
         }
 //        if (basePackages == null || basePackages.length == 0) {//HelloServiceScan的basePackages默认为空数组
 //            String basePackage = null;

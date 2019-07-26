@@ -3,12 +3,10 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.1.5.RELEASE</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <artifactId>j4f</artifactId>
+        <groupId>com.self.entertainment</groupId>
+        <version>${j4f.version}</version>
     </parent>
-    <groupId>com.self.entertainment</groupId>
     <artifactId>course</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>course</name>
@@ -23,10 +21,6 @@
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
         <dependency>
@@ -35,12 +29,12 @@
             <scope>test</scope>
         </dependency>
 
-<!--        &lt;!&ndash;文件密码加密&ndash;&gt;-->
-<!--        <dependency>-->
-<!--            <groupId>com.github.ulisesbocchio</groupId>-->
-<!--            <artifactId>jasypt-spring-boot-starter</artifactId>-->
-<!--            <version>1.16</version>-->
-<!--        </dependency>-->
+        <!--        &lt;!&ndash;文件密码加密&ndash;&gt;-->
+        <!--        <dependency>-->
+        <!--            <groupId>com.github.ulisesbocchio</groupId>-->
+        <!--            <artifactId>jasypt-spring-boot-starter</artifactId>-->
+        <!--            <version>1.16</version>-->
+        <!--        </dependency>-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
@@ -64,13 +58,6 @@
         </dependency>
 
 
-
-
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>1.18.8</version>
-        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
@@ -81,25 +68,21 @@
         <dependency>
             <groupId>commons-io</groupId>
             <artifactId>commons-io</artifactId>
-            <version>2.6</version>
         </dependency>
         <dependency>
             <groupId>org.apache.shiro</groupId>
             <artifactId>shiro-spring-boot-web-starter</artifactId>
-            <version>1.4.1</version>
         </dependency>
 
-<!--        &lt;!&ndash; https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-actuator &ndash;&gt;-->
+        <!--        &lt;!&ndash; https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-actuator &ndash;&gt;-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
-            <version>2.1.5.RELEASE</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/com.spring4all/swagger-spring-boot-starter -->
         <dependency>
             <groupId>com.spring4all</groupId>
             <artifactId>swagger-spring-boot-starter</artifactId>
-            <version>1.9.0.RELEASE</version>
         </dependency>
 
     </dependencies>

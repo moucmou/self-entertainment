@@ -9,6 +9,7 @@ import org.springframework.beans.factory.FactoryBean;
 public class TestFactoryBean implements FactoryBean {
 
     private Class<?> type;
+
     @Override
     public Object getObject() throws Exception {
         return new TestDemo();

@@ -61,7 +61,7 @@ public class IDeviceOtherServiceImpl implements IDeviceService {
     }
 
     @Override
-    public Page<Device> selectByName(DeviceDto deviceDto,User user) {
+    public Page<Device> selectByName(DeviceDto deviceDto, User user) {
         return null;
     }
 }

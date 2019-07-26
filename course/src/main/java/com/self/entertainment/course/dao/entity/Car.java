@@ -11,17 +11,17 @@ import java.io.Serializable;
  */
 @Entity
 @Data
-@Table(name="t_car")
+@Table(name = "t_car")
 public class Car implements Serializable {
 
     private static final long serialVersionUID = -4823977237082446746L;
     /**
-     *   userid int NOT NULL,
-     *      flower_name char(10) NOT NULL,
-     *      flower_outprice int NOT NULL,
-     *      flower_number int NOT NULL,
-     *        PRIMARY KEY(userid,flower_name),
-     *      FOREIGN KEY (userid) REFERENCES users(userid),
+     * userid int NOT NULL,
+     * flower_name char(10) NOT NULL,
+     * flower_outprice int NOT NULL,
+     * flower_number int NOT NULL,
+     * PRIMARY KEY(userid,flower_name),
+     * FOREIGN KEY (userid) REFERENCES users(userid),
      */
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

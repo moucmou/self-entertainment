@@ -1,6 +1,5 @@
 package com.self.entertainment.jetty.server;
 
-import com.alibaba.fastjson.JSONObject;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;
@@ -23,11 +22,11 @@ public class TestController {
 
     @RequestMapping("/hello")
     @ResponseBody
-    public String say(@RequestBody Object object){
+    public String say(@RequestBody Object object) {
         try {
-           log.info(objectMapper.writeValueAsString(object));
+            log.info(objectMapper.writeValueAsString(object));
         } catch (JsonProcessingException e) {
-            log.error("",e);
+            log.error("", e);
         }
         return "";
     }

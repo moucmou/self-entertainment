@@ -15,7 +15,7 @@ public class SpinlocksTest {
 //        stringBuffer.append("xxxx");
 //        boolean y= cas.compareAndSet(null,"xxx");
 //        boolean z= cas.compareAndSet("xxx","123");
-        Spinlocks spinLock=new Spinlocks();
+        Spinlocks spinLock = new Spinlocks();
 
         new Thread(new Runnable() {
             @Override
@@ -25,11 +25,12 @@ public class SpinlocksTest {
                 set();
             }
 
-            void get(){
+            void get() {
                 spinLock.lock();
                 System.out.println("hello");
             }
-            void set(){
+
+            void set() {
                 spinLock.lock();
                 System.out.println("hello");
             }

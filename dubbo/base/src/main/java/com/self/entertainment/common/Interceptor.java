@@ -16,5 +16,5 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 @Target(TYPE)
 public @interface Interceptor {
 
-     Class<?>[] interceptorClass() default {};
+    Class<?>[] interceptorClass() default {};
 }

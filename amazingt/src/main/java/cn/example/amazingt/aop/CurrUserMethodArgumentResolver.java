@@ -29,7 +29,7 @@ public class CurrUserMethodArgumentResolver implements HandlerMethodArgumentReso
     public Object resolveArgument(MethodParameter parameter, ModelAndViewContainer mavContainer, NativeWebRequest webRequest, WebDataBinderFactory binderFactory) throws Exception {
 //        return webRequest.getAttribute("user", NativeWebRequest.SCOPE_REQUEST);
         HttpServletRequest request = ((ServletRequestAttributes) Objects.requireNonNull(RequestContextHolder.getRequestAttributes())).getRequest();
-        return  request.getSession().getAttribute("user");
+        return request.getSession().getAttribute("user");
 
     }
 }

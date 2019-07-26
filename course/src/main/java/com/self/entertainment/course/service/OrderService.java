@@ -10,8 +10,8 @@ public interface OrderService {
 
     Order payOrder(Order Order);
 
-    ResponseData<Page<Order>> getOrder( Integer pageNo,Integer pageSize) ;
+    ResponseData<Page<Order>> getOrder(Integer pageNo, Integer pageSize);
 
-    ResponseData<Page<Order>> getAllOrder( Integer pageNo,Integer pageSize) ;
+    ResponseData<Page<Order>> getAllOrder(Integer pageNo, Integer pageSize);
 
 }

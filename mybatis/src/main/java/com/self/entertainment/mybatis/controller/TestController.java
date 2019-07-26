@@ -10,8 +10,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.self.entertainment.mybatis.service.TestService;
+
 import java.util.List;
+
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+
 /**
  * @author AmazingZ
  * @date 2019/5/30 14:05
@@ -24,7 +27,7 @@ public class TestController {
     TestService testService;
 
     @RequestMapping("/hello")
-    public IPage<LfTbSendingFaceResultHistory> sayHell(){
-        return  testService.getCache(null);
+    public IPage<LfTbSendingFaceResultHistory> sayHell() {
+        return testService.getCache(null);
     }
 }

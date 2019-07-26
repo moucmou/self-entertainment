@@ -12,18 +12,18 @@ import java.util.List;
  */
 @Entity
 @Data
-@Table(name="t_order")
+@Table(name = "t_order")
 public class Order implements Serializable {
 
 
     private static final long serialVersionUID = -2640199615072326164L;
     /**
-     *    order_id int NOT NULL,
-     *     username char(50) NOT NULL,
-     *     order_time varchar(50) NOT NULL,
-     *     order_address char(50) NOT NULL,
-     *     order_ps char(100),
-     *     PRIMARY KEY (order_id),
+     * order_id int NOT NULL,
+     * username char(50) NOT NULL,
+     * order_time varchar(50) NOT NULL,
+     * order_address char(50) NOT NULL,
+     * order_ps char(100),
+     * PRIMARY KEY (order_id),
      */
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

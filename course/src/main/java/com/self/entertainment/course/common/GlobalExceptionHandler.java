@@ -13,7 +13,7 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
     @ExceptionHandler(Exception.class)
     @ResponseBody
     public ResponseData<String> handleException(Exception e) {
-        log.error("全局异常处理",e);
-        return ResponseData.error("内部错误") ;
+        log.error("全局异常处理", e);
+        return ResponseData.error("内部错误");
     }
 }

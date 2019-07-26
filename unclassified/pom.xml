@@ -43,7 +43,7 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
         </dependency>
-<!--        自定义application 并支持属性联想-->
+        <!--        自定义application 并支持属性联想-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-configuration-processor</artifactId>
@@ -52,13 +52,11 @@
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-collections4</artifactId>
-            <version>4.3</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-integration -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-integration</artifactId>
-            <version>2.1.4.RELEASE</version>
         </dependency>
 
         <dependency>
@@ -100,41 +98,42 @@
         <dependency>
             <groupId>org.springframework.integration</groupId>
             <artifactId>spring-integration-jdbc</artifactId>
-            <version>5.1.4.RELEASE</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/org.springframework.integration/spring-integration-redis -->
         <dependency>
             <groupId>org.springframework.integration</groupId>
             <artifactId>spring-integration-redis</artifactId>
-            <version>5.1.4.RELEASE</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/org.springframework.integration/spring-integration-zookeeper -->
         <dependency>
             <groupId>org.springframework.integration</groupId>
             <artifactId>spring-integration-zookeeper</artifactId>
-            <version>5.1.4.RELEASE</version>
         </dependency>
 
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-openfeign</artifactId>
-            <version>2.1.2.RELEASE</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-consul-discovery -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-consul-discovery</artifactId>
-            <version>2.1.2.RELEASE</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.redisson/redisson -->
+        <dependency>
+            <groupId>org.redisson</groupId>
+            <artifactId>redisson</artifactId>
+            <version>3.11.1</version>
         </dependency>
 
 
-
         <!--        <dependency>-->
-<!--            <groupId>com.example.service</groupId>-->
-<!--            <artifactId>demo</artifactId>-->
-<!--            <version>0.0.1-SNAPSHOT</version>-->
-<!--&lt;!&ndash;            <scope>system</scope>&ndash;&gt;-->
-<!--        </dependency>-->
+        <!--            <groupId>com.example.service</groupId>-->
+        <!--            <artifactId>demo</artifactId>-->
+        <!--            <version>0.0.1-SNAPSHOT</version>-->
+        <!--&lt;!&ndash;            <scope>system</scope>&ndash;&gt;-->
+        <!--        </dependency>-->
 
         <!-- https://mvnrepository.com/artifact/org.javassist/javassist -->
         <dependency>

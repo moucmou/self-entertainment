@@ -40,7 +40,6 @@ public class CustomProtocolListenerWrapper extends ProtocolListenerWrapper {
 //    }
 
 
-
     public CustomProtocolListenerWrapper(Protocol protocol) {
         super(protocol);
 //        super(doTransform(protocol));

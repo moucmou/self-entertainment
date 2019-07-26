@@ -13,14 +13,16 @@ public class DeviceEvent extends ApplicationEvent {
 
     private Device device;
     private int eventTypeId;
+
     public DeviceEvent(Device device) {
         super(device);
-        this.device=device;
+        this.device = device;
     }
-    public DeviceEvent(int eventType,Device device) {
+
+    public DeviceEvent(int eventType, Device device) {
         super(device);
-        this.eventTypeId=eventType;
-        this.device=device;
+        this.eventTypeId = eventType;
+        this.device = device;
     }
 
     public Device getDevice() {

@@ -12,10 +12,10 @@ import org.springframework.context.annotation.Import;
  */
 @Configuration
 @ComponentScan
-@Import({TestSelector.class,TestImportBeanDefinitionRegistrar.class})
+@Import({TestSelector.class, TestImportBeanDefinitionRegistrar.class})
 public class TestGG {
 
-    public TestGG(){
+    public TestGG() {
         System.out.println("helloWord");
     }
 

@@ -13,13 +13,16 @@ import javax.servlet.http.HttpSession;
 public interface IUserService {
     /**
      * 登录校验
+     *
      * @param loginDto
      * @param httpSession
      * @return
      */
     ResponseData getByLogin(LoginDto loginDto, HttpSession httpSession);
+
     /**
      * 登出
+     *
      * @param user
      * @param httpSession
      * @return
@@ -28,6 +31,7 @@ public interface IUserService {
 
     /**
      * 添加用户
+     *
      * @param loginDto
      * @return
      */

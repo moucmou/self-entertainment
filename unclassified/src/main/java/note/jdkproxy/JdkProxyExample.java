@@ -10,15 +10,15 @@ import java.lang.reflect.Proxy;
  */
 public class JdkProxyExample implements InvocationHandler {
 
-    private Object target =null ;
+    private Object target = null;
 
-    public Object bind(Object target){
-        this.target=target;
-        return Proxy.newProxyInstance(target.getClass().getClassLoader(),target.getClass().getInterfaces(),this);
+    public Object bind(Object target) {
+        this.target = target;
+        return Proxy.newProxyInstance(target.getClass().getClassLoader(), target.getClass().getInterfaces(), this);
     }
 
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-        return method.invoke(target,args);
+        return method.invoke(target, args);
     }
 }

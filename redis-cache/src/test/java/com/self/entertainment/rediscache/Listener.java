@@ -18,7 +18,7 @@ public class Listener implements ApplicationListener<TestEvent> {
     public void onApplicationEvent(TestEvent event) {
         log.info("i'm recive");
         try {
-            Thread.sleep(1000*60*3);
+            Thread.sleep(1000 * 60 * 3);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

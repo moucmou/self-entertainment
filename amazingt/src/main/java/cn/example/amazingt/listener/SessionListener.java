@@ -21,15 +21,14 @@ import java.util.*;
  */
 
 @WebListener
-public class SessionListener implements HttpSessionListener , ServletRequestListener, HttpSessionAttributeListener {
+public class SessionListener implements HttpSessionListener, ServletRequestListener, HttpSessionAttributeListener {
 
-    static final Logger logger=LoggerFactory.getLogger(SessionListener.class);
-    static Set<String> nameSet=Collections.synchronizedSet(new HashSet<>());
+    static final Logger logger = LoggerFactory.getLogger(SessionListener.class);
+    static Set<String> nameSet = Collections.synchronizedSet(new HashSet<>());
 
     public static Set<String> getNameSet() {
         return nameSet;
     }
-
 
 
     public SessionListener() {
@@ -37,51 +36,53 @@ public class SessionListener implements HttpSessionListener , ServletRequestList
 
         logger.info("SessionListenerInitialized");
     }
+
     @Override
     public void sessionCreated(HttpSessionEvent se) {
         logger.info("sessionCreated");
         ServletContext context = se.getSession().getServletContext();
-        if(StringUtils.isEmpty(context.getAttribute("currentCount"))){
+        if (StringUtils.isEmpty(context.getAttribute("currentCount"))) {
             context.setAttribute("currentCount", 1);
             return;
         }
-        context.setAttribute("currentCount",  Integer.valueOf(context.getAttribute("currentCount").toString()) + 1);
+        context.setAttribute("currentCount", Integer.valueOf(context.getAttribute("currentCount").toString()) + 1);
     }
 
     @Override
     public void sessionDestroyed(HttpSessionEvent se) {
         logger.info("sessionDestroyed");
-            ServletContext context = se.getSession().getServletContext();
-            if(StringUtils.isEmpty(context.getAttribute("currentCount"))){
-                context.setAttribute("currentCount", 0);
-                return;
-            }
-            context.setAttribute("currentCount",  (Integer.valueOf(context.getAttribute("currentCount").toString()) - 1) < 1
-                    ? 0:Integer.valueOf(context.getAttribute("currentCount").toString()));
+        ServletContext context = se.getSession().getServletContext();
+        if (StringUtils.isEmpty(context.getAttribute("currentCount"))) {
+            context.setAttribute("currentCount", 0);
+            return;
+        }
+        context.setAttribute("currentCount", (Integer.valueOf(context.getAttribute("currentCount").toString()) - 1) < 1
+                ? 0 : Integer.valueOf(context.getAttribute("currentCount").toString()));
 
     }
 
     @Override
     public void requestDestroyed(ServletRequestEvent sre) {
-        logger.info("requestDestroyed"+sre.toString());
+        logger.info("requestDestroyed" + sre.toString());
     }
 
     @Override
-    public void requestInitialized(ServletRequestEvent sre) {logger.info("requestInitialized"+sre.toString());
+    public void requestInitialized(ServletRequestEvent sre) {
+        logger.info("requestInitialized" + sre.toString());
     }
 
     @Override
     public void attributeAdded(HttpSessionBindingEvent se) {
-        logger.info("requestInitialized"+se.toString());
+        logger.info("requestInitialized" + se.toString());
     }
 
     @Override
     public void attributeRemoved(HttpSessionBindingEvent se) {
-        logger.info("attributeRemoved"+se.toString());
+        logger.info("attributeRemoved" + se.toString());
     }
 
     @Override
     public void attributeReplaced(HttpSessionBindingEvent se) {
-        logger.info("attributeReplaced"+se.toString());
+        logger.info("attributeReplaced" + se.toString());
     }
 }

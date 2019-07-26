@@ -28,16 +28,17 @@ public class DeviceOnlineListener implements ApplicationListener<DeviceEvent> {
 
     /**
      * 一类事件，只对离线感到兴趣
+     *
      * @param event
      */
     @Override
     public void onApplicationEvent(DeviceEvent event) {
 
-        Logger logger=LoggerFactory.getLogger(DeviceOnlineListener.class);
-            if(event.getEventTypeId()==1) {
-                logger.info(event.getDevice().getDeviceName()+"在线");
-                iDeviceService.save(event.getDevice());
-            }
+        Logger logger = LoggerFactory.getLogger(DeviceOnlineListener.class);
+        if (event.getEventTypeId() == 1) {
+            logger.info(event.getDevice().getDeviceName() + "在线");
+            iDeviceService.save(event.getDevice());
+        }
 
     }
 }

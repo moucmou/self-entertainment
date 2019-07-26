@@ -15,21 +15,22 @@ import javax.transaction.Transactional;
  * @date 2018/9/15 17:37
  */
 @Repository
-public interface IDeviceRepository extends JpaRepository<Device, Long>,JpaSpecificationExecutor<Device> {
+public interface IDeviceRepository extends JpaRepository<Device, Long>, JpaSpecificationExecutor<Device> {
 
     @Modifying
     @Transactional
     @Query("delete from Device d where d.indexCode = :indexCode")
     int deleteByIndexCode(@Param("indexCode") String indexCode);
+
     @Modifying
     @Transactional
     @Query("update Device d SET d.deviceName=:deviceName,d.ip=:ip,d.timeNote=:timeNote where d.indexCode=:indexCode")
-    int updateByIndexCode(@Param("deviceName") String deviceName,@Param("ip") String ip,@Param("timeNote")String timeNote,@Param("indexCode") String indexCode);
+    int updateByIndexCode(@Param("deviceName") String deviceName, @Param("ip") String ip, @Param("timeNote") String timeNote, @Param("indexCode") String indexCode);
 
     @Modifying
     @Transactional
     @Query("update Device d SET d.online=0,d.timeNote=:timeNote where d.indexCode=:indexCode")
-    int updateStatuByIndexCode(@Param("timeNote")String timeNote,@Param("indexCode") String indexCode);
+    int updateStatuByIndexCode(@Param("timeNote") String timeNote, @Param("indexCode") String indexCode);
 
     Device findDeviceByIndexCode(String indexCode);
 }

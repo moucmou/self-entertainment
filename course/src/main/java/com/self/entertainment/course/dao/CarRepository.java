@@ -9,12 +9,12 @@ import org.springframework.data.jpa.repository.Modifying;
 
 import javax.transaction.Transactional;
 
-public interface CarRepository  extends JpaRepository<Car, Long>, JpaSpecificationExecutor<Car> {
+public interface CarRepository extends JpaRepository<Car, Long>, JpaSpecificationExecutor<Car> {
     @Transactional
     @Modifying
-    void deleteByUserIdAndFlowerId(Long userId,Long flowerId );
+    void deleteByUserIdAndFlowerId(Long userId, Long flowerId);
 
-    Car findByUserIdAndFlowerId(Long userId,Long flowerId);
+    Car findByUserIdAndFlowerId(Long userId, Long flowerId);
 
     Page<Car> findByUserId(Long userId, Pageable pageable);
 
