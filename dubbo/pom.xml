@@ -46,12 +46,12 @@
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/org.jboss.resteasy/resteasy-spring-boot-starter -->
-        <dependency>
-            <groupId>org.jboss.resteasy</groupId>
-            <artifactId>resteasy-spring-boot-starter</artifactId>
-            <version>2.0.1.Final</version>
+<!--        <dependency>-->
+<!--            <groupId>org.jboss.resteasy</groupId>-->
+<!--            <artifactId>resteasy-spring-boot-starter</artifactId>-->
+<!--            <version>2.0.1.Final</version>-->
 
-        </dependency>
+<!--        </dependency>-->
         <!-- https://mvnrepository.com/artifact/org.jboss.resteasy/resteasy-jaxrs -->
         <dependency>
             <groupId>org.jboss.resteasy</groupId>

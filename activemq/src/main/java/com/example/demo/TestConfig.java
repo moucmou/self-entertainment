@@ -27,5 +27,9 @@ public class TestConfig {
             return new PropertiesPropertySource("123",localConfig);
         };
     }
+    @Bean(initMethod="initMethod")
+    TestBean testBean(){
+        return new TestBean();
+    }
 
 }

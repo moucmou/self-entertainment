@@ -15,7 +15,20 @@
         <setting name="useGeneratedKeys" value="true"/>
         <setting name="logImpl" value="STDOUT_LOGGING" />
     </settings>
-
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"></transactionManager>
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.jdbc.Driver" />
+                <property name="url"
+                          value="jdbc:mysql://119.3.10.221:3306/course?characterEncoding=utf-8" />
+                <property name="username" value="admin" />
+                <property name="password" value=" Upc@CST2018" />
+            </dataSource>
+        </environment>
+    </environments>
+    <mappers>
+        <mapper resource="mapper/TbChannelMapper.xml" />
+    </mappers>
     <!-- Continue editing here -->
-
 </configuration>
