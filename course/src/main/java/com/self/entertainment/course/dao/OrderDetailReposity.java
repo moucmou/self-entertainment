@@ -9,5 +9,5 @@ import java.util.List;
 
 public interface OrderDetailReposity extends JpaRepository<OderDetail, Long>, JpaSpecificationExecutor<OderDetail> {
 
-     List<OderDetail> findByOrderId(Long orderId);
+    List<OderDetail> findByOrderId(Long orderId);
 }

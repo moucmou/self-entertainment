@@ -20,7 +20,7 @@ public class TestChain extends ChainBase {
 
     public static void main(String[] args) {
         Context context = new ContextBase();
-        ChainBase chainBase=new TestChain();
+        ChainBase chainBase = new TestChain();
         try {
             chainBase.execute(context);
         } catch (Exception e) {

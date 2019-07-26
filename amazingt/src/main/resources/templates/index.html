@@ -31,6 +31,7 @@
             height: 100%;
             overflow: hidden;
         }
+
         body {
             height: 100%;
         }
@@ -41,15 +42,14 @@
 <div class="container-fluid " style="margin-top:50px;background-color:beige">
 
 
-
 </div>
 
 <script type="text/javascript">
     /* 鼠标点击特效 */
     var a_idx = 0;
-    jQuery(document).ready(function($) {
-        $("body").click(function(e) {
-            var a = new Array("富强", "民主", "文明", "和谐", "自由", "平等", "公正" ,"法治", "爱国", "敬业", "诚信", "友善");
+    jQuery(document).ready(function ($) {
+        $("body").click(function (e) {
+            var a = new Array("富强", "民主", "文明", "和谐", "自由", "平等", "公正", "法治", "爱国", "敬业", "诚信", "友善");
             var $i = $("<span/>").text(a[a_idx]);
             a_idx = (a_idx + 1) % a.length;
             var x = e.pageX,
@@ -68,7 +68,7 @@
                     "opacity": 0
                 },
                 1500,
-                function() {
+                function () {
                     $i.remove();
                 });
         });
@@ -77,8 +77,7 @@
 <div th:include="top::header"></div>
 
 
-
-    <h1 th:text="${error}"></h1>
+<h1 th:text="${error}"></h1>
 <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
 <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
 <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->

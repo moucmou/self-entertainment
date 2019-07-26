@@ -30,7 +30,7 @@ public class UserController {
     }
 
     @RequestMapping(value = "/user/getUser", method = RequestMethod.POST)
-    public ResponseData<User> getUser( ) {
+    public ResponseData<User> getUser() {
         return userService.findByUserId();
     }
 }

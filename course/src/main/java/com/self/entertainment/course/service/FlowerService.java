@@ -50,6 +50,7 @@ public interface FlowerService {
 
     /**
      * 上传图片
+     *
      * @param multipartFile
      * @return
      */

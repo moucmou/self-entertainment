@@ -24,9 +24,9 @@ public class CompletableFutureTest {
 
     public static void main(String[] args) throws IOException {
 
-        SortedMap<String,Charset>  map=Charset.availableCharsets() ;
+        SortedMap<String, Charset> map = Charset.availableCharsets();
         log.error("");
-        FileWriter fileWriter=new FileWriter("");
+        FileWriter fileWriter = new FileWriter("");
         ExecutorService executorService = Executors.newFixedThreadPool(4);
         CompletableFuture<String> futureA = CompletableFuture.supplyAsync(() -> {
             try {
@@ -41,7 +41,7 @@ public class CompletableFutureTest {
                 , executorService);
         futureB.whenComplete((s, throwable) -> log.info(s));
         futureA.thenApply((Function<String, String>) s -> {
-            log.info(s+"fuck");
+            log.info(s + "fuck");
             return null;
         });
 

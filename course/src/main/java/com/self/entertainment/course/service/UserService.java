@@ -9,14 +9,13 @@ import com.self.entertainment.course.dao.entity.User;
  */
 public interface UserService {
 
-     ResponseData<String> addUser(User User);
+    ResponseData<String> addUser(User User);
 
-     ResponseData<String> updateUser(User User);
+    ResponseData<String> updateUser(User User);
 
-     ResponseData<User> findByUserId( );
+    ResponseData<User> findByUserId();
 
-     User findByUserNameAndPassWd(String userName,String passWd);
-
+    User findByUserNameAndPassWd(String userName, String passWd);
 
 
 }

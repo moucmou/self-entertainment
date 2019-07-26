@@ -1,10 +1,10 @@
 package com.self.entertainment.simple;
 
-import com.sun.xml.internal.messaging.saaj.util.ByteInputStream;
 import org.apache.commons.io.IOUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.ByteBuffer;
@@ -17,7 +17,7 @@ public class SimpleRequest {
     private String method;
 
     public SimpleRequest(InputStream inputStream) throws IOException {
-        String httpRequest =IOUtils.toString(inputStream, StandardCharsets.UTF_8);
+        String httpRequest = IOUtils.toString(inputStream, StandardCharsets.UTF_8);
         logger.info(httpRequest);
         //通过字符串截取URL和请求方法
         String httpHead = httpRequest.split("\n")[0];
@@ -27,10 +27,10 @@ public class SimpleRequest {
 
     public static SimpleRequest of(SocketChannel client) throws IOException {
         ByteBuffer byteBuffer = ByteBuffer.allocate(1024);
-        ByteInputStream byteInputStream = new ByteInputStream();
+        ByteArrayInputStream byteInputStream = null;
         while (client.read(byteBuffer) > 0) {
             byteBuffer.flip();
-            byteInputStream = new ByteInputStream(byteBuffer.array(), byteBuffer.remaining());
+            byteInputStream = new ByteArrayInputStream(byteBuffer.array(), 0, byteBuffer.remaining());
             byteBuffer.clear();
         }
         try {

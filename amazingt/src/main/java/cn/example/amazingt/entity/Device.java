@@ -14,19 +14,19 @@ public class Device {
 
     @Id
     @GeneratedValue
-    @Column(name = "i_id", nullable = false,unique = true)
+    @Column(name = "i_id", nullable = false, unique = true)
     private Integer id;
-    @Column(name="d_name")  //设备名称
+    @Column(name = "d_name")  //设备名称
     private String deviceName;
-    @Column(name="d_index_code")  //设备唯一标识
+    @Column(name = "d_index_code")  //设备唯一标识
     private String indexCode;
-    @Column(name="d_ip")  //设备ip
+    @Column(name = "d_ip")  //设备ip
     private String ip;
-    @Column(name="u_index_code")  //所属用户
+    @Column(name = "u_index_code")  //所属用户
     private String userIndexCode;
-    @Column(name="d_time_note")  //最后操作数据库时间
+    @Column(name = "d_time_note")  //最后操作数据库时间
     private String timeNote;
-    @Column(name="d_online")
+    @Column(name = "d_online")
     private int online;  //0表示离线，1表示在线
 
     public int getOnline() {

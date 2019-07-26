@@ -21,12 +21,13 @@ public class OtherEvent extends ApplicationEvent {
     private int eventTypeId;
 
 
-    public OtherEvent(String  ip,int eventTypeId) {
+    public OtherEvent(String ip, int eventTypeId) {
         super(ip);
-        this.ip=ip;
-        this.eventTypeId=eventTypeId;
+        this.ip = ip;
+        this.eventTypeId = eventTypeId;
 
     }
+
     public int getEventTypeId() {
         return eventTypeId;
     }

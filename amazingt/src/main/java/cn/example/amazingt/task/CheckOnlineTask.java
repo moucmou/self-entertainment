@@ -48,7 +48,7 @@ public class CheckOnlineTask {
      * ExecutorService executorService= Executors.newSingleThreadExecutor();
      * executorService.execute(() -> { });
      */
-    @Scheduled(fixedDelay=1000*60*5, initialDelay = 3000)
+    @Scheduled(fixedDelay = 1000 * 60 * 5, initialDelay = 3000)
     private void sync() {
         List<Device> allDeviceLists = iDeviceService.findAll();
 
@@ -58,30 +58,32 @@ public class CheckOnlineTask {
         }).forEach(executorService::execute);
 
     }
+
     private void checkDeviceOnline(Device device) {
         int timeOut = 3000;  //超时应该在3钞以上
         int status = 0;
         if (lock.tryLock()) {
             try {
-        //        "^(1\\d{2}|2[0-4]\\d|25[0-5]|[1-9]\\d|[1-9])\\."
-                String regIp="^(1\\d{2}|2[0-4]\\d|25[0-5]|[1-9]\\d|[1-9])\\."
-                        +"(1\\d{2}|2[0-4]\\d|25[0-5]|[1-9]\\d|\\d)\\."
-                        +"(1\\d{2}|2[0-4]\\d|25[0-5]|[1-9]\\d|\\d)\\."
-                        +"(1\\d{2}|2[0-4]\\d|25[0-5]|[1-9]\\d|\\d)$";;
+                //        "^(1\\d{2}|2[0-4]\\d|25[0-5]|[1-9]\\d|[1-9])\\."
+                String regIp = "^(1\\d{2}|2[0-4]\\d|25[0-5]|[1-9]\\d|[1-9])\\."
+                        + "(1\\d{2}|2[0-4]\\d|25[0-5]|[1-9]\\d|\\d)\\."
+                        + "(1\\d{2}|2[0-4]\\d|25[0-5]|[1-9]\\d|\\d)\\."
+                        + "(1\\d{2}|2[0-4]\\d|25[0-5]|[1-9]\\d|\\d)$";
+                ;
 
                 Pattern pattern = Pattern.compile(regIp);
-                if(Strings.isEmpty(device.getIp()) ){
-                    logger.info(device.getDeviceName()+"没有设置ip");
-                }else if(!pattern.matcher(device.getIp()).matches()){
-                    logger.info("设备ip"+device.getIp()+"ip地址无效");
-                }else {
+                if (Strings.isEmpty(device.getIp())) {
+                    logger.info(device.getDeviceName() + "没有设置ip");
+                } else if (!pattern.matcher(device.getIp()).matches()) {
+                    logger.info("设备ip" + device.getIp() + "ip地址无效");
+                } else {
                     status = InetAddress.getByName(device.getIp()).isReachable(timeOut) ? 1 : 0;
                     device.setOnline(status);
                     //事件发布,可以封装成不同的事件消息来通知不同的订阅者,或者同类事件有不同的事件类型
                     //一类事件多个监听者
-                    applicationContext.publishEvent(new DeviceEvent(status,device));
+                    applicationContext.publishEvent(new DeviceEvent(status, device));
                     //不同类事件
-                    applicationContext.publishEvent(new OtherEvent(device.getIp(),0));
+                    applicationContext.publishEvent(new OtherEvent(device.getIp(), 0));
                 }
             } catch (IOException e) {
                 logger.info("定时检查设备是否离线失败" + e);
@@ -94,7 +96,7 @@ public class CheckOnlineTask {
 
     public static void main(String[] args) {
 
-        String regIp="^(1\\d{2}|2[0-4]\\d|25[0-5]|[1-9]\\d|[1-9])\\.";
+        String regIp = "^(1\\d{2}|2[0-4]\\d|25[0-5]|[1-9]\\d|[1-9])\\.";
 
 //                +"(1\\d{2}|2[0-4]\\d|25[0-5]|[1-9]\\d|\\d)\\."
 //
@@ -103,10 +105,11 @@ public class CheckOnlineTask {
 //                +"(1\\d{2}|2[0-4]\\d|25[0-5]|[1-9]\\d|\\d)$";
         Pattern pattern = Pattern.compile(regIp);
         Matcher matcher = pattern.matcher("10.33.29.154");
-        System.out.println(matcher.matches());;
+        System.out.println(matcher.matches());
+        ;
 
         try {
-            for(int i=0;i<1;i++) {
+            for (int i = 0; i < 1; i++) {
                 int x = InetAddress.getByName("123123").isReachable(3000) == true ? 1 : 0;
                 System.out.println(x);
             }

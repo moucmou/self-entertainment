@@ -36,12 +36,12 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public ResponseData<User> findByUserId( ) {
+    public ResponseData<User> findByUserId() {
         return ResponseData.success(userRepository.findByUserName(CurrentUtils.getCurrent().getUserName()));
     }
 
     @Override
     public User findByUserNameAndPassWd(String userName, String passWd) {
-        return userRepository.findByUserNameAndPassword(userName,passWd);
+        return userRepository.findByUserNameAndPassword(userName, passWd);
     }
 }

@@ -4,7 +4,7 @@ package cn.example.amazingt.dto;
  * @author AmazingZ
  * @date 2018/9/15 17:35
  */
-public class DeviceDto extends PageDto{
+public class DeviceDto extends PageDto {
 
     private static final long serialVersionUID = 1L;
     private String deviceName;

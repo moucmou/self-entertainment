@@ -17,7 +17,8 @@ import org.springframework.context.annotation.ImportResource;
 public class DubboConsumerApplication {
     @Autowired
     TestRestEasyService testRestEasyService;
-//    @Autowired
+
+    //    @Autowired
 //    HelloService helloService;
     public static void main(String[] args) {
         SpringApplication.run(DubboConsumerApplication.class, args);

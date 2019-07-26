@@ -3,7 +3,8 @@ package com.self.entertainment.course.utils;
 public class SqlUtils {
     public static final String PERCENT = "%";
 
-    private SqlUtils(){}
+    private SqlUtils() {
+    }
 
     /**
      * 用%连接like

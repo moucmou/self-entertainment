@@ -30,57 +30,60 @@ public class UserRestController {
 
     /**
      * 登陆
+     *
      * @param loginDto
      * @return
      */
-    @RequestMapping(value = { "/v1/login"}, method = {RequestMethod.POST})
+    @RequestMapping(value = {"/v1/login"}, method = {RequestMethod.POST})
     @ResponseBody
     public ResponseData login(@RequestBody LoginDto loginDto, HttpServletRequest httpServletRequest) {
-        HttpSession session= httpServletRequest.getSession(false);
-        return userService.getByLogin(loginDto,session);
+        HttpSession session = httpServletRequest.getSession(false);
+        return userService.getByLogin(loginDto, session);
     }
 
     /**
      * 登陆
+     *
      * @return
      */
-    @RequestMapping(value = { "/login"}, method = {RequestMethod.GET})
+    @RequestMapping(value = {"/login"}, method = {RequestMethod.GET})
     public String loginPage() {
         return "login";
     }
 
     /**
      * 注销
+     *
      * @return
      */
-    @RequestMapping(value = { "/v1/logout"}, method = {RequestMethod.GET})
+    @RequestMapping(value = {"/v1/logout"}, method = {RequestMethod.GET})
     public String logout(HttpSession httpSession) {
-         userService.logout(httpSession);
-         return "login";
+        userService.logout(httpSession);
+        return "login";
     }
 
     /**
      * 注册
+     *
      * @param loginDto
      * @return
      */
 
-    @RequestMapping(value = { "/v1/addUser"}, method = {RequestMethod.POST})
+    @RequestMapping(value = {"/v1/addUser"}, method = {RequestMethod.POST})
     @ResponseBody
-    public ResponseData register(@RequestBody LoginDto loginDto)
-    {
+    public ResponseData register(@RequestBody LoginDto loginDto) {
         return userService.addByLogin(loginDto);
     }
 
 
     /**
      * 注册
+     *
      * @return
      */
 
-    @RequestMapping(value = { "/register"}, method = {RequestMethod.GET})
-    public String registerPage()
-    {
+    @RequestMapping(value = {"/register"}, method = {RequestMethod.GET})
+    public String registerPage() {
 //        if ("XMLHttpRequest".equalsIgnoreCase(((HttpServletRequest) httpServletRequest).getHeader("X-Requested-With"))) {
 //
 //        }

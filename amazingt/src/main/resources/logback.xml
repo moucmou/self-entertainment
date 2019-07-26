@@ -2,47 +2,47 @@
 <configuration>
 
 
-	<!-- ch.qos.logback.core.ConsoleAppender 控制台输出 -->
-	<appender name="console" class="ch.qos.logback.core.ConsoleAppender">
-		<encoder>
-			<pattern>[%-5level] %d{HH:mm:ss.SSS} [%thread] %logger{36} - %msg%n
-			</pattern>
-		</encoder>
-	</appender>
+    <!-- ch.qos.logback.core.ConsoleAppender 控制台输出 -->
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>[%-5level] %d{HH:mm:ss.SSS} [%thread] %logger{36} - %msg%n
+            </pattern>
+        </encoder>
+    </appender>
 
-	<!-- ch.qos.logback.core.rolling.RollingFileAppender 文件日志输出 -->
-	<appender name="file"
-		class="ch.qos.logback.core.rolling.RollingFileAppender">
-		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-			<FileNamePattern>amazingt/logs/amazingt-%d{yyyy-MM-dd}.%i.log
-			</FileNamePattern>
-			<MaxHistory>30</MaxHistory>
-			<TimeBasedFileNamingAndTriggeringPolicy
-				class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
-				<MaxFileSize>10MB</MaxFileSize>
-			</TimeBasedFileNamingAndTriggeringPolicy>
-		</rollingPolicy>
-		<layout class="ch.qos.logback.classic.PatternLayout">
-			<pattern>[%-5level] %d{HH:mm:ss.SSS} [%thread] %logger{36} - %msg%n
-			</pattern>
-		</layout>
-	</appender>
-	<!-- 日志级别 -->
-	<root>
-		<!-- 定义了ERROR和INFO级别的日志;分别在FILE文件和控制台输出 -->
-		<level value="info" />
-		<appender-ref ref="file" />
-		<appender-ref ref="console" />
-	</root>
-	<logger name="org.springframework" level="INFO" />
-	<logger name="org.jboss.resteasy" level="INFO" />
-	<logger name="org.jboss.logging" level="INFO" />
-	<logger name="com.alibaba.dubbo" level="INFO" />
+    <!-- ch.qos.logback.core.rolling.RollingFileAppender 文件日志输出 -->
+    <appender name="file"
+              class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <FileNamePattern>amazingt/logs/amazingt-%d{yyyy-MM-dd}.%i.log
+            </FileNamePattern>
+            <MaxHistory>30</MaxHistory>
+            <TimeBasedFileNamingAndTriggeringPolicy
+                    class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <MaxFileSize>10MB</MaxFileSize>
+            </TimeBasedFileNamingAndTriggeringPolicy>
+        </rollingPolicy>
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <pattern>[%-5level] %d{HH:mm:ss.SSS} [%thread] %logger{36} - %msg%n
+            </pattern>
+        </layout>
+    </appender>
+    <!-- 日志级别 -->
+    <root>
+        <!-- 定义了ERROR和INFO级别的日志;分别在FILE文件和控制台输出 -->
+        <level value="info"/>
+        <appender-ref ref="file"/>
+        <appender-ref ref="console"/>
+    </root>
+    <logger name="org.springframework" level="INFO"/>
+    <logger name="org.jboss.resteasy" level="INFO"/>
+    <logger name="org.jboss.logging" level="INFO"/>
+    <logger name="com.alibaba.dubbo" level="INFO"/>
 
-	<logger name="org.hibernate.type.descriptor.sql.BasicBinder" level="INFO" />
-	<logger name="org.hibernate.type.descriptor.sql.BasicExtractor"	level="INFO" />
-	<logger name="org.hibernate.SQL" level="INFO" />
-	<logger name="org.hibernate.type" level="INFO" />
-	<logger name="org.hibernate.engine.QueryParameters" level="INFO" />
-	<logger name="org.hibernate.engine.query.HQLQueryPlan" level="INFO" />
+    <logger name="org.hibernate.type.descriptor.sql.BasicBinder" level="INFO"/>
+    <logger name="org.hibernate.type.descriptor.sql.BasicExtractor" level="INFO"/>
+    <logger name="org.hibernate.SQL" level="INFO"/>
+    <logger name="org.hibernate.type" level="INFO"/>
+    <logger name="org.hibernate.engine.QueryParameters" level="INFO"/>
+    <logger name="org.hibernate.engine.query.HQLQueryPlan" level="INFO"/>
 </configuration>

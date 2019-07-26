@@ -10,6 +10,7 @@ import java.util.Objects;
 public class TempFile {
 
     private File file;
+
     private TempFile() {
         ClassLoader loader = TempFile.class.getClassLoader();
         if (loader != null && null != loader.getResource("")) {

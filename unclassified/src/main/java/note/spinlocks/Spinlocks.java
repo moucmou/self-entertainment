@@ -9,6 +9,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class Spinlocks {
 
     private AtomicReference<Thread> cas = new AtomicReference<Thread>();
+
     public void lock() {
         Thread current = Thread.currentThread();
         // 利用CAS
@@ -16,30 +17,33 @@ public class Spinlocks {
             // DO nothing
         }
     }
+
     public void unlock() {
         Thread current = Thread.currentThread();
         cas.compareAndSet(current, null);
     }
 
-    private AtomicReference<Thread> owner =new AtomicReference<>();
-    private int count =0;
-    public void lock1(){
+    private AtomicReference<Thread> owner = new AtomicReference<>();
+    private int count = 0;
+
+    public void lock1() {
         Thread current = Thread.currentThread();
-        if(current==owner.get()) {
+        if (current == owner.get()) {
             count++;
-            return ;
+            return;
         }
 
-        while(!owner.compareAndSet(null, current)){
+        while (!owner.compareAndSet(null, current)) {
 
         }
     }
-    public void unlock1 (){
+
+    public void unlock1() {
         Thread current = Thread.currentThread();
-        if(current==owner.get()){
-            if(count!=0){
+        if (current == owner.get()) {
+            if (count != 0) {
                 count--;
-            }else{
+            } else {
                 owner.compareAndSet(current, null);
             }
 

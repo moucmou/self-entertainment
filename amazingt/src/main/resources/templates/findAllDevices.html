@@ -28,37 +28,37 @@
 
     <script type="text/javascript">
         function updateDevice(text) {
-            var deviceName="deviceName"+text;
-            var ip="ip"+text;
-            var timeNote="timeNote"+text;
-            var indeCode="indeCode"+text;
-            var json={
-                "deviceName":$("#"+deviceName).val(),
-                "ip":$("#"+ip).val(),
-                "timeNote":$("#"+timeNote).val(),
+            var deviceName = "deviceName" + text;
+            var ip = "ip" + text;
+            var timeNote = "timeNote" + text;
+            var indeCode = "indeCode" + text;
+            var json = {
+                "deviceName": $("#" + deviceName).val(),
+                "ip": $("#" + ip).val(),
+                "timeNote": $("#" + timeNote).val(),
                 // "online":$("#online").val(),
-                "indexCode":$("#"+indeCode).val()
+                "indexCode": $("#" + indeCode).val()
             };
             $.ajax({
                 url: "/api/devices/updateByIndexCode",
                 contentType: 'application/json; charset=utf-8',
-                data:JSON.stringify(json),
+                data: JSON.stringify(json),
                 type: "POST",
                 success: function (result) {
-                    if(result.code=="0x00212099")
-                    {
+                    if (result.code == "0x00212099") {
                         alert("操作,即将跳转到设备查询页面");
-                        setTimeout('direct()',1000);
+                        setTimeout('direct()', 1000);
 
-                    }else {
-                        alert("出现错误"+result.msg);
+                    } else {
+                        alert("出现错误" + result.msg);
                     }
                 }
             })
 
         };
-        function direct(){
-            window.location.href="/web/device/findAllDevices";
+
+        function direct() {
+            window.location.href = "/web/device/findAllDevices";
         }
 
         $(document).ready(function () {
@@ -66,26 +66,25 @@
 
             $("#updateTarget").data("myModal")
             $("#update").click(function () {
-                var json={
-                    "deviceName":$("#deviceName").val(),
-                    "ip":$("#ip").val(),
-                    "timeNote":$("#timeNote").val(),
+                var json = {
+                    "deviceName": $("#deviceName").val(),
+                    "ip": $("#ip").val(),
+                    "timeNote": $("#timeNote").val(),
                     // "online":$("#online").val(),
-                    "indexCode":$("#indeCode").val()
+                    "indexCode": $("#indeCode").val()
                 };
                 $.ajax({
                     url: "/api/devices/updateByIndexCode",
                     contentType: 'application/json; charset=utf-8',
-                    data:JSON.stringify(json),
+                    data: JSON.stringify(json),
                     type: "POST",
                     success: function (result) {
-                        if(result.code=="0x00212099")
-                        {
+                        if (result.code == "0x00212099") {
                             alert("操作,即将跳转到设备查询页面");
-                            setTimeout('direct()',1000);
+                            setTimeout('direct()', 1000);
 
-                        }else {
-                            alert("出现错误"+result.msg);
+                        } else {
+                            alert("出现错误" + result.msg);
                         }
                     }
                 })
@@ -93,20 +92,19 @@
             });
 
 
-
-
         })
     </script>
     <style>
-        .a{
-            width:300px;
+        .a {
+            width: 300px;
             height: 30px;
             margin-left: 20px;
         }
-        #b{
+
+        #b {
             width: 500px;
             border: 1px;
-            text-align:right;
+            text-align: right;
         }
     </style>
 </head>
@@ -115,9 +113,9 @@
 <script type="text/javascript">
     /* 鼠标点击特效 */
     var a_idx = 0;
-    jQuery(document).ready(function($) {
-        $("body").click(function(e) {
-            var a = new Array("富强", "民主", "文明", "和谐", "自由", "平等", "公正" ,"法治", "爱国", "敬业", "诚信", "友善");
+    jQuery(document).ready(function ($) {
+        $("body").click(function (e) {
+            var a = new Array("富强", "民主", "文明", "和谐", "自由", "平等", "公正", "法治", "爱国", "敬业", "诚信", "友善");
             var $i = $("<span/>").text(a[a_idx]);
             a_idx = (a_idx + 1) % a.length;
             var x = e.pageX,
@@ -136,7 +134,7 @@
                     "opacity": 0
                 },
                 2500,
-                function() {
+                function () {
                     $i.remove();
                 });
         });
@@ -165,13 +163,14 @@
             <td th:text="${page.timeNote}"></td>
             <td th:text="${page.online==0} ? '离线':'在线'"></td>
 
-            <td > <a th:href="@{/web/device/deleteByIndexCode(indexCode=${page.indexCode})}">删除</a></td>
+            <td><a th:href="@{/web/device/deleteByIndexCode(indexCode=${page.indexCode})}">删除</a></td>
             <!-- 按钮触发模态框 -->
-            <td><a  data-toggle="modal" th:data-target="'#'+${userStat.index}" id="updateTarget" >修改</a></td>
+            <td><a data-toggle="modal" th:data-target="'#'+${userStat.index}" id="updateTarget">修改</a></td>
 
 
             <!-- 模态框（Modal） -->
-            <div class="modal fade" th:id="${userStat.index}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal fade" th:id="${userStat.index}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                 aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -179,27 +178,34 @@
                             <h4 class="modal-title" id="myModalLabel">修改设备信息</h4>
                         </div>
 
-                        <div class="modal-body" >
+                        <div class="modal-body">
                             <div id="b">
                                 <div>
-                                    设备名称 <input th:id="deviceName+${userStat.index}" class="a" th:value="${page.deviceName}"></input>
+                                    设备名称 <input th:id="deviceName+${userStat.index}" class="a"
+                                                th:value="${page.deviceName}"></input>
                                 </div>
                                 <div>
-                                设备ip   <input th:id="ip+${userStat.index}" class="a" th:value="${page.ip}"></input>
+                                    设备ip <input th:id="ip+${userStat.index}" class="a" th:value="${page.ip}"></input>
                                 </div>
                                 <div>
-                                最后修改时间   <input th:id="timeNote+${userStat.index}" class="a" th:value="${page.timeNote}"></input>
+                                    最后修改时间 <input th:id="timeNote+${userStat.index}" class="a"
+                                                  th:value="${page.timeNote}"></input>
                                 </div>
                                 <div>
-                                是否在线  <input th:id="online+${userStat.index}" class="a" th:value="${page.online==1}? '在线' :'离线'" readonly="readonly" disabled></input>
+                                    是否在线 <input th:id="online+${userStat.index}" class="a"
+                                                th:value="${page.online==1}? '在线' :'离线'" readonly="readonly"
+                                                disabled></input>
                                 </div>
-                            <input th:id="indeCode+${userStat.index}" type="hidden" th:value="${page.indexCode}"></input>
+                                <input th:id="indeCode+${userStat.index}" type="hidden"
+                                       th:value="${page.indexCode}"></input>
                             </div>
                         </div>
 
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-                            <button type="button" id="update" th:onclick="'updateDevice('+${userStat.index}+')'" class="btn btn-primary">提交更改</button>
+                            <button type="button" id="update" th:onclick="'updateDevice('+${userStat.index}+')'"
+                                    class="btn btn-primary">提交更改
+                            </button>
                         </div>
                     </div><!-- /.modal-content -->
                 </div><!-- /.modal -->
@@ -215,11 +221,16 @@
                     <span aria-hidden="true">&laquo;</span>
                 </a>
             </li>
-            <li><a th:href="@{/web/device/findAllDevices(pageNo=${pages.number}+1)}" th:text="${pages.number}+1"></a></li>
-            <li><a th:href="@{/web/device/findAllDevices(pageNo=${pages.number}+2)}" th:text="${pages.number}+2"></a></li>
-            <li><a th:href="@{/web/device/findAllDevices(pageNo=${pages.number}+3)}" th:text="${pages.number}+3"></a></li>
-            <li><a th:href="@{/web/device/findAllDevices(pageNo=${pages.number}+4)}" th:text="${pages.number}+4"></a></li>
-            <li><a th:href="@{/web/device/findAllDevices(pageNo=${pages.number}+5)}" th:text="${pages.number}+5"></a></li>
+            <li><a th:href="@{/web/device/findAllDevices(pageNo=${pages.number}+1)}" th:text="${pages.number}+1"></a>
+            </li>
+            <li><a th:href="@{/web/device/findAllDevices(pageNo=${pages.number}+2)}" th:text="${pages.number}+2"></a>
+            </li>
+            <li><a th:href="@{/web/device/findAllDevices(pageNo=${pages.number}+3)}" th:text="${pages.number}+3"></a>
+            </li>
+            <li><a th:href="@{/web/device/findAllDevices(pageNo=${pages.number}+4)}" th:text="${pages.number}+4"></a>
+            </li>
+            <li><a th:href="@{/web/device/findAllDevices(pageNo=${pages.number}+5)}" th:text="${pages.number}+5"></a>
+            </li>
             <li>
                 <a th:href="@{/web/device/findAllDevices(pageNo=${pages.number}+5)}">
                     <span aria-hidden="true">&raquo;</span>

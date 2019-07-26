@@ -4,13 +4,13 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://dubbo.apache.org/schema/dubbo http://dubbo.apache.org/schema/dubbo/dubbo.xsd">
 
     <dubbo:application name="demo-consumer"/>
-<!--    <dubbo:registry  address="simple://119.3.10.221:2181"/>-->
+    <!--    <dubbo:registry  address="simple://119.3.10.221:2181"/>-->
     <dubbo:registry protocol="simple" address="127.0.0.1:8073"/>
 
     <dubbo:protocol name="rest" port="8090"/>
 
-<!--    <dubbo:reference id="restEasyService" check="false" interface="entertainment.service.RestEasyService"  />-->
+    <!--    <dubbo:reference id="restEasyService" check="false" interface="entertainment.service.RestEasyService"  />-->
 
-    <dubbo:reference id="restEasyService" check="false" interface="com.self.entertainment.TestRestEasyService"  />
-<!--    <dubbo:reference id="helloService" check="false" interface="entertainment.service.HelloService"  />-->
+    <dubbo:reference id="restEasyService" check="false" interface="com.self.entertainment.TestRestEasyService"/>
+    <!--    <dubbo:reference id="helloService" check="false" interface="entertainment.service.HelloService"  />-->
 </beans>

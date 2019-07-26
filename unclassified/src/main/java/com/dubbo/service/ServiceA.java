@@ -9,5 +9,5 @@ import org.springframework.context.annotation.Configuration;
  */
 public interface ServiceA {
 
-     String  sayHello();
+    String sayHello();
 }

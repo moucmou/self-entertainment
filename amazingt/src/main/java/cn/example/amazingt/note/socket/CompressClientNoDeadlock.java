@@ -31,7 +31,8 @@ public class CompressClientNoDeadlock {
             public void run() {
                 try {
                     SendBytes(sock, fileIn);
-                } catch (Exception ignored) {}
+                } catch (Exception ignored) {
+                }
             }
         };
         thread.start();

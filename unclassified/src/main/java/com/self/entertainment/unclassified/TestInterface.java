@@ -7,7 +7,9 @@ import java.io.IOException;
  * @date 2019/5/5 17:11
  */
 public interface TestInterface {
-    default void sayHello(){
+    default void sayHello() {
         System.out.println(" hello world");
-    } ;
+    }
+
+    ;
 }

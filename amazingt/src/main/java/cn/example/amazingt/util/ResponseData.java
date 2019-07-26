@@ -12,7 +12,7 @@ import java.util.List;
 //@JsonInclude(JsonInclude.Include.NON_NULL)
 public class ResponseData {
 
-//    private static final long serialVersionUID = 1L;
+    //    private static final long serialVersionUID = 1L;
     public final static String SUCCESS = "0";
 
     public final static String ERROR = "-1";
@@ -28,7 +28,7 @@ public class ResponseData {
     /*
      * 错误消息
      */
-    private String msg ;
+    private String msg;
 
     public String getCode() {
         return code;
@@ -88,12 +88,12 @@ public class ResponseData {
         this.data = data;
     }
 
-     public ResponseData(String code, String msg) {
+    public ResponseData(String code, String msg) {
         this.code = code;
         this.msg = msg;
     }
 
-     public ResponseData(String code, String msg, Object data) {
+    public ResponseData(String code, String msg, Object data) {
         this.code = code;
         this.msg = msg;
         this.data = data;

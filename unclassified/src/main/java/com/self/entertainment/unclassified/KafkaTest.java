@@ -24,29 +24,30 @@ import java.util.stream.Collectors;
  */
 public class KafkaTest {
 
-    public static void main(String[] args)  {
+    public static void main(String[] args) {
         RetryPolicy retryPolicy = new ExponentialBackoffRetry(1000, 3);
-       try(CuratorFramework client =
-                   CuratorFrameworkFactory.builder()
-                           .connectString("10.20.84.150:2181")
-                           .sessionTimeoutMs(5000)
-                           .connectionTimeoutMs(5000)
-                           .retryPolicy(retryPolicy)
-                           .build()){
+        try (CuratorFramework client =
+                     CuratorFrameworkFactory.builder()
+                             .connectString("10.20.84.150:2181")
+                             .sessionTimeoutMs(5000)
+                             .connectionTimeoutMs(5000)
+                             .retryPolicy(retryPolicy)
+                             .build()) {
 
-           client.start();
-           ;
-           ObjectMapper objectMapper=new ObjectMapper();
-           Test test= objectMapper.readValue(new String(client.getData().forPath("/brokers/ids/0"), StandardCharsets.UTF_8) ,Test.class);
-       } catch (Exception e) {
-           e.printStackTrace();
-       }
+            client.start();
+            ;
+            ObjectMapper objectMapper = new ObjectMapper();
+            Test test = objectMapper.readValue(new String(client.getData().forPath("/brokers/ids/0"), StandardCharsets.UTF_8), Test.class);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         ;
 
 
 //        System.out.println(getNode(client, "/"));
 
     }
+
     @JsonIgnoreProperties(ignoreUnknown = true)
     public static class Test implements Serializable {
         private static final long serialVersionUID = 4800242250194288475L;
@@ -60,16 +61,17 @@ public class KafkaTest {
             this.port = port;
         }
     }
+
     public static List<String> res = new ArrayList<>();
 
     public static List<String> getNode(CuratorFramework client, String parentNode) throws Exception {
-            List<String> tmpList = client.getChildren().forPath(parentNode);
-            for (String tmp : tmpList) {
-                String childNode = parentNode.equals("/") ? parentNode + tmp : parentNode + "/" + tmp;
-                res.add(childNode);
-                getNode(client, childNode);
-            }
-            return res;
+        List<String> tmpList = client.getChildren().forPath(parentNode);
+        for (String tmp : tmpList) {
+            String childNode = parentNode.equals("/") ? parentNode + tmp : parentNode + "/" + tmp;
+            res.add(childNode);
+            getNode(client, childNode);
+        }
+        return res;
     }
 
 

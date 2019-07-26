@@ -29,8 +29,8 @@ public class NoticeServiceImpl implements NoticeService {
 
     @Override
     public ResponseData<List<String>> getAll() {
-        List<String> list=new ArrayList<>();
-        for(Notice notice:noticeRepository.findAll()) {
+        List<String> list = new ArrayList<>();
+        for (Notice notice : noticeRepository.findAll()) {
             list.add(notice.getNotice());
         }
         return ResponseData.success(list);

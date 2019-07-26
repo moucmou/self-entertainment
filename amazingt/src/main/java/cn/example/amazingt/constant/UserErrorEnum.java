@@ -12,8 +12,8 @@ public enum UserErrorEnum {
     USERNAME_EXSIT("0x00212024", "该用户名已被注册"),
     USERNAME_NOT_EXSIT("0x00212024", "登录用户名不存在"),
     PASSWORD_ERROR("0x00212026", "用户密码错误"),
-    NOT_LOGIN("0x00212028","当前无用户登录"),
-    SUCCESS("0x00212099","操作成功");
+    NOT_LOGIN("0x00212028", "当前无用户登录"),
+    SUCCESS("0x00212099", "操作成功");
 
     private String code;//编码值
     private String message;//描述信息

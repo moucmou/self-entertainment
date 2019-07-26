@@ -16,17 +16,19 @@ public class CarController {
     @Autowired
     CarService carService;
 
-    @RequestMapping(value="/addToCar",method = RequestMethod.POST)
-    public ResponseData<Car>  addItem(Long flowerId,Integer number){
-      return  carService.addItem(flowerId,number) ;
+    @RequestMapping(value = "/addToCar", method = RequestMethod.POST)
+    public ResponseData<Car> addItem(Long flowerId, Integer number) {
+        return carService.addItem(flowerId, number);
     }
-    @RequestMapping(value="/delFromCar",method = RequestMethod.POST)
-    public ResponseData<String>  delItem(Long flowerId){
-        return  carService.delItem(flowerId) ;
+
+    @RequestMapping(value = "/delFromCar", method = RequestMethod.POST)
+    public ResponseData<String> delItem(Long flowerId) {
+        return carService.delItem(flowerId);
     }
-    @RequestMapping(value="/getCar",method = RequestMethod.POST)
-    public ResponseData<Page<Car>>  getCar(Integer pageNo, Integer pageSize){
-        return  carService.getItem(pageNo,pageSize) ;
+
+    @RequestMapping(value = "/getCar", method = RequestMethod.POST)
+    public ResponseData<Page<Car>> getCar(Integer pageNo, Integer pageSize) {
+        return carService.getItem(pageNo, pageSize);
     }
 
 }

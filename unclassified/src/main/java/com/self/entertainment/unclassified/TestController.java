@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class TestController {
 
     @RequestMapping("/echo")
-    public String sayHello(){
+    public String sayHello() {
         return "hello world";
     }
 }

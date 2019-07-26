@@ -8,6 +8,7 @@ import org.slf4j.LoggerFactory;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.lang.reflect.Proxy;
 import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
 import java.nio.file.Paths;
@@ -21,6 +22,7 @@ public class JavaNioTest {
     private static final Logger logger = LoggerFactory.getLogger(JavaNioTest.class);
 
     public static void main(String[] args) throws IOException {
+
         try (FileChannel fileChannel = FileChannel.open(Paths.get("C:\\Users\\zhutao14\\Desktop\\springboot-shiro笔记.txt"));
              FileChannel dst = FileChannel.open(Paths.get("C:\\Users\\zhutao14\\Desktop\\socket\\sourceDst.txt"), StandardOpenOption.APPEND);
 //             FileOutputStream fileOutputStream= FileUtils.openOutputStream(new File("C:\\Users\\zhutao14\\Desktop\\socket\\sourceDst.txt"),true);

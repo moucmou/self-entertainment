@@ -15,7 +15,7 @@ const baseUrl = '/'
 Vue.prototype.$http = axios.create({
   baseURL: baseUrl,
   headers: {
-    post: { 'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8' }
+    post: {'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8'}
   },
   validateStatus: function (status) {
     return status >= 200 && status < 300
@@ -76,5 +76,6 @@ Vue.config.productionTip = false
 
 new Vue({
   router,
-  render: h => h(App)
-}).$mount('#app')
+  render: h = > h(App)
+}).
+$mount('#app')

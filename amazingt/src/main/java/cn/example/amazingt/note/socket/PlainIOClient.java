@@ -22,41 +22,44 @@ public class PlainIOClient {
         this.lastTime = lastTime;
     }
 
-    private LocalTime lastTime=LocalTime.now();
+    private LocalTime lastTime = LocalTime.now();
     private Socket socket;
     private int port;
     private String host;
     private OutputStream outputStream;
     private InputStream inputStream;
 
-    public PlainIOClient( int port, String host) {
+    public PlainIOClient(int port, String host) {
         this.port = port;
         this.host = host;
     }
+
     public void init() throws IOException {
         try {
-            this.socket= new Socket();
+            this.socket = new Socket();
             socket.connect(new InetSocketAddress("localhost", 9120), 2000);
             socket.setKeepAlive(true);
 //            socket.setSoTimeout(2000);
 
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println(e);
         }
-        this.outputStream=this.socket.getOutputStream();
-        this.inputStream=this.socket.getInputStream();
+        this.outputStream = this.socket.getOutputStream();
+        this.inputStream = this.socket.getInputStream();
         System.out.println("初始化完毕");
     }
+
     public void sendMsg(byte[] x) throws IOException {
         outputStream.write(x);
-        lastTime=LocalTime.now();
+        lastTime = LocalTime.now();
     }
+
     public void getMsg() throws IOException {
         InputStreamReader inputStreamReader = new InputStreamReader(inputStream, "UTF-8");
         BufferedReader bufferedReader = new BufferedReader(inputStreamReader);// 加入缓冲区
 //        LocalTime.now().minusSeconds(6L).isBefore(lastTime)
 
-        for( ;LocalTime.now().minusSeconds(50L).isBefore(lastTime);) {
+        for (; LocalTime.now().minusSeconds(50L).isBefore(lastTime); ) {
 
             if (bufferedReader.ready()) {
 
@@ -79,12 +82,14 @@ public class PlainIOClient {
 
 
     }
+
     public void refresh() throws IOException {
         destroy();
         init();
         getMsg();
     }
-    public void destroy(){
+
+    public void destroy() {
         try {
 
 //            IOUtils.closeQuietly(inputStream);
@@ -97,6 +102,7 @@ public class PlainIOClient {
             e.printStackTrace();
         }
     }
+
     public static void main(String[] args) throws InterruptedException, IOException {
 
 //        PlainIOClient plainIOClient= new PlainIOClient(9120,"localhost");
@@ -131,23 +137,24 @@ public class PlainIOClient {
 ////            }
 ////        });
 //
-        PlainIOClient plainIOClient= new PlainIOClient(9120,"localhost");
+        PlainIOClient plainIOClient = new PlainIOClient(9120, "localhost");
         plainIOClient.init();
         executorService.scheduleWithFixedDelay(new Runnable() {
-            private boolean isconnected=true;
-            int count=0;
+            private boolean isconnected = true;
+            int count = 0;
+
             @Override
             public void run() {
                 //                    cyclicBarrier.reset();
 //                if (isconnected && LocalTime.now().minusSeconds(5).isAfter(plainIOClient.getLastTime())) {
-                    System.out.println(LocalTime.now().toString());
-                    try {
-                        System.out.println(count++);
+                System.out.println(LocalTime.now().toString());
+                try {
+                    System.out.println(count++);
 //                        PlainIOClient plainIOClient= new PlainIOClient(9120,"localhost");
 //                        plainIOClient.init();
 //                        plainIOClient.outputStream.write("hello".getBytes(Charset.forName("UTF-8")));
-                        String x="heartbeatjkdhaskjdhksadsajdaskasd"+count+"\r\n";
-                        plainIOClient.sendMsg(x.getBytes(Charset.forName("UTF-8")));
+                    String x = "heartbeatjkdhaskjdhksadsajdaskasd" + count + "\r\n";
+                    plainIOClient.sendMsg(x.getBytes(Charset.forName("UTF-8")));
 //
 //                        plainIOClient.setLastTime(LocalTime.now());
 //                        count++;
@@ -156,12 +163,12 @@ public class PlainIOClient {
 //                        }
 //                        System.out.println(count);
 
-                    }catch (IOException e){
-                        System.out.println(LocalTime.now().toString());
-                        System.out.println(e);
+                } catch (IOException e) {
+                    System.out.println(LocalTime.now().toString());
+                    System.out.println(e);
 //                        isconnected=false;
 //                        plainIOClient.destroy();
-                    }
+                }
 //                        cyclicBarrier.await();
 //                }
 //                while(!isconnected){
@@ -176,7 +183,7 @@ public class PlainIOClient {
 //                }
 
             }
-        }, 0, 20,TimeUnit.MILLISECONDS);
+        }, 0, 20, TimeUnit.MILLISECONDS);
 
 //        plainIOClient.sendMsg(("asdasd asdsa sdadasd!\r\n").getBytes(Charset.forName("UTF-8")));
 //        plainIOClient.getMsg();

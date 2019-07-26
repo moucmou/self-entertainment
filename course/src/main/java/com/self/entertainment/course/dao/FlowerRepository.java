@@ -21,7 +21,7 @@ public interface FlowerRepository extends JpaRepository<Flower, Long>, JpaSpecif
 
     boolean existsByFlowerName(String name);
 
-    Page<Flower> findByFlowerNameLike(String flowerName, Pageable page );
+    Page<Flower> findByFlowerNameLike(String flowerName, Pageable page);
 
     List<Flower> findByFlowerIdIn(Long[] ids);
 }

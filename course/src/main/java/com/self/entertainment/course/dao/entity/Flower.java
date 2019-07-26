@@ -11,18 +11,18 @@ import java.io.Serializable;
  */
 @Data
 @Entity
-@Table(name="t_flower")
+@Table(name = "t_flower")
 public class Flower implements Serializable {
 
     private static final long serialVersionUID = 2604396364055746843L;
     /**
-     *    flower_id int NOT NULL,
-     *    flower_name char(10) NOT NULL,
-     *    flower_language char(50),
-     *    flower_inprice int NOT NULL,
-     *    flower_outprice int NOT NULL,
-     *    flower_state char(50) NOT NULL,
-     *    PRIMARY KEY(flower_id),
+     * flower_id int NOT NULL,
+     * flower_name char(10) NOT NULL,
+     * flower_language char(50),
+     * flower_inprice int NOT NULL,
+     * flower_outprice int NOT NULL,
+     * flower_state char(50) NOT NULL,
+     * PRIMARY KEY(flower_id),
      */
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -35,9 +35,6 @@ public class Flower implements Serializable {
     private Integer flowerNumber;
     private String picUrl;
     private Long createTime;
-
-
-
 
 
 }

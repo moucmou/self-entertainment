@@ -16,12 +16,13 @@ import java.nio.charset.Charset;
  * @date 2019/4/19 11:33
  */
 @Component
-public class TestG implements ApplicationListener<ContextRefreshedEvent>  {
+public class TestG implements ApplicationListener<ContextRefreshedEvent> {
 
     @Autowired
     private TestI testI;
     @Autowired
     private ApplicationContext applicationContext;
+
     @Override
     public void onApplicationEvent(ContextRefreshedEvent event) {
         testI.sayHello("");
@@ -30,7 +31,7 @@ public class TestG implements ApplicationListener<ContextRefreshedEvent>  {
 //       }
 
         try {
-            String x=new String("123".getBytes(), "Unicode");
+            String x = new String("123".getBytes(), "Unicode");
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }

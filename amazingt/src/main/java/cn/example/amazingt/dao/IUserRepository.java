@@ -12,9 +12,10 @@ import org.springframework.stereotype.Repository;
  */
 
 @Repository
-public interface IUserRepository  extends JpaRepository<User, Long> {
+public interface IUserRepository extends JpaRepository<User, Long> {
     /**
      * 根据用户名获取用户信息（包括密码））
+     *
      * @param userName 用户名
      * @return
      */

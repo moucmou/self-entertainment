@@ -52,7 +52,7 @@ public class NioSocketServer implements Runnable {
                                 client.close();
                             }
                         } catch (Exception e) {
-                            logger.error("",e);
+                            logger.error("", e);
                         }
                     }
 

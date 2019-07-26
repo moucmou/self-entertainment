@@ -17,8 +17,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @SpringBootApplication
 @EnableScheduling
 @ServletComponentScan
-public class AmazingtApplication extends SpringBootServletInitializer
-{
+public class AmazingtApplication extends SpringBootServletInitializer {
 
     public static void main(String[] args) {
         SpringApplication.run(AmazingtApplication.class, args);

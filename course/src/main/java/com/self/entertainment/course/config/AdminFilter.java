@@ -5,7 +5,7 @@ import com.self.entertainment.course.utils.Role;
 import org.springframework.stereotype.Component;
 
 @Component
-public class AdminFilter extends  CustomFilter {
+public class AdminFilter extends CustomFilter {
     @Override
     public boolean hasPermitted(Integer role) {
 

@@ -12,8 +12,8 @@ import java.util.BitSet;
 public class TestBit {
 
     public static void main(String[] args) {
-        BitSet bitSet1=  BitSet.valueOf(new long[]{99,123,55});
-        BitSet bitSet =new BitSet();
+        BitSet bitSet1 = BitSet.valueOf(new long[]{99, 123, 55});
+        BitSet bitSet = new BitSet();
         bitSet.set(66);
         bitSet.set(88);
         System.out.println();

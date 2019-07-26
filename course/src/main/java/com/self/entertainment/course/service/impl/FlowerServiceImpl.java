@@ -65,7 +65,8 @@ public class FlowerServiceImpl implements FlowerService {
         for (Flower flower : page.getContent()) {
             File picFile = new File(TempFile.getInstance().getFile(), String.valueOf(flower.getFlowerId()));
             try {
-                flower.setPicUrl(FileUtils.readFileToString(picFile,"UTF-8"));  ;
+                flower.setPicUrl(FileUtils.readFileToString(picFile, "UTF-8"));
+                ;
             } catch (IOException e) {
                 log.error("读数据失败", e);
             }

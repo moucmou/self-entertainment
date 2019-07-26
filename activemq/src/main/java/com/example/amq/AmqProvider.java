@@ -24,12 +24,6 @@ public class AmqProvider {
     public static void main(String[] args) throws Exception {
         Lock lock = new ReentrantLock();
         Thread thread = null;
-        new Thread(()->{
-            Thread.currentThread().setName("测试线程");
-            for(Long i=0L;i<Long.MAX_VALUE;i++){
-                System.out.println(i);
-            }
-        }).start();
         try {
             //加超时时间也能强制唤醒、但是没有amq集群就还是不要用failover了  ?timeout=3000
             // Create a ConnectionFactory
@@ -41,20 +35,20 @@ public class AmqProvider {
             JmsTemplate jmsTemplate = new JmsTemplate(cachingConnectionFactory[0]);
             jmsTemplate.setSessionAcknowledgeMode(2);
             // 修改消息的有效时间，设置为60s（秒）
-            jmsTemplate.setTimeToLive(120*60*1000);
+            jmsTemplate.setTimeToLive(120 * 60 * 1000);
             //jmsTemplate.setDefaultDestination(getDestination(destionName, isTopic));
             jmsTemplate.setDeliveryMode(DeliveryMode.PERSISTENT);
             jmsTemplate.setExplicitQosEnabled(true);
             // Create the destination (Topic or Queue)
             thread = new Thread(() -> {
                 Thread.currentThread().setName("让我看看是哪个弟弟出问题了");
-                int count = 30;
+                int count = 1;
                 while (count > 0) {
-                    try {
-                        Thread.sleep(1 * 5000);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
+//                    try {
+//                        Thread.sleep(1 * 5000);
+//                    } catch (InterruptedException e) {
+//                        e.printStackTrace();
+//                    }
                     try {
                         long start = System.currentTimeMillis();
                         jmsTemplate.send(new ActiveMQQueue("test.test.test")

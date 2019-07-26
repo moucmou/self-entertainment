@@ -12,22 +12,20 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class ComonController {
 
     @RequestMapping("/index")
-    public String index(){
+    public String index() {
         return "index";
     }
 
 
     @RequestMapping("/addDevice")
-    public String addDevice(){
+    public String addDevice() {
         return "addDevice";
     }
+
     @RequestMapping("/findAllDevice")
-    public String findALlDevice(){
+    public String findALlDevice() {
         return "findAllDevices";
     }
-
-
-
 
 
 }

@@ -14,6 +14,6 @@ public class TestObsever implements Observer {
 
     @Override
     public void update(Observable o, Object arg) {
-        log.info("i'm called" + o+"\r\n" +arg);
+        log.info("i'm called" + o + "\r\n" + arg);
     }
 }

@@ -9,13 +9,14 @@ import java.util.Observable;
  * @date 2019/5/30 10:16
  */
 @Slf4j
-public class TestObseverable  extends Observable {
+public class TestObseverable extends Observable {
 
-    public void setChange(){
+    public void setChange() {
         super.setChanged();
     }
+
     public static void main(String[] args) {
-        TestObseverable observable=new TestObseverable();
+        TestObseverable observable = new TestObseverable();
         observable.setChange();
         observable.addObserver(new TestObsever());
         observable.notifyObservers("helloworld");

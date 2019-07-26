@@ -25,7 +25,7 @@ import java.util.List;
  * @date 2018/9/15 11:43
  */
 @Configuration
-public class WebSecurityConfig  extends WebMvcConfigurationSupport {
+public class WebSecurityConfig extends WebMvcConfigurationSupport {
     @Override
     protected void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(userInterceptor()).addPathPatterns("/web/**").addPathPatterns("")
@@ -48,7 +48,6 @@ public class WebSecurityConfig  extends WebMvcConfigurationSupport {
     public UserInterceptor userInterceptor() {
         return new UserInterceptor();
     }
-
 
 
     @Bean
@@ -75,16 +74,19 @@ public class WebSecurityConfig  extends WebMvcConfigurationSupport {
 
     /**
      * 实例化自己的注解解析器
+     *
      * @return
      */
     @Bean
     public CurrUserMethodArgumentResolver currUserMethodArgumentResolver() {
         return new CurrUserMethodArgumentResolver();
     }
+
     /**
      * 其实从这里看出来，与配置在spring-servlet.xml中相比，都是实例化一个自己注解解析器，
      * 然后将它add进spring的List<HandlerMethodArgumentResolver> argumentResolvers中
      * 最后交给spring统一管理
+     *
      * @param argumentResolvers
      */
     @Override

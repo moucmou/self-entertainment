@@ -14,19 +14,21 @@ import java.util.concurrent.Executors;
  * @author AmazingZ
  * @date 2018/11/6 10:28
  */
-public class PlainOioServerThread implements Runnable{
+public class PlainOioServerThread implements Runnable {
     private Socket socket;
 
     //同一IP只允许一个链接的Map
     public static final ConcurrentHashMap<String, Long> map = new ConcurrentHashMap<String, Long>();
+
     public PlainOioServerThread(Socket socket) {
         this.socket = socket;
     }
-    public static void main(String[] args){
-        new Thread(new Runnable(){
+
+    public static void main(String[] args) {
+        new Thread(new Runnable() {
             @Override
             public void run() {
-                try{
+                try {
                     ServerSocket serverSocket = new ServerSocket(9120);
                     try {
                         System.out.println("Socket服务端已启动，等待客户端连接......");
@@ -37,30 +39,31 @@ public class PlainOioServerThread implements Runnable{
                             PlainOioServerThread socketThread = new PlainOioServerThread(socket);
                             Executors.newFixedThreadPool(5).execute(socketThread);
                         }
-                    }finally{
+                    } finally {
                         //释放资源回收
-                        if(serverSocket != null){
+                        if (serverSocket != null) {
                             serverSocket.close();
                         }
                     }
-                } catch(Exception e){
+                } catch (Exception e) {
                     System.out.println("初始化Socket服务失败");
                 }
             }
         }).start();
     }
+
     @Override
     public void run() {
 
         Thread.currentThread().setName("服务器线程");
-        if(socket == null || socket.getInetAddress() == null){
+        if (socket == null || socket.getInetAddress() == null) {
             System.out.println("请求参数有误，socket为空或客户端Address为空");
             return;
         }
         String ipAndPort = socket.getInetAddress().getHostAddress() + "-" + socket.getPort();
         //判断是否为相同ip链接，如果是，挤掉该ip之前的链接
         Long socketStatus = map.get(socket.getInetAddress().getHostAddress());
-        while(socketStatus != null && socketStatus == 1){
+        while (socketStatus != null && socketStatus == 1) {
             try {
                 //服务端断开与该ip的链接状态为已断开，服务端主动断开无效的客户端链接
                 map.put(socket.getInetAddress().getHostAddress(), 0L);
@@ -77,23 +80,23 @@ public class PlainOioServerThread implements Runnable{
         BufferedReader bufferedReader = null;
         OutputStream outputStream = null;
         PrintWriter printWriter = null;
-        try{
+        try {
             try {
                 inputStream = socket.getInputStream();
                 // 得到一个输入流，接收客户端传递的信息
                 InputStreamReader inputStreamReader = new InputStreamReader(inputStream, "UTF-8");// 提高效率，将字节流转为字符流
                 bufferedReader = new BufferedReader(inputStreamReader);// 加入缓冲区
-                while(true){
+                while (true) {
                     //链接状态已断开
                     socketStatus = map.get(socket.getInetAddress().getHostAddress());
-                    if(socketStatus != 1L){
+                    if (socketStatus != 1L) {
                         break;
                     }
-                    if(socket.isClosed() || !socket.isConnected()){
+                    if (socket.isClosed() || !socket.isConnected()) {
                         System.out.println("客户端：{}已经主动断开连接:" + ipAndPort);
                         break;
                     }
-                    if(bufferedReader.ready()) {
+                    if (bufferedReader.ready()) {
                         String msg = bufferedReader.readLine();
 //                        new Thread(new Runnable() {
 //                            @Override
@@ -139,9 +142,9 @@ public class PlainOioServerThread implements Runnable{
                         }
                     }
                 }
-            }finally{
+            } finally {
                 System.out.println("socket断开连接成功，当前客户端为：{}" + ipAndPort);
-                if(!socket.isClosed() && socket.isConnected()){
+                if (!socket.isClosed() && socket.isConnected()) {
                     socket.shutdownOutput();// 关闭输出流
                 }
                 // 关闭相对应的资源

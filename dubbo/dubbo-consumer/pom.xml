@@ -29,7 +29,6 @@
         </dependency>
 
 
-
         <dependency>
             <groupId>com.self.entertainment</groupId>
             <artifactId>dubbo-api</artifactId>
@@ -41,11 +40,11 @@
             <version>1.0.0-SNAPSHOT</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/org.jboss.resteasy/resteasy-client -->
-<!--        <dependency>-->
-<!--            <groupId>org.jboss.resteasy</groupId>-->
-<!--            <artifactId>resteasy-client</artifactId>-->
-<!--            <version>3.6.1.Final</version>-->
-<!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>org.jboss.resteasy</groupId>-->
+        <!--            <artifactId>resteasy-client</artifactId>-->
+        <!--            <version>3.6.1.Final</version>-->
+        <!--        </dependency>-->
 
     </dependencies>
 

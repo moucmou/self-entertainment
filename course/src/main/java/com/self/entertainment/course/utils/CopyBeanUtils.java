@@ -45,14 +45,13 @@ public class CopyBeanUtils extends BeanUtils {
                                 readMethod.setAccessible(true);
                             }
                             Object value = readMethod.invoke(source);
-                            if(Objects.nonNull(value)){  //只拷贝不为null的属性 by zhao
+                            if (Objects.nonNull(value)) {  //只拷贝不为null的属性 by zhao
                                 if (!Modifier.isPublic(writeMethod.getDeclaringClass().getModifiers())) {
                                     writeMethod.setAccessible(true);
                                 }
                                 writeMethod.invoke(target, value);
                             }
-                        }
-                        catch (Throwable ex) {
+                        } catch (Throwable ex) {
                             throw new FatalBeanException(
                                     "Could not copy property '" + targetPd.getName() + "' from source to target", ex);
                         }

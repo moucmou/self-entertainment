@@ -30,13 +30,15 @@ public class CurrUserAspect {
     @Pointcut("execution(public * cn.example.amazingt.controller.*.*(..))")
     public void CurrUserPointcut() {
     }
+
     @Around("CurrUserPointcut()")
     public Object around(ProceedingJoinPoint joinPoint) throws Throwable {
         return joinPoint.proceed();
     }
+
     //后置最终通知,final增强，不管是抛出异常或者正常退出都会执行
     @After("CurrUserPointcut()")
-    public void after(JoinPoint jp){
+    public void after(JoinPoint jp) {
         System.out.println("方法最后执行.....");
     }
 }

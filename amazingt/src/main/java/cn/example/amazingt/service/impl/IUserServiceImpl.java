@@ -34,8 +34,8 @@ public class IUserServiceImpl implements IUserService {
     @Override
     public ResponseData getByLogin(LoginDto loginDto, HttpSession httpSession) {
         long start = System.currentTimeMillis();
-        if(null != this.validate(loginDto)){
-            return  this.validate(loginDto);
+        if (null != this.validate(loginDto)) {
+            return this.validate(loginDto);
         }
         User bu = userRepository.getByUserNameIncPassword(loginDto.getLoginName());
         if (!bu.getPassword().equals(MessageDigestUtil.sha256Hex(loginDto.getPassword() + loginDto.getSalt()))) {
@@ -44,46 +44,46 @@ public class IUserServiceImpl implements IUserService {
         }
         long end = System.currentTimeMillis();
         logger.info("登录认证时间，时长={}", end - start);
-        httpSession.setAttribute("user",bu);
+        httpSession.setAttribute("user", bu);
         Map<String, Object> map = new HashMap<String, Object>();
         map.put("indexCode", bu.getIndexCode());
         SessionListener.getNameSet().add(bu.getUserName());
-        return new ResponseData(UserErrorEnum.SUCCESS.getCode(),StringUtils.splice("登录成功,用户名=", loginDto.getLoginName()), map);
+        return new ResponseData(UserErrorEnum.SUCCESS.getCode(), StringUtils.splice("登录成功,用户名=", loginDto.getLoginName()), map);
     }
 
     @Override
     public ResponseData logout(HttpSession httpSession) {
-        User user=(User)httpSession.getAttribute("user");
+        User user = (User) httpSession.getAttribute("user");
         httpSession.removeAttribute("user");
         httpSession.invalidate();
         SessionListener.getNameSet().remove(user.getUserName());
-        return new ResponseData(UserErrorEnum.SUCCESS.getCode(),StringUtils.splice("注销成功,用户名=", user.getUserName()), null);
+        return new ResponseData(UserErrorEnum.SUCCESS.getCode(), StringUtils.splice("注销成功,用户名=", user.getUserName()), null);
     }
 
     @Override
     public ResponseData addByLogin(LoginDto loginDto) {
         User bu = userRepository.getByUserNameIncPassword(loginDto.getLoginName());
         if (bu != null) {
-            return  new ResponseData(UserErrorEnum.USERNAME_NOT_EXSIT.getCode(),
-                    StringUtils.splice(UserErrorEnum.USERNAME_EXSIT.getMessage(), ",用户名=", loginDto.getLoginName()),null);
+            return new ResponseData(UserErrorEnum.USERNAME_NOT_EXSIT.getCode(),
+                    StringUtils.splice(UserErrorEnum.USERNAME_EXSIT.getMessage(), ",用户名=", loginDto.getLoginName()), null);
         }
-        User user =new User();
+        User user = new User();
         loginDto.setSalt(CodeConfig.SALT);
-        user.setIndexCode(UUID.randomUUID().toString().replace("-",""));
+        user.setIndexCode(UUID.randomUUID().toString().replace("-", ""));
         user.setUserName(loginDto.getLoginName());
         user.setPassword(MessageDigestUtil.sha256Hex(loginDto.getPassword() + loginDto.getSalt()));
         userRepository.save(user);
-        return new ResponseData(UserErrorEnum.SUCCESS.getCode(),StringUtils.splice("注册成功,用户名=", loginDto.getLoginName()), null);
+        return new ResponseData(UserErrorEnum.SUCCESS.getCode(), StringUtils.splice("注册成功,用户名=", loginDto.getLoginName()), null);
     }
 
-    private ResponseData validate(LoginDto loginDto){
+    private ResponseData validate(LoginDto loginDto) {
         if (loginDto == null) {
-            return new ResponseData(UserErrorEnum.PARAM_EMPTY.getCode(),UserErrorEnum.PARAM_EMPTY.getMessage(),null);
+            return new ResponseData(UserErrorEnum.PARAM_EMPTY.getCode(), UserErrorEnum.PARAM_EMPTY.getMessage(), null);
         }
         loginDto.setSalt(CodeConfig.SALT);
         if (StringUtils.isEmpty(loginDto.getLoginName())) {
-            return new ResponseData(UserErrorEnum.USERNAME_EMPTY.getCode(),StringUtils.splice(
-                    UserErrorEnum.USERNAME_EMPTY.getMessage(), ",用户名=", loginDto.getLoginName(),  null));
+            return new ResponseData(UserErrorEnum.USERNAME_EMPTY.getCode(), StringUtils.splice(
+                    UserErrorEnum.USERNAME_EMPTY.getMessage(), ",用户名=", loginDto.getLoginName(), null));
         }
         if (StringUtils.isEmpty(loginDto.getPassword())) {
             return new ResponseData(UserErrorEnum.PASSWORD_EMPTY.getCode(), StringUtils.splice(
@@ -91,8 +91,8 @@ public class IUserServiceImpl implements IUserService {
         }
         User bu = userRepository.getByUserNameIncPassword(loginDto.getLoginName());
         if (bu == null) {
-            return  new ResponseData(UserErrorEnum.USERNAME_NOT_EXSIT.getCode(),
-                    StringUtils.splice(UserErrorEnum.USERNAME_NOT_EXSIT.getMessage(), ",用户名=", loginDto.getLoginName()),null);
+            return new ResponseData(UserErrorEnum.USERNAME_NOT_EXSIT.getCode(),
+                    StringUtils.splice(UserErrorEnum.USERNAME_NOT_EXSIT.getMessage(), ",用户名=", loginDto.getLoginName()), null);
         }
         return null;
     }

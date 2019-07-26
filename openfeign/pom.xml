@@ -5,7 +5,7 @@
     <parent>
         <artifactId>j4f</artifactId>
         <groupId>com.self.entertainment</groupId>
-        <version>1.0.0-SNAPSHOT</version>
+        <version>${j4f.version}</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -15,7 +15,6 @@
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-openfeign</artifactId>
-            <version>2.1.2.RELEASE</version>
         </dependency>
 
     </dependencies>

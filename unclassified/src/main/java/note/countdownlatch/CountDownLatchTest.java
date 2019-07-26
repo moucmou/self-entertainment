@@ -9,34 +9,30 @@ import java.util.concurrent.locks.ReentrantLock;
  * @date 2018/10/27 11:52
  */
 public class CountDownLatchTest {
-    private final static CountDownLatch cdl=new CountDownLatch(2);
-    private final static ThreadPoolExecutor threadPool= new ThreadPoolExecutor(2, 15, 30, TimeUnit.SECONDS, new LinkedBlockingQueue<Runnable>());//使用线程池
-    private final static Executor threadPoo1= Executors.newFixedThreadPool(8);
-    private static class GoThread extends Thread{
+    private final static CountDownLatch cdl = new CountDownLatch(2);
+    private final static ThreadPoolExecutor threadPool = new ThreadPoolExecutor(2, 15, 30, TimeUnit.SECONDS, new LinkedBlockingQueue<Runnable>());//使用线程池
+    private final static Executor threadPoo1 = Executors.newFixedThreadPool(8);
+
+    private static class GoThread extends Thread {
         private final String name;
 
-         GoThread(String name)
-        {
-            this.name=name;
+        GoThread(String name) {
+            this.name = name;
 
         }
-        public void run()
-        {
-            System.out.println(name+"开始从宿舍出发");
+
+        public void run() {
+            System.out.println(name + "开始从宿舍出发");
 //            cdl.countDown();
-            try
-            {
+            try {
                 Thread.sleep(1000);
 //                cdl.await();//拦截线程
-                System.out.println(name+"从楼底下出发");
+                System.out.println(name + "从楼底下出发");
                 Thread.sleep(1000);
-                System.out.println(name+"到达操场");
-            }
-            catch(InterruptedException e)
-            {
+                System.out.println(name + "到达操场");
+            } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-
 
 
         }
@@ -53,13 +49,13 @@ public class CountDownLatchTest {
 //                System.out.println("111");
 //            }
 //        });
-        Lock lock =new ReentrantLock();
+        Lock lock = new ReentrantLock();
 //        threadPool.shutdown();;
-        Thread t1=new Thread(()->{
+        Thread t1 = new Thread(() -> {
             try {
                 lock.lockInterruptibly();
-                while (true){
-                    Thread.sleep(3*1000);
+                while (true) {
+                    Thread.sleep(3 * 1000);
                     System.out.println("Hello World 11111");
                 }
             } catch (InterruptedException e) {
@@ -68,23 +64,22 @@ public class CountDownLatchTest {
 
 
         });
-        Thread t2=new Thread(()->{
-                lock.lock();
-                while (true){
-                    try {
-                        Thread.sleep(3*1000);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-                    System.out.println("Hello World 22222");
+        Thread t2 = new Thread(() -> {
+            lock.lock();
+            while (true) {
+                try {
+                    Thread.sleep(3 * 1000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
                 }
-
+                System.out.println("Hello World 22222");
+            }
 
 
         });
 
-            t1.start();
-            t2.start();
+        t1.start();
+        t2.start();
         try {
             Thread.sleep(3000);
         } catch (InterruptedException e) {
@@ -139,7 +134,6 @@ public class CountDownLatchTest {
 
 
     }
-
 
 
 }

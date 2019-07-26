@@ -13,14 +13,14 @@ public class User {
 
     @Id
     @GeneratedValue
-    @Column(name = "i_id", nullable = false,unique = true)
+    @Column(name = "i_id", nullable = false, unique = true)
     private Integer id;
-    @Column(name="u_user_name",nullable = false)
+    @Column(name = "u_user_name", nullable = false)
     private String userName;  //用户名N
-    @Column(name="u_password")
+    @Column(name = "u_password")
 //    @Transient
     private String password;
-    @Column(name="u_index_code")  //用户唯一标识
+    @Column(name = "u_index_code")  //用户唯一标识
     private String indexCode;
     @Transient
     private List<String> list;  //设备标识

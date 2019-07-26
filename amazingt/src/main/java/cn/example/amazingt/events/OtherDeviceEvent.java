@@ -11,9 +11,10 @@ public class OtherDeviceEvent extends ApplicationEvent {
 
     private Device device;
     private int eventTypeId;
+
     public OtherDeviceEvent(Device device) {
         super(device);
-        this.device=device;
+        this.device = device;
     }
 
     public Device getDevice() {

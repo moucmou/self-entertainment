@@ -4,11 +4,13 @@ import com.self.entertainment.course.dao.entity.User;
 import com.self.entertainment.course.service.UserService;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;
+import org.apache.shiro.authz.SimpleAuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.HashSet;
 import java.util.Objects;
 
 @Component("authorizer")
@@ -19,7 +21,15 @@ public class CustomRealm extends AuthorizingRealm {
 
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principals) {
-        return null;
+        /**
+         * 用简单的权限来进行判断用户是否有权限
+         */
+        SimpleAuthorizationInfo simpleAuthorizationInfo = new SimpleAuthorizationInfo();
+        HashSet<String> hashSet = new HashSet<>();
+        hashSet.add("123");
+        hashSet.add("234");
+        simpleAuthorizationInfo.setStringPermissions(hashSet);
+        return simpleAuthorizationInfo;
     }
 
     @Override

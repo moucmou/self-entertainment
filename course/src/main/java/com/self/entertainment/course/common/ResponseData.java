@@ -12,7 +12,7 @@ import java.util.Optional;
  * @date 2018/12/24 14:14
  */
 @Data
-@AllArgsConstructor(staticName="of")
+@AllArgsConstructor(staticName = "of")
 public class ResponseData<T> {
     private static final long serialVersionUID = 5508864578970150888L;
 
@@ -32,14 +32,14 @@ public class ResponseData<T> {
     }
 
     public static <T> ResponseData<T> success(T t) {
-        return  ResponseData.of("0","SUCCESS",t);
+        return ResponseData.of("0", "SUCCESS", t);
     }
 
-    public static <T> ResponseData<T> fail( String message) {
+    public static <T> ResponseData<T> fail(String message) {
         return new ResponseData<>("1", message);
     }
 
-    public static <T> ResponseData<T> error( String message) {
+    public static <T> ResponseData<T> error(String message) {
         return new ResponseData<>("-1", message);
     }
 

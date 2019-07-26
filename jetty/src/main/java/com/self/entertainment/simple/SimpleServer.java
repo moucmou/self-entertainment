@@ -1,6 +1,5 @@
 package com.self.entertainment.simple;
 
-import com.sun.xml.internal.messaging.saaj.util.ByteInputStream;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,7 +15,9 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.Objects;
 import java.util.concurrent.ConcurrentHashMap;
+
 import org.apache.commons.io.IOUtils;
+
 @Slf4j
 public class SimpleServer {
 
@@ -50,7 +51,7 @@ public class SimpleServer {
 //                                byteBuffer.flip();
 //                            }
 //                            ;SimpleRequest.of(new ByteInputStream(byteBuffer.array(), byteBuffer.array().length))
-                            dispatch(Objects.requireNonNull(SimpleRequest.of(client)),new SimpleResponse(client));
+                            dispatch(Objects.requireNonNull(SimpleRequest.of(client)), new SimpleResponse(client));
                         } catch (Exception e) {
                             logger.error("读出错", e);
                         }
@@ -63,6 +64,7 @@ public class SimpleServer {
             logger.error("", e);
         }
     }
+
     private void dispatch(SimpleRequest simpleRequest, SimpleResponse simpleResponse) {
         String clazz = urlServletMap.get(simpleRequest.getUrl());
         if (clazz == null) {
@@ -73,9 +75,10 @@ public class SimpleServer {
             AbstractServlet abstractServlet = (AbstractServlet) Class.forName(clazz).newInstance();
             abstractServlet.service(simpleRequest, simpleResponse);
         } catch (Exception e) {
-            log.error("反射创建实例失败",e);
+            log.error("反射创建实例失败", e);
         }
     }
+
     /**
      * 初始化Map
      *

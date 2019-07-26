@@ -19,22 +19,23 @@ import java.util.Arrays;
 @Component
 public class OtherEventListener implements ApplicationListener<OtherEvent> {
 
-    private Logger logger =LoggerFactory.getLogger(OtherEventListener.class);
-    private final String [] blackIp={
+    private Logger logger = LoggerFactory.getLogger(OtherEventListener.class);
+    private final String[] blackIp = {
             "10.10.10.10",
             "11.11.11.11"
     };
+
     /**
      * 其他类型事件的监听器
      * 比如统计有没有在黑名单里的ip
+     *
      * @param event
      */
     @Override
     public void onApplicationEvent(OtherEvent event) {
 
-       if( Arrays.asList(blackIp).contains(event.getIp()))
-       {
-           logger.info(event.getIp()+"这个黑名单设备又来了");
-       }
+        if (Arrays.asList(blackIp).contains(event.getIp())) {
+            logger.info(event.getIp() + "这个黑名单设备又来了");
+        }
     }
 }
