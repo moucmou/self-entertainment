@@ -2,7 +2,11 @@ package com.example.amq;
 
 import lombok.extern.slf4j.Slf4j;
 import org.apache.activemq.ActiveMQConnectionFactory;
+import org.apache.activemq.ActiveMQMessageConsumer;
+import org.apache.activemq.ActiveMQPrefetchPolicy;
 import org.apache.activemq.command.ActiveMQQueue;
+import org.apache.activemq.command.ActiveMQTextMessage;
+import org.apache.activemq.command.ActiveMQTopic;
 import org.springframework.jms.listener.SimpleMessageListenerContainer;
 import org.springframework.jms.listener.adapter.MessageListenerAdapter;
 
@@ -24,7 +28,13 @@ public class AmqListener {
 
         try {
             // Create a ConnectionFactory
-            ActiveMQConnectionFactory connectionFactory = new ActiveMQConnectionFactory("admin", "7Ta7uzbg", "failover:(tcp://10.19.132.205:7018)?timeout=3000");
+            ActiveMQConnectionFactory connectionFactory = new ActiveMQConnectionFactory("admin", "7Ta7uzbg", "failover:(tcp://119.3.10.221:61616)?timeout=3000");
+
+            ActiveMQPrefetchPolicy test=new ActiveMQPrefetchPolicy();
+//            test.setQueueBrowserPrefetch();
+//            test.setQueuePrefetch();
+            test.setQueuePrefetch(0);
+            connectionFactory.setPrefetchPolicy(test);
             // Create a Connection
 //            Connection connection = connectionFactory.createConnection();
 //
@@ -40,20 +50,23 @@ public class AmqListener {
 
             SimpleMessageListenerContainer container = new SimpleMessageListenerContainer();
             container.setConnectionFactory(connectionFactory);
-            container.setDestination(new ActiveMQQueue("test.test.test"));
-
+            container.setDestination(new ActiveMQQueue("test.test.test3"));
             container.setSessionAcknowledgeMode(2);
+            /**
+             * 持久订阅参数
+             */
+//            container.setSubscriptionDurable(true);
+//            container.setClientId("testzz");
             container.setMessageListener(new MessageListener() {
                 int count = 0;
 
                 @Override
                 public void onMessage(Message message) {
-                    TextMessage textMessage = (TextMessage) message;
+                    ActiveMQTextMessage textMessage = (ActiveMQTextMessage) message;
                     try {
                         System.out.println(textMessage.getText());
-                        System.out.println("看看会不会重发");
+                        System.out.println("testzz2看看会不会重发");
                         System.out.println(count++);
-                        throw new RuntimeException("");
                     } catch (JMSException e) {
 //                        e.printStackTrace();
                     }
