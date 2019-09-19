@@ -11,4 +11,4 @@
 9. netty模块是记录对netty api的使用以及对netty的源码分析
 10. unclassifield 主要是对一些杂七杂八的代码进行测试，包括设计模式、分布式锁、JUC类库等
 ---
-会慢慢补充各个模块的readme
+会慢慢补充各个模块的readme，有疑问提issues会自动发到我的邮箱，我会及时回答
