@@ -4,8 +4,8 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://dubbo.apache.org/schema/dubbo http://dubbo.apache.org/schema/dubbo/dubbo.xsd">
 
     <dubbo:application name="demo-consumer"/>
-    <!--    <dubbo:registry  address="simple://119.3.10.221:2181"/>-->
-    <dubbo:registry protocol="zookeeper" address="119.3.10.221:2181"/>
+    <!--    <dubbo:registry  address="simple://localhost:2181"/>-->
+    <dubbo:registry protocol="zookeeper" address="localhost:2181"/>
 
     <dubbo:protocol name="rest" port="8090"/>
 

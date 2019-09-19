@@ -19,8 +19,8 @@
 
     <dubbo:registry protocol="simple" address="127.0.0.1:8073"/>
 
-    <!--    <dubbo:registry address="zookeeper://119.3.10.221:2181"/>-->
-    <!--    <dubbo:metadata-report address="zookeeper://119.3.10.221:2181"/>-->
+    <!--    <dubbo:registry address="zookeeper://localhost:2181"/>-->
+    <!--    <dubbo:metadata-report address="zookeeper://localhost:2181"/>-->
     <!--    <dubbo:protocol name="dubbo" port="20890"/>-->
     <dubbo:protocol name="rest" port="8090"/>
     <!--    <bean id="testService" class="com.self.entertainment.service.impl.TestServiceImpl"/>-->

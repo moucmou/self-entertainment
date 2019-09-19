@@ -21,7 +21,7 @@
 <!--            <dataSource type="POOLED">-->
 <!--                <property name="driver" value="com.mysql.jdbc.Driver" />-->
 <!--                <property name="url"-->
-<!--                          value="jdbc:mysql://119.3.10.221:3306/course?characterEncoding=utf-8" />-->
+<!--                          value="jdbc:mysql://localhost:3306/course?characterEncoding=utf-8" />-->
 <!--                <property name="username" value="admin" />-->
 <!--                <property name="password" value=" Upc@CST2018" />-->
 <!--            </dataSource>-->

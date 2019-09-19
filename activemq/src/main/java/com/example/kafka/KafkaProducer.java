@@ -34,7 +34,7 @@ public class KafkaProducer {
     public void testProducer() {
 
         Map<String, Object> configs = new HashMap<>();
-        configs.putIfAbsent("bootstrap.servers", "119.3.10.221:9092");
+        configs.putIfAbsent("bootstrap.servers", "localhost:9092");
         configs.putIfAbsent("acks", "all");
         DefaultKafkaProducerFactory<String, String> producerFactory = new DefaultKafkaProducerFactory<>(configs, new StringSerializer(), new StringSerializer());
 
@@ -54,7 +54,7 @@ public class KafkaProducer {
     public void testConsumer() {
 
         Map<String, Object> configs = new HashMap<>();
-        configs.putIfAbsent("bootstrap.servers", "119.3.10.221:9092");
+        configs.putIfAbsent("bootstrap.servers", "localhost:9092");
         configs.put("group.id", "testzzz");
         configs.putIfAbsent("enable.auto.commit",false);
         ConsumerFactory<String, String> consumerFactory = new DefaultKafkaConsumerFactory<>(configs, new StringDeserializer(), new StringDeserializer());

@@ -30,7 +30,7 @@ public class CuratorTest {
     @Test
     public void testSetdata() throws Exception {
         try (
-                CuratorFramework curatorFramework = CuratorFrameworkFactory.newClient("119.3.10.221:2181", new RetryNTimes(10, 5000));
+                CuratorFramework curatorFramework = CuratorFrameworkFactory.newClient("localhost:2181", new RetryNTimes(10, 5000));
         ) {
             curatorFramework.start();
             /**
@@ -60,7 +60,7 @@ public class CuratorTest {
     @Test
     public void testSetdataWatcher() throws Exception {
         try (
-                CuratorFramework curatorFramework = CuratorFrameworkFactory.newClient("119.3.10.221:2181", new RetryNTimes(10, 5000));
+                CuratorFramework curatorFramework = CuratorFrameworkFactory.newClient("localhost:2181", new RetryNTimes(10, 5000));
         ) {
             curatorFramework.start();
             curatorFramework.getData().usingWatcher(new CuratorWatcher() {
@@ -84,7 +84,7 @@ public class CuratorTest {
     @Test
     public void testGetChildrenWatcher() throws Exception {
         try (
-                CuratorFramework curatorFramework = CuratorFrameworkFactory.newClient("119.3.10.221:2181", new RetryNTimes(10, 5000));
+                CuratorFramework curatorFramework = CuratorFrameworkFactory.newClient("localhost:2181", new RetryNTimes(10, 5000));
         ) {
             curatorFramework.start();
             curatorFramework.getChildren().usingWatcher(new CuratorWatcher() {
@@ -109,7 +109,7 @@ public class CuratorTest {
     @Test
     public void testConnectionWatcher() throws Exception {
         try (
-                CuratorFramework curatorFramework = CuratorFrameworkFactory.newClient("119.3.10.221:2181", new RetryNTimes(10, 5000));
+                CuratorFramework curatorFramework = CuratorFrameworkFactory.newClient("localhost:2181", new RetryNTimes(10, 5000));
         ) {
             CountDownLatch countDownLatch=new CountDownLatch(1);
             curatorFramework.start();
@@ -136,7 +136,7 @@ public class CuratorTest {
         Executor executor = Executors.newSingleThreadExecutor();
 
         Thread t1 = new Thread(() -> {
-            CuratorFramework curatorFramework = CuratorFrameworkFactory.newClient("119.3.10.221:2181", new RetryNTimes(10, 5000));
+            CuratorFramework curatorFramework = CuratorFrameworkFactory.newClient("localhost:2181", new RetryNTimes(10, 5000));
             curatorFramework.start();
             try {
                 for (int i = 0; i < 9; i++) {

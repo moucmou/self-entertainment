@@ -26,7 +26,7 @@ public class AmqProvider {
         try {
             //加超时时间也能强制唤醒、但是没有amq集群就还是不要用failover了  ?timeout=3000
             // Create a ConnectionFactory
-            ActiveMQConnectionFactory connectionFactory = new ActiveMQConnectionFactory("admin", "7Ta7uzbg", "failover:(tcp://119.3.10.221:61616)?timeout=3000");
+            ActiveMQConnectionFactory connectionFactory = new ActiveMQConnectionFactory("admin", "7Ta7uzbg", "failover:(tcp://localhost:61616)?timeout=3000");
             final CachingConnectionFactory[] cachingConnectionFactory = {new CachingConnectionFactory(connectionFactory)};
             cachingConnectionFactory[0].setReconnectOnException(true);
             cachingConnectionFactory[0].setSessionCacheSize(10);

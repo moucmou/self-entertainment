@@ -32,7 +32,7 @@ public class Test implements ApplicationListener<ContextRefreshedEvent> {
 
 //        SimpleRegistryService.getInstance().register("server@justTest", URL.valueOf("rest://127.0.0.1:8090"));
         try (
-                CuratorFramework curatorFramework = CuratorFrameworkFactory.newClient("119.3.10.221:2181", new RetryNTimes(10, 5000));
+                CuratorFramework curatorFramework = CuratorFrameworkFactory.newClient("localhost:2181", new RetryNTimes(10, 5000));
         ) {
             curatorFramework.start();
             try {

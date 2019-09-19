@@ -28,7 +28,7 @@ public class AmqListener {
 
         try {
             // Create a ConnectionFactory
-            ActiveMQConnectionFactory connectionFactory = new ActiveMQConnectionFactory("admin", "7Ta7uzbg", "failover:(tcp://119.3.10.221:61616)?timeout=3000");
+            ActiveMQConnectionFactory connectionFactory = new ActiveMQConnectionFactory("admin", "7Ta7uzbg", "failover:(tcp://localhost:61616)?timeout=3000");
 
             ActiveMQPrefetchPolicy test=new ActiveMQPrefetchPolicy();
 //            test.setQueueBrowserPrefetch();
