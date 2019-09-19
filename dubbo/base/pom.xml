@@ -9,9 +9,9 @@
         <version>${j4f.version}</version>
     </parent>
     <groupId>dubbo.custom.base</groupId>
-    <artifactId>dubbo</artifactId>
+    <artifactId>base</artifactId>
     <version>1.0.0-SNAPSHOT</version>
-    <name>base</name>
+    <name>dubbo-base</name>
 
     <dependencies>
         <dependency>

@@ -1,0 +1,7 @@
+spring:
+  cloud:
+    config:
+      name: application
+      profile: dev
+      uri: http://localhost:8714/config/
+

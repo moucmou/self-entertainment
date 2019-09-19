@@ -3,6 +3,7 @@ package com.self.entertainment.mybatis.pojo;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.Date;
+import java.util.List;
 
 /**
  * @author AmazingZ
@@ -15,6 +16,15 @@ public class User implements Serializable {
     private Integer test;
     private Date startTime;
     private String site;
+    private List<Role>  role;
+
+    public List<Role> getRole() {
+        return role;
+    }
+
+    public void setRole(List<Role> role) {
+        this.role = role;
+    }
 
     public void setTest(Integer test) {
         this.test = test;

@@ -1,0 +1,18 @@
+server:
+  port: 8766
+spring:
+  application:
+    name: zuul
+  cloud:
+    consul:
+      host: 127.0.0.1
+      port: 8500
+      discovery:
+        register: false
+    config:
+      name: zuul
+      profile: dev
+      discovery:
+        enabled: true
+        service-id: config-server
+

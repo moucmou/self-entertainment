@@ -7,9 +7,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import java.sql.Date;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
+import java.time.ZoneOffset;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -56,10 +57,17 @@ public class TbUserMapperTest {
         /**
          * between and
          */
-        LocalDateTime startTime = LocalDateTime.now().minusDays(1).plusMonths(1);
-        LocalDateTime endTime = LocalDateTime.now().plusDays(1).plusMonths(1);
-        List<User> users = tbUserMapper.findByTimeAndSite1(Date.from(startTime.atZone(ZoneId.of("+8")).toInstant()) , Date.from(endTime.atZone(ZoneId.of("+8")).toInstant()),"luofu");
-        System.out.println();
+//        LocalDateTime startTime = LocalDateTime.now().minusDays(1).plusMonths(1);
+//        LocalDateTime endTime = LocalDateTime.now().plusDays(1).plusMonths(1);
+//        List<User> users = tbUserMapper.findByTimeAndSite1(Date.from(startTime.atZone(ZoneId.of("+8")).toInstant()) , Date.from(endTime.atZone(ZoneId.of("+8")).toInstant()),"luofu");
+//        System.out.println();
+
+        /**
+         * findByTime 复合分表时某个字段没有会怎样，一定要两个字段的值都被给到
+         */
+//        tbUserMapper.findByTime(Date.from(LocalDateTime.now().toInstant(ZoneOffset.of("+8"))));
+
+        tbUserMapper.findByIdzz(4L);
 
 //        LocalDateTime startTime = LocalDateTime.now().plusMonths(1);
 //        tbUserMapper.findByTimeAndSite(Date.from(startTime.atZone(ZoneId.of("+8")).toInstant()),"luofu");

@@ -7,10 +7,6 @@ spring:
   #  redis:
   #    port: 6379
   #    timeout: 5000
-  cache:
-    redis:
-      key-prefix: redis-key
-    cache-names: redis-key
 mybatis-plus:
   config-location: classpath:MybatisConfig.xml
   mapper-locations: classpath:mapper/*.xml

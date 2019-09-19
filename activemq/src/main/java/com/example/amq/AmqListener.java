@@ -47,7 +47,7 @@ public class AmqListener {
 //            Destination destination = session.createQueue("TEST.FOO.ZZ6");
 
             // Create a MessageConsumer from the Session to the Topic or Queue
-
+            String x="tcp://0.0.0.0:61616?maximumConnections=1000&amp;wireFormat.maxFrameSize=104857600&amp;transport.defaultKeepAlive=90000&amp;allowLinkStealing=false&amp;transport.activeMQSubscriptionPrefetch=1000&amp;wireFormat.maxInactivityDuration=30000&amp;wireFormat.maxInactivityDurationInitalDelay=10000&amp;transport.useInactivityMonitor=true&amp;transport.useKeepAlive=true";
             SimpleMessageListenerContainer container = new SimpleMessageListenerContainer();
             container.setConnectionFactory(connectionFactory);
             container.setDestination(new ActiveMQQueue("test.test.test3"));

@@ -1,0 +1,17 @@
+server:
+  port: 8763
+spring:
+  application:
+    name: consul-provider
+  cloud:
+    consul:
+      host: 127.0.0.1
+      port: 8500
+      discovery:
+        service-name: consul-provider
+        health-check-path: /actuator/health
+  zipkin:
+    base-url: http://localhost:9000/
+  sleuth:
+    sampler:
+      probability: 1.0

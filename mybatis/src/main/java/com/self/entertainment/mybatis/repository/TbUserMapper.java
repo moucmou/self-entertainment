@@ -24,4 +24,8 @@ public interface TbUserMapper {
     List<User> findByTimeAndSite1(@Param("startTime") Date startTime, @Param("endTime") Date endTime,@Param("site")String site);
 
     List<User> findByTimeAndSite(@Param("startTime") Date startTime,@Param("site") String site);
+
+    List<User> findByTime(@Param("startTime") Date startTime);
+
+    List<User> findByIdzz(@Param("id")Long id);
 }

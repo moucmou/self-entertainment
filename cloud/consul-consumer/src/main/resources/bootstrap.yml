@@ -1,0 +1,19 @@
+server:
+  port: 8762
+spring:
+  application:
+    name: consul-consumer
+  cloud:
+    config:
+      name: consul-consumer
+      profile: dev
+      discovery:
+        enabled: true
+        service-id: config-server
+    consul:
+      host: 127.0.0.1
+      port: 8500
+      discovery:
+        healthCheckInterval: 10s
+        register: true
+        instance-id: ${spring.application.name}:${server.port}

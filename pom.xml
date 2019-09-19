@@ -23,9 +23,10 @@
         <projectlombok.version>1.18.8</projectlombok.version>
         <spring.common.version>2.1.6.RELEASE</spring.common.version>
     </properties>
+
     <modules>
         <module>unclassified</module>
-        <module>jetty</module>
+        <module>netty</module>
         <module>dubbo</module>
         <module>amazingt</module>
         <module>redis-cache</module>
@@ -34,9 +35,8 @@
         <module>openfeign</module>
         <module>activemq</module>
         <module>shardingjdbc</module>
+        <module>cloud</module>
     </modules>
-
-
     <dependencyManagement>
 
         <dependencies>
@@ -271,36 +271,51 @@
                 <artifactId>spring-cloud-starter-stream-rabbit</artifactId>
                 <version>2.1.2.RELEASE</version>
             </dependency>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            <!-- https://mvnrepository.com/artifact/org.springframework.kafka/spring-kafka -->
+            <dependency>
+                <groupId>org.springframework.kafka</groupId>
+                <artifactId>spring-kafka</artifactId>
+                <version>2.2.8.RELEASE</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-web</artifactId>
+                <version>2.1.6.RELEASE</version>
+            </dependency>
+            <dependency>
+                <groupId>io.github.openfeign</groupId>
+                <artifactId>feign-jaxrs</artifactId>
+                <version>10.3.0</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-netflix-hystrix-dashboard -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-netflix-hystrix-dashboard</artifactId>
+                <version>2.1.3.RELEASE</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-netflix-zuul -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-netflix-zuul</artifactId>
+                <version>2.1.2.RELEASE</version>
+            </dependency>
 
         </dependencies>
 
     </dependencyManagement>
+
 
     <dependencies>
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>${projectlombok.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
         </dependency>
     </dependencies>
     <build>

@@ -7,6 +7,11 @@
         <result column="test" jdbcType="INTEGER" property="test"/>
         <result column="start_time" jdbcType="TIMESTAMP" property="startTime"/>
         <result column="site" jdbcType="VARCHAR" property="site"/>
+        <collection property="role" column="city_id" ofType="com.self.entertainment.mybatis.pojo.Role">
+            <result property="cityId" column="city_id" />
+            <result property="id" column="id"/>
+            <result property="name" column="name"/>
+        </collection>
     </resultMap>
     <insert id="insert" parameterType="com.self.entertainment.mybatis.pojo.User" useGeneratedKeys="true"
             keyProperty="id">
@@ -53,5 +58,11 @@
     </select>
     <select id="findByTimeAndSite" resultType="com.self.entertainment.mybatis.pojo.User">
         select id, city_id, test,  start_time,site from "t_user" where site =#{site} and start_time &gt;=#{startTime}
+    </select>
+    <select id="findByTime" resultType="com.self.entertainment.mybatis.pojo.User">
+        select id, city_id, test,  start_time,site from "t_user" where start_time &gt;= #{startTime}
+    </select>
+    <select id="findByIdzz" resultType="com.self.entertainment.mybatis.pojo.User">
+        select a.id,a.city_id from t_user_0 a inner join t_role b on a.city_id=b.city_id
     </select>
 </mapper>

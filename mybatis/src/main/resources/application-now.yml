@@ -41,7 +41,7 @@ sharding:
               #                sharding-column: test
               #                algorithm-expression: order$->{test % 2}
               complex:
-                shardingColumns: site
+                shardingColumns: start_time,site
                 algorithmClassName: com.self.entertainment.mybatis.sharding.MyComplexShardingDatasource
 #            table-strategy:  #分表策略
 #              inline:

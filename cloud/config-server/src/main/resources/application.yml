@@ -1,0 +1,26 @@
+server:
+  port: 8714
+spring:
+  application:
+    name: config-server
+  profiles:
+    active: native
+#   配置使用下面哪一个配置
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: file:E:/github/config
+#        git:
+#          uri: https://github.com/ityouknow/spring-cloud-starter/     # 配置git仓库的地址
+#          search-paths: config-repo                             # git仓库地址下的相对地址，可以配置多个，用,分割。
+#          username:                                             # git仓库的账号
+#          password:
+#   将配置中心注册到consul中，consul保证分布式集群
+    consul:
+      host: 127.0.0.1
+      port: 8500
+      discovery:
+        health-check-path: /actuator/health
+        instance-id: ${spring.application.name}:${server.port}
+

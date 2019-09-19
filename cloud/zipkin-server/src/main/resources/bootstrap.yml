@@ -1,0 +1,20 @@
+spring:
+  cloud:
+    config:
+      name: zipkin-server
+      profile: dev
+      discovery:
+        enabled: true
+        service-id: config-server
+    consul:
+      host: 127.0.0.1
+      port: 8500
+      discovery:
+        register: false
+  application:
+    name: zipkin-server
+server:
+  port: 9000
+
+
+

@@ -7,7 +7,7 @@
         <groupId>com.self.entertainment</groupId>
         <version>${j4f.version}</version>
     </parent>
-    <artifactId>jetty</artifactId>
+    <artifactId>netty</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>netty</name>
     <description>Demo project for Spring Boot</description>
@@ -48,11 +48,7 @@
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-csv</artifactId>
         </dependency>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.12</version>
-        </dependency>
+
 
     </dependencies>
 

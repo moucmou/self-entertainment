@@ -1,0 +1,14 @@
+1. springconfig 获取配置中心的信息是通过ConfigServicePropertySourceLocator，是properttsourcelocator的一个实现，来获取远程配置信息，是通过调用rest接口来获取的信息
+2. spring bus 在配置中心服务器修改配置文件后，调用refresh接口发送消息通知各个configclient后，是通过监听RefreshRemoteApplicationEvent事件来刷新enviroment，重构上下文环境（初步理解是这样）后续了解相关源码入口（RefreshListener、RefreshRemoteApplicationEvent来了解）
+3. 注册consul中的服务都是不带上下文的、需要注意，带上了上下文其他服务访问的时候需要自己手动自动上下文路径否则很容易访问不到服务，比如config client获取服务端的配置时候因为少拼了上下文而拿不到配置，没有明显的报错信息就会出现config client的配置不生效问题
+4. springcloud config 配置consul使用的时候，为了config高可用，可以吧配置中心注册到注册中心，但是要在bootstrap.yml中指定consul的路径才能进行服务寻址，consul自身保证高可用
+5. springzuul 本身就做了一个url转发的东西，其中额外实现了filter和熔断的一些功能，需要注意的是zuul转发的路径也是不带上下文的，配置的path直接就会出现在最终的url中而不会拼到实际调用的服务url前缀中
+6. zuul自定义实现filter，实现ZuulFilter就可以了，重写一下run方法，参考其他实现类即可
+7. 需要注册到consul注册中心的时候，instance-id 为必填属性，记得了
+8. 目前zuul是没有跨域问题的，需要看看他是怎么实现的、顺带需要了解一下nginx怎么解决跨域问题的
+9. 开启hystrix监控，需要指定management.endpoints.web.exposure.include: *，yml的时候一定要指定为"*",否则会出现未识别错误，才能来访问接口的监控情况，比如/actuator/hystrix.stream进行界面监控，不指定是不开启的
+10. 需要指定一下健康监测接口，否则服务注册到consul中后也会被认为是不健康的接口而无法获取节点，心跳检测的时间也要自己注意一下
+11. 可以使用spring-cloud-starter-sleuth和spring-cloud-sleuth-zipkin来进行追踪日志管理，指定上传日志发送的完整接口和收集百分比就可以根据tranceid或者服务名来获取调用链日志了，也能看到服务的依赖关系，需要对原理进一步了解，追踪日志什么的对feign生效
+12. hystrix dashboard可以看到每个接口的调用状况，是否开启熔断等信息，看查看服务的健康装填
+13. 漏记了一个可以观察整个服务集群的状态的，stream什么的 记得补上
+14. maven 配置多个模块的时候记得指定打包方式，默认为jar，可能有些时候需要指定为pom
