@@ -215,12 +215,12 @@
             <dependency>
                 <groupId>org.eclipse.jetty</groupId>
                 <artifactId>jetty-server</artifactId>
-                <version>9.4.16.v20190411</version>
+                <version>9.4.32.v20200930</version>
             </dependency>
             <dependency>
                 <groupId>org.eclipse.jetty</groupId>
                 <artifactId>jetty-util</artifactId>
-                <version>9.4.16.v20190411</version>
+                <version>9.4.32.v20200930</version>
             </dependency>
             <!-- https://mvnrepository.com/artifact/org.eclipse.jetty/jetty-servlet -->
             <dependency>
