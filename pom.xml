@@ -11,8 +11,8 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.self.entertainment</groupId>
-    <artifactId>j4f</artifactId>
-    <version>${j4f.version}</version>
+    <artifactId>self-entertainment</artifactId>
+    <name>self-entertainment</name>
     <properties>
         <java.version>1.8</java.version>
         <j4f.version>1.0.0-SNAPSHOT</j4f.version>
@@ -23,6 +23,7 @@
         <projectlombok.version>1.18.8</projectlombok.version>
         <spring.common.version>2.1.6.RELEASE</spring.common.version>
     </properties>
+    <version>${j4f.version}</version>
 
     <modules>
         <module>unclassified</module>
@@ -37,6 +38,9 @@
         <module>shardingjdbc</module>
         <module>cloud</module>
         <module>utils</module>
+        <module>lucene</module>
+        <module>elasticsearch</module>
+        <module>web</module>
     </modules>
     <dependencyManagement>
 

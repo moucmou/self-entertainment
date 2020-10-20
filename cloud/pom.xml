@@ -3,7 +3,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <artifactId>j4f</artifactId>
+        <artifactId>self-entertainment</artifactId>
         <groupId>com.self.entertainment</groupId>
         <version>${j4f.version}</version>
     </parent>

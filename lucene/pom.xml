@@ -3,9 +3,9 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>j4f</artifactId>
+        <artifactId>self-entertainment</artifactId>
         <groupId>com.self.entertainment</groupId>
-        <version>1.0.0-SNAPSHOT</version>
+        <version>${j4f.version}</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -13,6 +13,7 @@
     <properties>
             <lucene.vertsion>8.2.0</lucene.vertsion>
     </properties>
+    <packaging>jar</packaging>
     <dependencies>
         <!-- https://mvnrepository.com/artifact/org.apache.lucene/lucene-core -->
         <dependency>
