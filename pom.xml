@@ -33,7 +33,6 @@
         <module>redis-cache</module>
         <module>mybatis</module>
         <module>course</module>
-        <module>openfeign</module>
         <module>activemq</module>
         <module>shardingjdbc</module>
         <module>cloud</module>
@@ -41,6 +40,7 @@
         <module>lucene</module>
         <module>elasticsearch</module>
         <module>web</module>
+        <module>open-fegin</module>
     </modules>
     <dependencyManagement>
 
