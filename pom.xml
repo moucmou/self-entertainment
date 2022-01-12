@@ -17,7 +17,7 @@
         <java.version>1.8</java.version>
         <j4f.version>1.0.0-SNAPSHOT</j4f.version>
         <spring-boot.version>2.1.1.RELEASE</spring-boot.version>
-        <dubbo.version>2.7.1</dubbo.version>
+        <dubbo.version>2.7.15</dubbo.version>
         <curator.version>4.2.0</curator.version>
         <commons-io.version>2.6</commons-io.version>
         <projectlombok.version>1.18.8</projectlombok.version>
