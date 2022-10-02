@@ -19,7 +19,7 @@
         <spring-boot.version>2.1.1.RELEASE</spring-boot.version>
         <dubbo.version>2.7.1</dubbo.version>
         <curator.version>4.2.0</curator.version>
-        <commons-io.version>2.6</commons-io.version>
+        <commons-io.version>2.7</commons-io.version>
         <projectlombok.version>1.18.8</projectlombok.version>
         <spring.common.version>2.1.6.RELEASE</spring.common.version>
     </properties>
